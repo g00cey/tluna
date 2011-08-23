@@ -1,0 +1,65 @@
+"font
+set guifont=MS_Mincho:h08:cSHIFTJIS
+set printfont=MS_Mincho:h08:cSHIFTJIS
+
+" edit
+set autoindent
+set smartindent
+set showmatch
+set wildmenu
+
+"filetype
+filetype plugin indent on
+syntax on
+
+"tab
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+
+"display 
+set         number
+colorscheme darkblue
+
+"vim command iterpolation
+set nocompatible
+
+"filebackup
+"set nobackup
+"set noswapfile
+set backup
+set swapfile
+set dir=~/vimfiles/swap
+set backupdir=~/vimfiles/backup
+
+"plugin
+filetype plugin indent on
+
+"fileenconrdings
+set fileencodings=iso-2022-jp,sjis,utf-8
+
+"vim/ruby
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+
+imap <C-Space> <C-x><C-o>
+
+"rails.vim
+let g:rails_dbext      = 1
+let g:rails_gnu_screen = 1
+let g:rails_modelines  = 1
+
+"grep
+let Grep_Path             = 'grep'
+let Fgrep_Path            = 'fgrep'
+let Egrep_Path            = 'egrep'
+let Grep_Find_Path        = 'find'
+let Grep_Xargs_Path       = 'xargs'
+let Grep_Shell_Quote_Char = '"'
+
+cmap wr w<Bar>!perl ~/.vim/auto_upload.pl "%:p"
+
+"align
+let g:Align_xstrlen = 3

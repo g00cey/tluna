@@ -1,0 +1,40 @@
+" edit
+set autoindent
+set showmatch
+set wildmenu
+syntax on
+filetype on
+filetype indent on
+filetype plugin on
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+set nocompatible
+
+" backup
+set backup
+set backupdir =~/.vim/vimbackup
+set swapfile
+set directory =~/.vim/vim_swap
+
+set autoindent
+
+filetype plugin indent on
+
+set number
+
+set fileencodings=iso-2022-jp,sjis,utf-8
+set encoding=utf-8
+let twitvim_login = "totugekiluna:gona57"
+
+"vim/ruby
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+
+imap <C-Space> <C-x><C-o>
+"rails.vim
+let g:rails_dbext = 1
+let g:rails_gnu_screen=1
+let g:rails_modelines=1
