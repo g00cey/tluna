@@ -16,7 +16,7 @@ set nocompatible
 set backup
 set backupdir =~/.vim/vimbackup
 set swapfile
-set directory =~/.vim/vim_swap
+set directory =~/.vim/vimswap
 
 set autoindent
 

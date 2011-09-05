@@ -8,17 +8,16 @@ $KCODE = 'u'
 
 #でっち上げのnamespace
 ns = [
-  'atom' => 'http://blogspot.com',
-  'os' => 'http://blogspot.com'
+  'atom' => 'http://www.w3.org/2005/Atom'
 ]
 
-beforefile = File::read('tluna-work-before.xml')
 afterfile = File::read('tluna-work-after.xml')
+beforefile = File::read('tluna-work-before.xml')
 
-afterparser = XML::Parser.string afterfile
-beforeparser = XML::Parser.string beforefile
+after  = XML::Document.string afterfile
+before = XML::Document.string beforefile
 
-after = afterparser.parse
-before = beforeparser.parse
+after.parse
+before.parse
 
-puts after.root.find('//atom:entry[2]',ns)
+p after.root.first_find('/atom:entry',ns)
