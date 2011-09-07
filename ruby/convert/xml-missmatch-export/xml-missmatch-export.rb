@@ -15,28 +15,36 @@ beforefile = File::read('tluna-work-before.xml')
 after  = XML::Document.string afterfile
 before = XML::Document.string beforefile
 
-#afterのentryを一度配列へ
-a = []
-c = 0
+beforearray = []
+barray_id = []
 #p after.root.namespace
-p after.root.find_first('//atom:feed/atom:entry/atom:title',ns)
+#p after.root.find_first('//atom:feed/atom:entry/atom:title',ns)
 
-after.root.find('//atom:feed/entry',ns).each do |af|
-  a << af.inner_xml
-  c += 1
+p before.class
+before.root.find('//atom:feed/atom:entry',ns).each do |before|
+  beforearray <<  before
 end
 
 no = []
-before.root.find('//atom:entry',ns).each do |be|
-  if(a.index(be.inner_xml))
-    no << be.inner_xml
+after.root.find('//atom:feed/atom:entry',ns).each do |after|
+  beforearray.reject! do |before| 
+    before == after
   end
 end
 
+
+File::open('missmatch.txt' , 'w') do |miss|
+  miss.write beforearray
+end
+
+File::open('barray_id.txt' , 'w') do |miss|
+  miss.write barray_id
+end
+
+=begin
 open('match.txt','w') do |match|
   a.each do |matchline|
     match << matchline
   end
 end
-
-p c
+=end
