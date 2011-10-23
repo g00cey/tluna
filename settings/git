@@ -1,3 +1,0 @@
-git config --global user.name "t1una"
-git config --global user.email "totugekiluna@gmail.com"
-git config --global core.editor 'vim -c "set fenc=utf-8"'
