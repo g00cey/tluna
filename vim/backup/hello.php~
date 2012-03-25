@@ -1,0 +1,10 @@
+<?php
+
+if($_POST['name']){
+  #$post_name = htmlspecialchars($_POST['name'].ENT_QUOTES);
+  $post_name = $_POST['name'].ENT_QUOTES;
+  echo "こんにちは、".$post_name."さん。";
+}else{
+  echo "名前を入力してください。";
+}
+?>

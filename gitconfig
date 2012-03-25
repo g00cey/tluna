@@ -1,0 +1,5 @@
+[user]
+	name = t1una
+	email = totugekiluna@gmail.com
+[core]
+	editor = vim -c \"set fenc=utf-8\"

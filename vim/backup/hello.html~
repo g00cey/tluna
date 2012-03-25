@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lnag="ja" lang="ja" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <style type="text/css">
+      <!--
+      -->
+    </style>
+    <script type="text/javascript">
+      //<![CDATA[
+    function createXMLHttpRequest(){
+      /* HXMLHttpRequest オブジェクトを作成 */
+      if(window.addEventListener){
+        /* Firefox */
+        return new XMLHttpRequest();
+      }else{
+        /* IE */
+        return new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    }
+    function XMLHttpRequestByPost(postdata){
+      /* hello.phpにリクエストを送る */
+      var request = createXMLHttpRequest();
+
+      /* ステータス(読み込み中なのか完了したのか)が変更されたら、
+         readyStateChangeHandlerを実行 */
+      request.open("POST", "hello.php", true);
+      request.onreadystatechange = readyStateChangeHandler;
+      request.setRequestHeader("Content-Type" , "application/x-www-form-urlencoded");
+      request.send("name=" + postdata);
+      function readyStateChangeHandler(){
+        switch(request.readyState){
+          case 4:
+          if(request.status == 200){
+            document.getElementById('result').innerHTML = request.responseText;
+          }
+          break;
+        }
+      }
+    }
+    function RequestByPost(){
+      XMLHttpRequestByPost(document.getElementById('name').value);
+    }
+    window.onload = function(){
+      var obj = document.getElementById('submit-button');
+      if(window.addEventListener){
+        /* Firefox */
+        obj.addEventListener("click", RequestByPost, false);
+      }else{
+        /* IE */
+        obj.attacheEvent("onclick", RequestByPost);
+      }
+    }
+      //]]>
+    </script>
+  <title>こんにちはサンプル</title>
+  </head>
+  <body>
+    <h1>こんにちは○○さん</h1>
+    <label for="name">名前</label>
+    <input type="text" id="name" width="10" />
+    <p id="result"></p>
+    <input type="submit" id="submit-button" value="クリック" />
+
+  </body>
+</html>
+

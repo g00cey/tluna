@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/luna/git/tluna/php/ajax/ajaxvol1'
+let g:netrw_dirhist_2='/home/luna/git/tluna/php/ajax/sampleajax/js'
+let g:netrw_dirhist_3='/home/luna/git/tluna/php/ajax/sampleajax'
+let g:netrw_dirhist_4='/home/luna/git/tluna/ruby/document'
+let g:netrw_dirhist_5='/home/luna/git/tluna/ruby'
+let g:netrw_dirhist_6='/home/luna/git/tluna/ruby/fixture'
+let g:netrw_dirhist_7='/home/luna/git/tluna/ruby/logger'
+let g:netrw_dirhist_8='/home/luna/git/tluna/ruby/rack'
+let g:netrw_dirhist_9='/home/luna/git/tluna/ruby/rails'
