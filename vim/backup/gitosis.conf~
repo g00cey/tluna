@@ -1,9 +1,0 @@
-[gitosis]
-
-[group gitosis-admin]
-writable = gitosis-admin
-members = luna@tluna.mydns.jp luna
-
-[group rere]
-writable = rere
-members = luna nooj
