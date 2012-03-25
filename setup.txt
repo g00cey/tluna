@@ -9,9 +9,9 @@ else
 fi
 
 #vim
-ln -s ~/git/dotfiles/vim/vimrc        ~/.vimrc
-cp    ~/git/dotfiles/vim/vimrc-color  ~/.vimrc-color
-ln -s ~/git/dotfiles/vim              ~/.vim
+ln -s ~/git/github-tluna/vim/vimrc        ~/.vimrc
+cp    ~/git/github-tluna/vim/vimrc-color  ~/.vimrc-color
+ln -s ~/git/github-tluna/vim              ~/.vim
 
 
 #another dot files and w3m cgi-bin
@@ -22,13 +22,13 @@ rm -rf ~/.irbrc
 rm -rf ~/.screenrc
 
 
-ln -s ~/git/dotfiles/w3m/             ~/.w3m
-ln -s ~/git/dotfiles/gitconfig        ~/.gitconfig
-ln -s ~/git/dotfiles/irbrc            ~/.irbrc
-ln -s ~/git/dotfiles/cgi-bin/         ~/cgi-bin
-ln -s ~/git/dotfiles/screenrc         ~/.screenrc
-ln -s ~/git/dotfiles/bashrc           ~/.bashrc
-ln -s ~/git/dotfiles/bash_profile     ~/.bash_profile
+ln -s ~/git/github-tluna/w3m/             ~/.w3m
+ln -s ~/git/github-tluna/gitconfig        ~/.gitconfig
+ln -s ~/git/github-tluna/irbrc            ~/.irbrc
+ln -s ~/git/github-tluna/cgi-bin/         ~/cgi-bin
+ln -s ~/git/github-tluna/screenrc         ~/.screenrc
+ln -s ~/git/github-tluna/bashrc           ~/.bashrc
+ln -s ~/git/github-tluna/bash_profile     ~/.bash_profile
 
 #git settings
 git config --global user.name "t1una"
@@ -36,6 +36,6 @@ git config --global user.email "totugekiluna@gmail.com"
 git config --global core.editor 'vim -c "set fenc=utf-8"'
 
 #submoudle
-cd git/dotfiles/vim
+cd git/github-tluna/vim
 git submodule init
 git submodule update
