@@ -2,15 +2,16 @@ filetype plugin indent on
 syntax on
 
 "Vundle
-if has('win32')
-  set rtp+=$HOME/dotfiles/vim/vundle
+if has("win32") || has("win64")
+  set rtp+=~/vim/vundle/
   set guifont=OsakaÅ|ìôïù:h09:cSHIFTJIS
   source $HOME/_vimrc-color
+  call vundle#rc('~/vim/bundle/')
 else 
   source ~/.vimrc-color
-  set rtp+=~/.vim/vundle
+  set rtp+=~/.vim/vundle/
+  call vundle#rc()
 endif
-call vundle#rc()
 
 "templates
 augroup SkeletonAu
