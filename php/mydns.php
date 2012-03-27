@@ -1,5 +1,6 @@
 <?php
-    $url = 'www.mydns.jp';
+#require_once ('pp.class');
+    $url = 'http://www.mydns.jp';
     $masterid = 'mydns90546';
     $masterpwd = 'hX3iX2j8';
     $data = array (
@@ -9,5 +10,6 @@
       'method' => 'POST',
       'content' => http_build_query($data),
     ));
-    $contents = file_get_contents($url, false,stream_context_create($options));
+    $contents = file_get_contents($url, false, stream_context_create($options));
+      var_dump ($contents);
 ?>
