@@ -41,6 +41,11 @@ Bundle 'Solarized'
 filetype plugin indent on
 syntax on
 
+if has('win32') || has('win64')
+  let g:netrw_scp_cmd='C:/soft/putty/pscp.exe -q -batch'
+  let g:netrw_ssh_cmd='C:/soft/putty/plink.exe'
+endif
+
 "xpath-search
 "let g:loaded_xpath = 1
 
