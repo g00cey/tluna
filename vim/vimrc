@@ -1,7 +1,7 @@
 "Vundle
 if has("win32") || has("win64")
-  set rtp+=~/vimfiles/vundle/
-  let $DOTVIM = expand('~/vimfiles')
+  set rtp+=~/vim/vundle/
+  let $DOTVIM = expand('~/vim')
 else 
   set rtp+=~/.vim/vundle/
   let $DOTVIM = expand('~/.vim')
@@ -68,8 +68,8 @@ set         number
 set backup
 set swapfile
 if has("win32") || has("win64")
-  set dir=~/vimfiles/swap
-  set backupdir=~/vimfiles/backup
+  set dir=~/vim/swap
+  set backupdir=~/vim/backup
 else 
   set dir=~/.vim/swap
   set backupdir=~/.vim/backup
