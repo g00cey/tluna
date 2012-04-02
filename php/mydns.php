@@ -1,15 +1,15 @@
 <?php
 #require_once ('pp.class');
-    $url = 'http://www.mydns.jp';
+    $url = 'http://www.mydns.jp/login.html';
     $masterid = 'mydns90546';
     $masterpwd = 'hX3iX2j8';
-    $data = array (
-      'masterid' => $masterid,
-      'masterpwd' => $masterpwd,);
-    $options = array ('http' => array(
-      'method' => 'POST',
-      'content' => http_build_query($data),
-    ));
-    $contents = file_get_contents($url, false, stream_context_create($options));
-      var_dump ($contents);
+    file_get_contents("j
+    var_dump ($contents);
+    option = array(
+      "fimeout" => "10",
+      "allowRedirects" => true,
+      "maxRedirects" => 3,
+    );
+    $http = new HTTP_Request($url,$option);
+    $http->addHeader("
 ?>
