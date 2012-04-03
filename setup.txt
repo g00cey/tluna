@@ -1,32 +1,20 @@
 #!/bin/bash
-#create tmp directory (screen)
-SCREEN_DIRECTORY='~/tmp'
-REDHAT='/etc/redhat-release'
-if [ -d $SCREEN_DIRECTORY ]; then
-  echo 'already screen_directory'
-else 
-  mkdir ~/tmp
-fi
 
 #vim
 ln -s ~/git/github-tluna/vim/vimrc        ~/.vimrc
 cp    ~/git/github-tluna/vim/vimrc-color  ~/.vimrc-color
 ln -s ~/git/github-tluna/vim              ~/.vim
 
-
 #another dot files and w3m cgi-bin
 rm -rf ~/.w3m
 rm -rf ~/.gitconfig
 rm -rf ~/cgi-bin
 rm -rf ~/.irbrc
-rm -rf ~/.screenrc
-
 
 ln -s ~/git/github-tluna/w3m/             ~/.w3m
 ln -s ~/git/github-tluna/gitconfig        ~/.gitconfig
 ln -s ~/git/github-tluna/irbrc            ~/.irbrc
 ln -s ~/git/github-tluna/cgi-bin/         ~/cgi-bin
-ln -s ~/git/github-tluna/screenrc         ~/.screenrc
 ln -s ~/git/github-tluna/bashrc           ~/.bashrc
 ln -s ~/git/github-tluna/bash_profile     ~/.bash_profile
 ln -s ~/git/github-tluna/ctags            ~/.ctags
