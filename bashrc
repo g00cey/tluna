@@ -19,8 +19,8 @@ function refe() {
 }
 
 #各種ディストリとホストごとにあわせた環境パス設定
-if [ -f redhatfile ]; then
-  if [ $HOSTNAME -eq "centos.localdomain" ]; then
+if [ -f $redhatfile ]; then
+  if [ $HOSTNAME == "centos.localdomain" ]; then
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
     PATH=~/bin/:~/.rvm/bin:~/bin:/var/lib/gems/1.8/bin/:/usr/local/gae/:/usr/local/sbin/:/usr/local/bin/:$PATH
   fi
