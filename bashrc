@@ -9,7 +9,6 @@ fi
 PATH=~/bin/:~/.rvm/bin:~/bin:/var/lib/gems/1.8/bin/:/usr/local/gae/:/usr/local/sbin/:/usr/local/bin/:$PATH
 export PATH
 export EDITOR=vim
-export WORDCHARS='?_-.[]~=&;!#$%^(){}<>'
 alias ssh-agent-run='exec ssh-agent bash'
 alias key-tluna='ssh-add /home/luna/.ssh/tluna_id_rsa'
 alias key-github='ssh-add /home/luna/.ssh/git_id_rsa'
