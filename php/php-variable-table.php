@@ -3,7 +3,7 @@
   <body>
 <?php
 include_once ('./inc/htmltemplate_oo/htmltemplate.inc');
-$connect_resource = pg_connect("dbname=luna user=hoge password='hogehoge'");
+$connect_resource = pg_connect("dbname=php_test user=hoge password='hogehoge'");
 $rtn = pg_exec($connect_resource, "select * from hogehoge");
 $num = pg_numrows($rtn);
 for($i=0; $i<$num; $i++){

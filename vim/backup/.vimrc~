@@ -16,7 +16,7 @@ augroup SkeletonAu
 augroup END
 
 "tags
-set ctags=~/.tags
+set tags=~/.tags
 
 "original repos on github
 Bundle 'gmarik/vundle'

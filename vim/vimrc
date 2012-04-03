@@ -40,6 +40,7 @@ Bundle 'surround.vim'
 Bundle 'quickrun'
 Bundle 'superSnipMate'
 Bundle 'Solarized'
+Bundle 'SudoEdit.vim'
 
 filetype plugin indent on
 syntax on
