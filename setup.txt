@@ -29,6 +29,8 @@ ln -s ~/git/github-tluna/cgi-bin/         ~/cgi-bin
 ln -s ~/git/github-tluna/screenrc         ~/.screenrc
 ln -s ~/git/github-tluna/bashrc           ~/.bashrc
 ln -s ~/git/github-tluna/bash_profile     ~/.bash_profile
+ln -s ~/git/github-tluna/ctags            ~/.ctags
+ln -s ~/git/github-tluna/bin/             ~/bin
 
 #git settings
 git config --global user.name "t1una"

@@ -21,7 +21,7 @@ else
 fi
 
 ## ubuntu version path
-PATH=~/.rvm/bin:~/bin:/var/lib/gems/1.8/bin/:/usr/local/gae/:/usr/local/sbin/:/usr/local/bin/:$PATH
+PATH=~/bin/:~/.rvm/bin:~/bin:/var/lib/gems/1.8/bin/:/usr/local/gae/:/usr/local/sbin/:/usr/local/bin/:$PATH
 export PATH
 export EDITOR=vim
 export WORDCHARS='?_-.[]~=&;!#$%^(){}<>'

@@ -1,0 +1,3 @@
+ctags -f .tags -R ~/git/github-tluna
+ctags -f .tags -R ~/git/public_html
+ctags -f .tags -R ~/git/tluna

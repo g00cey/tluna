@@ -15,6 +15,9 @@ augroup SkeletonAu
   autocmd BufNewFile *.html 0r ~/.vim/templates/skel.html
 augroup END
 
+"tags
+set tags=~/.tags
+
 "original repos on github
 Bundle 'gmarik/vundle'
 Bundle 'fugitive.vim'
