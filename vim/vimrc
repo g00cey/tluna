@@ -39,6 +39,7 @@ Bundle 'ZenCoding.vim'
 Bundle 'surround.vim'
 Bundle 'quickrun'
 Bundle 'superSnipMate'
+Bundle 'TwitVim'
 Bundle 'Solarized'
 Bundle 'SudoEdit.vim'
 
