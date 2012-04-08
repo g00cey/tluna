@@ -1,24 +1,37 @@
 #!/bin/bash
 
+if [ -f /etc/redhat-release ] ; then
+if [ ! -f /usr/bin/tmux ] ; then
+bash ./centos-initial-install.txt
+fi
+fi
+
+#delete links
+rm  ~/.w3m
+rm  ~/.gitconfig
+rm  ~/cgi-bin
+rm  ~/.irbrc
+rm  ~/.bashrc
+rm  ~/.bash_profile
+rm  ~/.ctags
+rm  ~/bin
+rm  ~/.vimrc
+rm  ~/.vim
+
 #vim
-ln -s ~/git/github-tluna/vim/vimrc        ~/.vimrc
-cp    ~/git/github-tluna/vim/vimrc-color  ~/.vimrc-color
-ln -s ~/git/github-tluna/vim              ~/.vim
+ln -s ~/tluna/vim/vimrc        ~/.vimrc
+ln -s ~/tluna/vim              ~/.vim
 
 #another dot files and w3m cgi-bin
-rm -rf ~/.w3m
-rm -rf ~/.gitconfig
-rm -rf ~/cgi-bin
-rm -rf ~/.irbrc
 
-ln -s ~/git/github-tluna/w3m/             ~/.w3m
-ln -s ~/git/github-tluna/gitconfig        ~/.gitconfig
-ln -s ~/git/github-tluna/irbrc            ~/.irbrc
-ln -s ~/git/github-tluna/cgi-bin/         ~/cgi-bin
-ln -s ~/git/github-tluna/bashrc           ~/.bashrc
-ln -s ~/git/github-tluna/bash_profile     ~/.bash_profile
-ln -s ~/git/github-tluna/ctags            ~/.ctags
-ln -s ~/git/github-tluna/bin/             ~/bin
+ln -s ~/tluna/w3m/             ~/.w3m
+ln -s ~/tluna/gitconfig        ~/.gitconfig
+ln -s ~/tluna/irbrc            ~/.irbrc
+ln -s ~/tluna/cgi-bin/         ~/cgi-bin
+ln -s ~/tluna/bashrc           ~/.bashrc
+ln -s ~/tluna/bash_profile     ~/.bash_profile
+ln -s ~/tluna/ctags            ~/.ctags
+ln -s ~/tluna/bin/             ~/bin
 
 #git settings
 git config --global user.name "t1una"
@@ -26,6 +39,5 @@ git config --global user.email "totugekiluna@gmail.com"
 git config --global core.editor 'vim -c "set fenc=utf-8"'
 
 #submoudle
-cd git/github-tluna/vim
 git submodule init
 git submodule update
