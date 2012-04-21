@@ -17,6 +17,7 @@ rm  ~/.ctags
 rm  ~/bin
 rm  ~/.vimrc
 rm  ~/.vim
+rm  ~/.tmux.conf
 
 #vim
 ln -s ~/tluna/vim/vimrc        ~/.vimrc
@@ -29,6 +30,7 @@ ln -s ~/tluna/gitconfig        ~/.gitconfig
 ln -s ~/tluna/irbrc            ~/.irbrc
 ln -s ~/tluna/cgi-bin/         ~/cgi-bin
 ln -s ~/tluna/bashrc           ~/.bashrc
+ln -s ~/tluna/tmux.conf        ~/.tmux.conf
 ln -s ~/tluna/bash_profile     ~/.bash_profile
 ln -s ~/tluna/ctags            ~/.ctags
 ln -s ~/tluna/bin/             ~/bin

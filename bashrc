@@ -10,6 +10,7 @@ PATH=~/bin/:~/.rvm/bin:~/bin:/var/lib/gems/1.8/bin/:/usr/local/gae/:/usr/local/s
 export PATH
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
+export TERM=xterm-256color
 alias ssh-agent-run='exec ssh-agent bash'
 alias key-tluna='ssh-add /home/luna/.ssh/tluna_id_rsa'
 alias key-github='ssh-add /home/luna/.ssh/git_id_rsa'
