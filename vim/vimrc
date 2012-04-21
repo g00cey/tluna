@@ -21,6 +21,7 @@ set tags=~/.tags
 "original repos on github
 Bundle 'gmarik/vundle'
 Bundle 'fugitive.vim'
+Bundle 'project.tar.gz'
 Bundle 'taglist.vim'
 Bundle 'listtag'
 Bundle 'git://github.com/thinca/vim-ref.git'
@@ -98,6 +99,7 @@ let g:rails_modelines  = 1
 
 "netrw
 let g:netrw_liststyle = 3
+let g:netrw_ = 3
 
 "grep
 let Grep_Path             = 'grep'
