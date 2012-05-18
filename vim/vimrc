@@ -7,10 +7,6 @@ else
   let $DOTVIM = expand('~/.vim')
 endif
 call vundle#rc('$DOTVIM/bundle')
-<<<<<<< HEAD
-colorscheme koehler
-=======
->>>>>>> 7e3cb61a98265915519b0cccf395599984fc8955
 
 "templates
 augroup SkeletonAu
