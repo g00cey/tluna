@@ -1,13 +1,16 @@
 "Vundle
 if has("win32") || has("win64")
-  set rtp+=~/vimfiles/vundle/
-  let $DOTVIM = expand('~/vimfiles')
+  set rtp+=~/vim/vundle/
+  let $DOTVIM = expand('~/vim')
 else 
   set rtp+=~/.vim/vundle/
   let $DOTVIM = expand('~/.vim')
 endif
 call vundle#rc('$DOTVIM/bundle')
+<<<<<<< HEAD
 colorscheme koehler
+=======
+>>>>>>> 7e3cb61a98265915519b0cccf395599984fc8955
 
 "templates
 augroup SkeletonAu
@@ -20,6 +23,7 @@ set tags=~/.tags
 
 "original repos on github
 Bundle 'gmarik/vundle'
+Bundle 'grep.vim'
 Bundle 'fugitive.vim'
 Bundle 'project.tar.gz'
 Bundle 'taglist.vim'
@@ -47,10 +51,8 @@ Bundle 'SudoEdit.vim'
 filetype plugin indent on
 syntax on
 
-if has('win32') || has('win64')
-  let g:netrw_scp_cmd='C:/soft/putty/pscp.exe -q -batch'
-  let g:netrw_ssh_cmd='C:/soft/putty/plink.exe'
-endif
+"filetype
+au! BufNewFile,BufRead *.changelog setf changelog
 
 "xpath-search
 "let g:loaded_xpath = 1
@@ -74,8 +76,8 @@ set         number
 set backup
 set swapfile
 if has("win32") || has("win64")
-  set dir=~/vimfiles/swap
-  set backupdir=~/vimfiles/backup
+  set dir=~/vim/swap
+  set backupdir=~/vim/backup
 else 
   set dir=~/.vim/swap
   set backupdir=~/.vim/backup
@@ -103,12 +105,21 @@ let g:loaded_netrwPlugin = 1
 let g:netrw_altv = 1
 
 "grep
-let Grep_Path             = 'grep'
-let Fgrep_Path            = 'fgrep'
-let Egrep_Path            = 'egrep'
-let Grep_Find_Path        = 'find'
-let Grep_Xargs_Path       = 'xargs'
-let Grep_Shell_Quote_Char = '"'
+if has("win32") || has("win64")
+  let Grep_Path             = 'grep'
+  let Fgrep_Path            = 'fgrep'
+  let Egrep_Path            = 'egrep'
+  let Grep_Find_Path        = 'find'
+  let Grep_Xargs_Path       = 'xargs'
+  let Grep_Shell_Quote_Char = '"'
+else 
+  let Grep_Path             = 'grep'
+  let Fgrep_Path            = 'fgrep'
+  let Egrep_Path            = 'egrep'
+  let Grep_Find_Path        = 'find'
+  let Grep_Xargs_Path       = 'xargs'
+  let Grep_Shell_Quote_Char = '"'
+endif
 
 "align
 let g:Align_xstrlen = 3
@@ -123,3 +134,15 @@ let g:ref_alc_encoding = 'Shift-JIS'
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
+
+"DirDiff
+let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp"
+let g:DirDiffIgnore = "Id:,Revision:,Date:"
+let g:DirDiffSort = 1
+let g:DirDiffWindowSize = 14
+let g:DirDiffIgnoreCase = 0
+let g:DirDiffDynamicDiffText = 0
+let g:DirDiffTextFiles = "ファイル"
+let g:DirDiffTextAnd = "と"
+let g:DirDiffTextDiffer = "は違います"
+let g:DirDiffTextOnlyIn = "だけに発見"
