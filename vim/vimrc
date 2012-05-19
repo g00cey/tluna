@@ -8,6 +8,8 @@ else
 endif
 call vundle#rc('$DOTVIM/bundle')
 
+colorscheme darkblue
+
 "templates
 augroup SkeletonAu
   autocmd!
