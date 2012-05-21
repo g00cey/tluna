@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- loading jquery -->
+    <style type="text/css">
+      <!--
+      -->
+    </style>
+    <script type="text/javascript">
+      //<![CDATA[
+    httpObj = new XMLHttpRequest();
+    httpObj.open("get", "./sample.php","true");
+    httpObj.onload = function(){
+      var myData = JSON.parse(this.responseText);
+      alert(myData.color);
+      for (var i = 0; i < myData.latlon.length; i++){
+        for( var x = 0; x < myData.latlon[i].length; x++){
+          alert(myData.latlon[i][x]);
+        }
+      }
+    };
+    httpObj.send(null);
+      //]]>
+    </script>
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+</html>
+
