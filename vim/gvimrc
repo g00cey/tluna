@@ -1,4 +1,4 @@
 if has("win32") || has("win64")
   set guifont=Osaka|“™•:h09:cSHIFTJIS
 endif
-colorscheme blue
+colorscheme solarized
