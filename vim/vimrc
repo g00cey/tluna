@@ -7,7 +7,6 @@ else
   let $DOTVIM = expand('~/.vim')
 endif
 call vundle#rc('$DOTVIM/bundle')
-colorscheme blue
 
 "templates
 augroup SkeletonAu
@@ -15,9 +14,14 @@ augroup SkeletonAu
   autocmd BufNewFile *.html 0r ~/.vim/templates/skel.html
 augroup END
 
+"tags
+set tags=~/.tags
+
 "original repos on github
 Bundle 'gmarik/vundle'
+Bundle 'grep.vim'
 Bundle 'fugitive.vim'
+Bundle 'project.tar.gz'
 Bundle 'taglist.vim'
 Bundle 'listtag'
 Bundle 'git://github.com/thinca/vim-ref.git'
@@ -36,15 +40,13 @@ Bundle 'ZenCoding.vim'
 Bundle 'surround.vim'
 Bundle 'quickrun'
 Bundle 'superSnipMate'
+Bundle 'TwitVim'
 Bundle 'Solarized'
+Bundle 'SudoEdit.vim'
 
 filetype plugin indent on
 syntax on
 
-if has('win32') || has('win64')
-  let g:netrw_scp_cmd='C:/soft/putty/pscp.exe -q -batch'
-  let g:netrw_ssh_cmd='C:/soft/putty/plink.exe'
-endif
 
 "xpath-search
 "let g:loaded_xpath = 1
@@ -92,15 +94,27 @@ let g:rails_gnu_screen = 1
 let g:rails_modelines  = 1
 
 "netrw
-let g:netrw_liststyle = 3
+"let g:netrw_liststyle = 3
+"let g:netrw_ = 3
+"let g:loaded_netrwPlugin = 1
+"let g:netrw_altv = 1
 
 "grep
-let Grep_Path             = 'grep'
-let Fgrep_Path            = 'fgrep'
-let Egrep_Path            = 'egrep'
-let Grep_Find_Path        = 'find'
-let Grep_Xargs_Path       = 'xargs'
-let Grep_Shell_Quote_Char = '"'
+if has("win32") || has("win64")
+  let Grep_Path             = 'grep'
+  let Fgrep_Path            = 'fgrep'
+  let Egrep_Path            = 'egrep'
+  let Grep_Find_Path        = 'find'
+  let Grep_Xargs_Path       = 'xargs'
+  let Grep_Shell_Quote_Char = '"'
+else 
+  let Grep_Path             = 'grep'
+  let Fgrep_Path            = 'fgrep'
+  let Egrep_Path            = 'egrep'
+  let Grep_Find_Path        = 'find'
+  let Grep_Xargs_Path       = 'xargs'
+  let Grep_Shell_Quote_Char = '"'
+endif
 
 "align
 let g:Align_xstrlen = 3

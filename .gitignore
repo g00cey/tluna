@@ -2,8 +2,9 @@
 vim/swap/*
 vim/backup/*
 !vim/backup/init
-w3m/*.*
+w3m/**
 w3m/*
 !w3m/bookmark.html
 !w3m/config
 vim/bundle/*
+lang/php/basic_auth/mydns.jp.setting.php

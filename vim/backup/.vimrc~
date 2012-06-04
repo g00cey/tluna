@@ -1,16 +1,13 @@
-filetype plugin indent on
-syntax on
-
 "Vundle
-if has('win32')
-  set rtp+=$HOME/dotfiles/vim/vundle
-  set guifont=Osaka－等幅:h09:cSHIFTJIS
-  source $HOME/_vimrc-color
+if has("win32") || has("win64")
+  set rtp+=~/vimfiles/vundle/
+  let $DOTVIM = expand('~/vimfiles')
 else 
-  source ~/.vimrc-color
-  set rtp+=~/.vim/vundle
+  set rtp+=~/.vim/vundle/
+  let $DOTVIM = expand('~/.vim')
 endif
-call vundle#rc()
+call vundle#rc('$DOTVIM/bundle')
+colorscheme blue
 
 "templates
 augroup SkeletonAu
@@ -18,9 +15,13 @@ augroup SkeletonAu
   autocmd BufNewFile *.html 0r ~/.vim/templates/skel.html
 augroup END
 
+"tags
+set tags=~/.tags
+
 "original repos on github
 Bundle 'gmarik/vundle'
 Bundle 'fugitive.vim'
+Bundle 'project.tar.gz'
 Bundle 'taglist.vim'
 Bundle 'listtag'
 Bundle 'git://github.com/thinca/vim-ref.git'
@@ -39,14 +40,20 @@ Bundle 'ZenCoding.vim'
 Bundle 'surround.vim'
 Bundle 'quickrun'
 Bundle 'superSnipMate'
+Bundle 'TwitVim'
 Bundle 'Solarized'
-Bundle 'XPath-Search'
+Bundle 'SudoEdit.vim'
+
+filetype plugin indent on
+syntax on
+
+if has('win32') || has('win64')
+  let g:netrw_scp_cmd='C:/soft/putty/pscp.exe -q -batch'
+  let g:netrw_ssh_cmd='C:/soft/putty/plink.exe'
+endif
 
 "xpath-search
-let g:loaded_xpath = 1
-
-"ftdetect
-runtime! ftdetect\*.vim
+"let g:loaded_xpath = 1
 
 " edit
 set autoindent
@@ -66,9 +73,9 @@ set         number
 "filebackup
 set backup
 set swapfile
-if has('win32')
-  set dir=~/_vim/swap
-  set backupdir=~/_vim/backup
+if has("win32") || has("win64")
+  set dir=~/vimfiles/swap
+  set backupdir=~/vimfiles/backup
 else 
   set dir=~/.vim/swap
   set backupdir=~/.vim/backup
@@ -92,6 +99,7 @@ let g:rails_modelines  = 1
 
 "netrw
 let g:netrw_liststyle = 3
+let g:netrw_ = 3
 
 "grep
 let Grep_Path             = 'grep'
@@ -100,8 +108,6 @@ let Egrep_Path            = 'egrep'
 let Grep_Find_Path        = 'find'
 let Grep_Xargs_Path       = 'xargs'
 let Grep_Shell_Quote_Char = '"'
-
-cmap wr w<Bar>!perl ~/.vim/auto_upload.pl "%:p"
 
 "align
 let g:Align_xstrlen = 3
@@ -112,7 +118,7 @@ nmap ,ra :<C-u>Ref alc<Space>
 "refe (ruby-refe)
 nmap ,rr :<C-u>Ref refe<Space>
 let g:ref_alc_start_linenumber = 100 "表示する行数
-"let g:ref_alc_encoding = 'Shift-JIS'
+let g:ref_alc_encoding = 'Shift-JIS'
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
