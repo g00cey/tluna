@@ -129,3 +129,15 @@ let g:ref_alc_encoding = 'Shift-JIS'
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
+
+"DirDiff
+let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp"
+let g:DirDiffIgnore = "Id:,Revision:,Date:"
+let g:DirDiffSort = 1
+let g:DirDiffWindowSize = 14
+let g:DirDiffIgnoreCase = 0
+let g:DirDiffDynamicDiffText = 0
+let g:DirDiffTextFiles = "ファイル"
+let g:DirDiffTextAnd = "と"
+let g:DirDiffTextDiffer = "は違います"
+let g:DirDiffTextOnlyIn = "だけに発見"
