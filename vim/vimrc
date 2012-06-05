@@ -47,6 +47,8 @@ Bundle 'SudoEdit.vim'
 filetype plugin indent on
 syntax on
 
+"filetype
+au! BufNewFile,BufRead *.changelog setf changelog
 
 "xpath-search
 "let g:loaded_xpath = 1
