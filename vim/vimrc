@@ -135,6 +135,8 @@ if has("win32") || has("win64")
   let Grep_Find_Path        = 'find'
   let Grep_Xargs_Path       = 'xargs'
   let Grep_Shell_Quote_Char = '"'
+  let Grep_Skip_dirs = '.svn'
+  let Grep_Skip_Files = '*.bak'
 else 
   let Grep_Path             = 'grep'
   let Fgrep_Path            = 'fgrep'
@@ -142,6 +144,8 @@ else
   let Grep_Find_Path        = 'find'
   let Grep_Xargs_Path       = 'xargs'
   let Grep_Shell_Quote_Char = '"'
+  let Grep_Skip_dirs = '.svn'
+  let Grep_Skip_Files = '*.bak'
 endif
 
 "align
