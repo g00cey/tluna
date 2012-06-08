@@ -99,8 +99,8 @@ let g:rails_gnu_screen = 1
 let g:rails_modelines  = 1
 
 "netrw
-"let g:netrw_liststyle = 3
-let g:loaded_netrwPlugin = 1
+let g:netrw_liststyle = 3
+"let g:loaded_netrwPlugin = 1
 let g:netrw_altv = 1
 
 "grep
