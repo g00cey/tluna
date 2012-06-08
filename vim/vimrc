@@ -45,6 +45,7 @@ Bundle 'superSnipMate'
 Bundle 'TwitVim'
 Bundle 'Solarized'
 Bundle 'SudoEdit.vim'
+Bundle 'vcscommand.vim'
 
 filetype plugin indent on
 syntax on
