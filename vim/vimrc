@@ -21,6 +21,7 @@ set tags=~/.tags
 
 "original repos on github
 Bundle 'gmarik/vundle'
+Bundle 'jslint.vim'
 Bundle 'grep.vim'
 Bundle 'fugitive.vim'
 Bundle 'project.tar.gz'
