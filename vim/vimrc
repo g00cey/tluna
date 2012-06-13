@@ -8,7 +8,7 @@ else
 endif
 call vundle#rc('$DOTVIM/bundle')
 
-colorscheme darkblue
+colorscheme solarized
 
 "templates
 augroup SkeletonAu
