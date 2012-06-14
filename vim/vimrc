@@ -74,8 +74,8 @@ set         number
 set backup
 set swapfile
 if has("win32") || has("win64")
-  set dir=~/vim/swap
-  set backupdir=~/vim/backup
+  set dir=~/vimfiles/swap
+  set backupdir=~/vimfiles/backup
 else 
   set dir=~/.vim/swap
   set backupdir=~/.vim/backup
@@ -98,8 +98,9 @@ let g:rails_gnu_screen = 1
 let g:rails_modelines  = 1
 
 "netrw
-"let g:netrw_liststyle = 3
-let g:loaded_netrwPlugin = 1
+let g:netrw_liststyle = 3
+let g:netrw_ = 3
+"let g:loaded_netrwPlugin = 1
 let g:netrw_altv = 1
 
 "grep
@@ -144,3 +145,11 @@ let g:DirDiffTextFiles = "ƒtƒ@ƒCƒ‹"
 let g:DirDiffTextAnd = "‚Æ"
 let g:DirDiffTextDiffer = "‚Íˆá‚¢‚Ü‚·"
 let g:DirDiffTextOnlyIn = "‚¾‚¯‚É”­Œ©"
+
+" jslint.vim
+function! s:javascript_filetype_settings()
+  autocmd BufLeave     <buffer> call jslint#clear()
+  autocmd BufWritePost <buffer> call jslint#check()
+  autocmd CursorMoved  <buffer> call jslint#message()
+endfunction
+autocmd FileType javascript call s:javascript_filetype_settings()
