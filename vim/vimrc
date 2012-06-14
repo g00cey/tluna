@@ -29,10 +29,10 @@ Bundle 'taglist.vim'
 Bundle 'listtag'
 Bundle 'git://github.com/thinca/vim-ref.git'
 Bundle 'git://github.com/tpope/vim-rails.git'
+Bundle 'local_vimrc.vim'
 Bundle 'eruby.vim'
 Bundle 'ruby.vim'
 Bundle 'DirDiff.vim'
-Bundle 'svndiff.vim'
 Bundle 'Align'
 Bundle 'matchit.zip'
 Bundle 'Rubytest.vim'
@@ -71,6 +71,9 @@ set autoindent
 
 "display 
 set         number
+
+"print
+set printoptions=number:y
 
 "filebackup
 set backup
@@ -128,6 +131,9 @@ endif
 
 "align
 let g:Align_xstrlen = 3
+
+"localvimrc
+let g:local_vimrc=0
 
 "ref
 "alc (eijirou)
