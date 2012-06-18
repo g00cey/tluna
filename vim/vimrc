@@ -8,7 +8,7 @@ else
 endif
 call vundle#rc('$DOTVIM/bundle')
 
-colorscheme solarized
+colorscheme blue
 
 "templates
 augroup SkeletonAu
@@ -21,6 +21,7 @@ set tags=~/.tags
 
 "original repos on github
 Bundle 'gmarik/vundle'
+Bundle 'surround.vim'
 Bundle 'jslint.vim'
 Bundle 'grep.vim'
 Bundle 'fugitive.vim'
@@ -57,6 +58,9 @@ au! BufNewFile,BufRead *.changelog setf changelog
 "xpath-search
 "let g:loaded_xpath = 1
 
+"fold
+set foldmethod=syntax
+
 " edit
 set autoindent
 set smartindent
@@ -86,6 +90,13 @@ else
   set backupdir=~/.vim/backup
 endif
 
+"jslint
+function! s:javascript_filetype_settings()
+  autocmd BufLeave     <buffer> call jslint#clear()
+  autocmd BufWritePost <buffer> call jslint#check()
+  autocmd CursorMoved  <buffer> call jslint#message()
+endfunction
+autocmd FileType javascript call s:javascript_filetype_settings()
 
 "fileenconrdings
 set fileencodings=utf-8,iso-2022-jp,sjis
