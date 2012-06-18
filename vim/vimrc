@@ -8,6 +8,8 @@ else
 endif
 call vundle#rc('$DOTVIM/bundle')
 
+colorscheme blue
+
 "templates
 augroup SkeletonAu
   autocmd!
@@ -18,19 +20,16 @@ augroup END
 set tags=~/.tags
 
 "original repos on github
-Bundle 'gmarik/vundle'
 Bundle 'grep.vim'
 Bundle 'fugitive.vim'
-Bundle 'project.tar.gz'
 Bundle 'taglist.vim'
 Bundle 'listtag'
 Bundle 'git://github.com/thinca/vim-ref.git'
 Bundle 'git://github.com/tpope/vim-rails.git'
 Bundle 'eruby.vim'
 Bundle 'ruby.vim'
-Bundle 'DirDiff.vim'
-Bundle 'svndiff.vim'
 Bundle 'Align'
+Bundle 'vcscommand.vim'
 Bundle 'matchit.zip'
 Bundle 'Rubytest.vim'
 Bundle 'neocomplcache'
@@ -40,11 +39,6 @@ Bundle 'ZenCoding.vim'
 Bundle 'surround.vim'
 Bundle 'quickrun'
 Bundle 'superSnipMate'
-Bundle 'TwitVim'
-Bundle 'Solarized'
-Bundle 'SudoEdit.vim'
-Bundle 'basyura/jslint.vim'
-Bundle 'https://github.com/hallettj/jslint.vim.git'
 
 filetype plugin indent on
 syntax on
@@ -97,11 +91,17 @@ let g:rails_dbext      = 1
 let g:rails_gnu_screen = 1
 let g:rails_modelines  = 1
 
+"jslint
+function! s:javascript_filetype_settings()
+  autocmd BufLeave     <buffer> call jslint#clear()
+  autocmd BufWritePost <buffer> call jslint#check()
+  autocmd CursorMoved  <buffer> call jslint#message()
+endfunction
+
 "netrw
-"let g:netrw_liststyle = 3
-"let g:netrw_ = 3
+let g:netrw_liststyle = 3
 "let g:loaded_netrwPlugin = 1
-"let g:netrw_altv = 1
+let g:netrw_altv = 1
 
 "grep
 if has("win32") || has("win64")
@@ -133,16 +133,3 @@ let g:ref_alc_encoding = 'Shift-JIS'
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
-
-"DirDiff
-let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp"
-let g:DirDiffIgnore = "Id:,Revision:,Date:"
-let g:DirDiffSort = 1
-let g:DirDiffWindowSize = 14
-let g:DirDiffIgnoreCase = 0
-let g:DirDiffDynamicDiffText = 0
-let g:DirDiffTextFiles = "ファイル"
-let g:DirDiffTextAnd = "と"
-let g:DirDiffTextDiffer = "は違います"
-let g:DirDiffTextOnlyIn = "だけに発見"
-
