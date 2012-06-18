@@ -8,3 +8,5 @@ w3m/*
 !w3m/config
 vim/bundle/*
 lang/php/basic_auth/mydns.jp.setting.php
+
+/vim/.netrwhist

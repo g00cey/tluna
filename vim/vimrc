@@ -8,7 +8,7 @@ else
 endif
 call vundle#rc('$DOTVIM/bundle')
 
-colorscheme darkblue
+colorscheme blue
 
 "templates
 augroup SkeletonAu
@@ -21,6 +21,7 @@ set tags=~/.tags
 
 "original repos on github
 Bundle 'gmarik/vundle'
+Bundle 'surround.vim'
 Bundle 'grep.vim'
 Bundle 'fugitive.vim'
 Bundle 'project.tar.gz'
@@ -28,10 +29,10 @@ Bundle 'taglist.vim'
 Bundle 'listtag'
 Bundle 'git://github.com/thinca/vim-ref.git'
 Bundle 'git://github.com/tpope/vim-rails.git'
+Bundle 'local_vimrc.vim'
 Bundle 'eruby.vim'
 Bundle 'ruby.vim'
 Bundle 'DirDiff.vim'
-Bundle 'svndiff.vim'
 Bundle 'Align'
 Bundle 'matchit.zip'
 Bundle 'Rubytest.vim'
@@ -45,6 +46,7 @@ Bundle 'superSnipMate'
 Bundle 'TwitVim'
 Bundle 'Solarized'
 Bundle 'SudoEdit.vim'
+Bundle 'vcscommand.vim'
 
 filetype plugin indent on
 syntax on
@@ -54,6 +56,9 @@ au! BufNewFile,BufRead *.changelog setf changelog
 
 "xpath-search
 "let g:loaded_xpath = 1
+
+"fold
+set foldmethod=syntax
 
 " edit
 set autoindent
@@ -70,6 +75,9 @@ set autoindent
 "display 
 set         number
 
+"print
+set printoptions=number:y
+
 "filebackup
 set backup
 set swapfile
@@ -80,7 +88,6 @@ else
   set dir=~/.vim/swap
   set backupdir=~/.vim/backup
 endif
-
 
 "fileenconrdings
 set fileencodings=utf-8,iso-2022-jp,sjis
@@ -99,10 +106,8 @@ let g:rails_modelines  = 1
 
 "netrw
 let g:netrw_liststyle = 3
-let g:netrw_ = 3
 "let g:loaded_netrwPlugin = 1
-let g:netrw_altv = 1
-
+let g:netrw_liststyle = 3
 "grep
 if has("win32") || has("win64")
   let Grep_Path             = 'grep'
@@ -111,6 +116,8 @@ if has("win32") || has("win64")
   let Grep_Find_Path        = 'find'
   let Grep_Xargs_Path       = 'xargs'
   let Grep_Shell_Quote_Char = '"'
+  let Grep_Skip_dirs = '.svn'
+  let Grep_Skip_Files = '*.bak'
 else 
   let Grep_Path             = 'grep'
   let Fgrep_Path            = 'fgrep'
@@ -118,10 +125,15 @@ else
   let Grep_Find_Path        = 'find'
   let Grep_Xargs_Path       = 'xargs'
   let Grep_Shell_Quote_Char = '"'
+  let Grep_Skip_dirs = '.svn'
+  let Grep_Skip_Files = '*.bak'
 endif
 
 "align
 let g:Align_xstrlen = 3
+
+"localvimrc
+let g:local_vimrc=0
 
 "ref
 "alc (eijirou)
@@ -146,10 +158,3 @@ let g:DirDiffTextAnd = "‚Æ"
 let g:DirDiffTextDiffer = "‚Íˆá‚¢‚Ü‚·"
 let g:DirDiffTextOnlyIn = "‚¾‚¯‚É”­Œ©"
 
-" jslint.vim
-function! s:javascript_filetype_settings()
-  autocmd BufLeave     <buffer> call jslint#clear()
-  autocmd BufWritePost <buffer> call jslint#check()
-  autocmd CursorMoved  <buffer> call jslint#message()
-endfunction
-autocmd FileType javascript call s:javascript_filetype_settings()
