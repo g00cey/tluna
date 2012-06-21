@@ -39,6 +39,7 @@ Bundle 'ZenCoding.vim'
 Bundle 'surround.vim'
 Bundle 'quickrun'
 Bundle 'superSnipMate'
+Bundle 'local_vimrc.vim'
 
 filetype plugin indent on
 syntax on
@@ -130,7 +131,7 @@ endif
 let g:Align_xstrlen = 3
 
 "localvimrc
-let g:local_vimrc=0
+let g:local_vimrc=1
 
 "ref
 "alc (eijirou)
