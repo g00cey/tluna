@@ -37,8 +37,9 @@ Bundle 'EnhCommentify.vim'
 Bundle 'unite.vim'
 Bundle 'ZenCoding.vim'
 Bundle 'surround.vim'
-Bundle 'quickrun'
 Bundle 'superSnipMate'
+Bundle 'quickrun.vim'
+
 
 filetype plugin indent on
 syntax on
