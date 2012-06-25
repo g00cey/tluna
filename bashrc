@@ -15,6 +15,7 @@ alias ssh-agent-run='exec ssh-agent bash'
 alias key-tluna='ssh-add /home/luna/.ssh/tluna_id_rsa'
 alias key-github='ssh-add /home/luna/.ssh/git_id_rsa'
 
+
 #refe ecu-jp to utf-8
 function refe() {
   /usr/bin/refe $1 | iconv -f euc-jp -t utf-8 | cat
@@ -27,3 +28,5 @@ if [ -f $redhatfile ]; then
     PATH=~/bin/:~/.rvm/bin:~/bin:/var/lib/gems/1.8/bin/:/usr/local/gae/:/usr/local/sbin/:/usr/local/bin/:$PATH
   fi
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
