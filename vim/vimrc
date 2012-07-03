@@ -37,9 +37,10 @@ Bundle 'EnhCommentify.vim'
 Bundle 'unite.vim'
 Bundle 'ZenCoding.vim'
 Bundle 'surround.vim'
-Bundle 'quickrun'
 Bundle 'superSnipMate'
 Bundle 'local_vimrc.vim'
+Bundle 'quickrun.vim'
+Bundle 'https://github.com/vim-scripts/DirDiff.vim.git'
 
 filetype plugin indent on
 syntax on
@@ -70,6 +71,16 @@ set autoindent
 
 "display 
 set         number
+
+"session
+if has("win32") || has("win64")
+  au VimLeave * mks! $HOME/vimfiles/session
+  source $HOME/vimfiles/session
+else 
+  au VimLeave * mks! ~/.vim/session
+  source ~/.vim/session
+endif
+
 
 "print
 set printoptions=number:y
@@ -108,10 +119,10 @@ let g:netrw_altv = 1
 
 "grep
 if has("win32") || has("win64")
-  let Grep_Path             = 'grep'
-  let Fgrep_Path            = 'fgrep'
-  let Egrep_Path            = 'egrep'
-  let Grep_Find_Path        = 'find'
+  let Grep_Path             = 'C:\bin\yagrep.exe'
+  let Fgrep_Path            = 'C:\bin\yagrep.exe -F '
+  let Egrep_Path            = 'C:\bin\yagrep.exe -E '
+  let Grep_Find_Path        = 'C:\soft\gnu\bin\find.exe'
   let Grep_Xargs_Path       = 'xargs'
   let Grep_Shell_Quote_Char = '"'
   let Grep_Skip_dirs = '.svn'
