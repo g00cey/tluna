@@ -72,16 +72,6 @@ set autoindent
 "display 
 set         number
 
-"session
-if has("win32") || has("win64")
-  au VimLeave * mks! $HOME/vimfiles/session
-  source $HOME/vimfiles/session
-else 
-  au VimLeave * mks! ~/.vim/session
-  source ~/.vim/session
-endif
-
-
 "print
 set printoptions=number:y
 

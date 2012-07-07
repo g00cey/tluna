@@ -14,15 +14,19 @@
     httpObj = new XMLHttpRequest();
     httpObj.open("get", "./sample.php","true");
     httpObj.onload = function(){
-      var myData = JSON.parse(this.responseText);
+      myData = JSON.parse(this.responseText);
       alert(myData.color);
-      for (var i = 0; i < myData.latlon.length; i++){
+      for (var i = 0; i < myData.length; i++){
         for( var x = 0; x < myData.latlon[i].length; x++){
           alert(myData.latlon[i][x]);
         }
       }
+      eval(myData.hoge());
     };
     httpObj.send(null);
+    function hoge(){
+      console.log('hogehoge');
+    };
       //]]>
     </script>
     <title></title>

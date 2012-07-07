@@ -7,6 +7,7 @@ else
   let $DOTVIM = expand('~/.vim')
 endif
 call vundle#rc('$DOTVIM/bundle')
+
 colorscheme blue
 
 "templates
@@ -19,18 +20,16 @@ augroup END
 set tags=~/.tags
 
 "original repos on github
-Bundle 'gmarik/vundle'
+Bundle 'grep.vim'
 Bundle 'fugitive.vim'
-Bundle 'project.tar.gz'
 Bundle 'taglist.vim'
 Bundle 'listtag'
 Bundle 'git://github.com/thinca/vim-ref.git'
 Bundle 'git://github.com/tpope/vim-rails.git'
 Bundle 'eruby.vim'
 Bundle 'ruby.vim'
-Bundle 'DirDiff.vim'
-Bundle 'svndiff.vim'
 Bundle 'Align'
+Bundle 'vcscommand.vim'
 Bundle 'matchit.zip'
 Bundle 'Rubytest.vim'
 Bundle 'neocomplcache'
@@ -38,28 +37,31 @@ Bundle 'EnhCommentify.vim'
 Bundle 'unite.vim'
 Bundle 'ZenCoding.vim'
 Bundle 'surround.vim'
-Bundle 'quickrun'
 Bundle 'superSnipMate'
-Bundle 'TwitVim'
-Bundle 'Solarized'
-Bundle 'SudoEdit.vim'
+Bundle 'local_vimrc.vim'
+Bundle 'quickrun.vim'
+Bundle 'https://github.com/vim-scripts/DirDiff.vim.git'
 
 filetype plugin indent on
 syntax on
 
-if has('win32') || has('win64')
-  let g:netrw_scp_cmd='C:/soft/putty/pscp.exe -q -batch'
-  let g:netrw_ssh_cmd='C:/soft/putty/plink.exe'
-endif
+"filetype
+au! BufNewFile,BufRead *.changelog setf changelog
 
 "xpath-search
 "let g:loaded_xpath = 1
+
+"fold
+set foldmethod=syntax
 
 " edit
 set autoindent
 set smartindent
 set showmatch
 set wildmenu
+
+"wildmode
+set wildmode=longest,list
 
 "tab
 set tabstop=2
@@ -69,6 +71,9 @@ set autoindent
 
 "display 
 set         number
+
+"print
+set printoptions=number:y
 
 "filebackup
 set backup
@@ -98,20 +103,36 @@ let g:rails_gnu_screen = 1
 let g:rails_modelines  = 1
 
 "netrw
-"let g:netrw_liststyle = 3
-let g:loaded_netrwPlugin = 1
+let g:netrw_liststyle = 3
+"let g:loaded_netrwPlugin = 1
 let g:netrw_altv = 1
 
 "grep
-let Grep_Path             = 'grep'
-let Fgrep_Path            = 'fgrep'
-let Egrep_Path            = 'egrep'
-let Grep_Find_Path        = 'find'
-let Grep_Xargs_Path       = 'xargs'
-let Grep_Shell_Quote_Char = '"'
+if has("win32") || has("win64")
+  let Grep_Path             = 'C:\bin\yagrep.exe'
+  let Fgrep_Path            = 'C:\bin\yagrep.exe -F '
+  let Egrep_Path            = 'C:\bin\yagrep.exe -E '
+  let Grep_Find_Path        = 'C:\soft\gnu\bin\find.exe'
+  let Grep_Xargs_Path       = 'xargs'
+  let Grep_Shell_Quote_Char = '"'
+  let Grep_Skip_dirs = '.svn'
+  let Grep_Skip_Files = '*.bak'
+else 
+  let Grep_Path             = 'grep'
+  let Fgrep_Path            = 'fgrep'
+  let Egrep_Path            = 'egrep'
+  let Grep_Find_Path        = 'find'
+  let Grep_Xargs_Path       = 'xargs'
+  let Grep_Shell_Quote_Char = '"'
+  let Grep_Skip_dirs = '.svn'
+  let Grep_Skip_Files = '*.bak'
+endif
 
 "align
 let g:Align_xstrlen = 3
+
+"localvimrc
+let g:local_vimrc=1
 
 "ref
 "alc (eijirou)
@@ -123,3 +144,15 @@ let g:ref_alc_encoding = 'Shift-JIS'
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
+
+"DirDiff
+let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp"
+let g:DirDiffIgnore = "Id:,Revision:,Date:"
+let g:DirDiffSort = 1
+let g:DirDiffWindowSize = 14
+let g:DirDiffIgnoreCase = 0
+let g:DirDiffDynamicDiffText = 0
+let g:DirDiffTextFiles = "ファイル"
+let g:DirDiffTextAnd = "と"
+let g:DirDiffTextDiffer = "は違います"
+let g:DirDiffTextOnlyIn = "だけに発見"

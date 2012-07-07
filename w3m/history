@@ -15,7 +15,6 @@ http://centos/~luna/
 http://centos/~luna/sampleajax/
 http://centos/~luna/sampleajax/demo.html
 http://www.phppro.jp/phpmanual/pear/package.http.http-client.http-client.post.html
-http://www.google.co.jp/
 http://www.google.co.jp/search?hl=ja&source=hp&ie=Shift_JIS&q=vim+colorscheme&btnG=Google+%8C%9F%8D%F5&gbv=1
 http://www.google.co.jp/url?q=http://nanasi.jp/articles/howto/colorscheme.html&sa=U&ei=SBa2T6nyA6-XiAeq-9XmCA&ved=0CBgQFjAB&usg=AFQjCNFhGUB6YOG-fOTWKcMOHcddbabS2A
 http://sourceforge.jp/projects/shovel/downloads/32236/doko-0.5.0-1.i386.rpm/
@@ -25,9 +24,6 @@ http://sourceforge.jp/projects/shovel/files/
 http://jqery.com/
 http://jqery.com/?epl=G-JMs-3qdifAi_RsiEfONODk6NcfEgqnSO7iB0wUu6Vam8CjwWeXOj1eeU_JuG1lIzKEENkv6Q4qojJsG63nOaxHs906vOiDvruXgq59YykUhDQdkTkJLT6GocXa5J04ac8YRlQCikTeuHyM2lkBMhmojQwZNVP9FEFhjEZ51LRJTdNT40k1ZAAgMPy3vwAA4H8FQABAgNsLAAAnR7_-WVMmWUExNmhaQo0AAADw
 http://jqery.com/?epl=6qyh4YP8ERgiNbVvkwl1SyCU85gECYVTJHfhX1ILZFKjs8iD6oCSCBVgFKWIq-GJhBh3bMwnKsjSTBy0Ts9dMoczueDBCEc1cQfRcfcGbFxuSIKAxj5hETVWG-N54cxeoDw__wNsl8-skXMaDyEKVTGgAc6SFZYqebAgcx22H2iYzrgVGSvrvUJUXc9sNC6lTeubUaMwQ5UC885WBVP8lL6Xmi6W6PXI9n6kTdeaJaGgOresyJNSIIeGzzVEGpJNk6G6fAzCsg8C-UJvXA0Osvtzs76gyVZ5hTqe5TRen3oViHTeoShaZgYLChmILJuAks69wRXELK48rXhUiJfZ5BwdaELuE0c0TOZxv6OOguCNl2PSbykblOlH4YFdjFsGZT5VnKlPJGt9jG4QxYWsW1G84mXqAUyZZoroEUEjMDUYgWlkkKHJQKbJGBpqU48aPaJHTOmnPAloUw2gTAEw4P__vwAA4H8FQQBAgNscAABCOY9JWVMmWUExNmhaQv0BAADw&query=javascript%20download
-file:///cgi-bin/gsearch.sh?
-http://google.co.jp/search?btnG=Google&q=
-http://www.google.co.jp/webhp?btnG=Google
 http://www.google.co.jp/search?ie=Shift_JIS&hl=ja&source=hp&q=jquery&btnG=Google+%8C%9F%8D%F5&gbv=1
 http://www.google.com/
 http://www.google.co.jp/url?q=http://jquery.com/&sa=U&ei=XsnUT8yvE8y5iAf999mAAw&ved=0CBQQFjAA&usg=AFQjCNGoyiAa5bs2Nv3U6XGIco6UP1TZzA
@@ -35,3 +31,12 @@ http://jquery.com/
 http://docs.jquery.com/Downloading_jQuery
 http://docs.jquery.com/Downloading_jQuery#Download_jQuery
 http://code.jquery.com/jquery-1.7.2.js
+http://www.google.co.jp/
+http://www.google.co.jp/search?ie=Shift_JIS&hl=ja&source=hp&q=thin+start+config+&btnG=Google+%8C%9F%8D%F5&gbv=1
+http://www.google.co.jp/url?q=http://code.macournoyer.com/thin/usage/&sa=U&ei=IFf5T_K8E8zUmAXHi_2bBQ&ved=0CBIQFjAA&usg=AFQjCNFHrojN2g7YWvlZL1jLubczzclhKw
+http://brainspl.at/nginx.conf.txt
+file:///cgi-bin/gsearch.sh?
+http://google.co.jp/search?btnG=Google&q=
+http://www.google.co.jp/webhp?btnG=Google
+http://www.google.co.jp/search?ie=Shift_JIS&hl=ja&source=hp&q=thin+start+netstat&btnG=Google+%8C%9F%8D%F5&gbv=1
+http://www.google.co.jp/url?q=http://stackoverflow.com/questions/2732944/intelligent-thin-start-with-port-alias-for-bash&sa=U&ei=wlv5T_WeEY-TiQf6qPnTBg&ved=0CCkQFjAD&usg=AFQjCNHPovTbT9yIHa4MMsj9JQwMCDmLOA
