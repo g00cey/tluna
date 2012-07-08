@@ -30,3 +30,4 @@ if [ -f $redhatfile ]; then
 fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+alias sudo="sudo env PATH=$PATH"

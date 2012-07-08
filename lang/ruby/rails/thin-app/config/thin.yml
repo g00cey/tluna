@@ -1,0 +1,15 @@
+---
+chdir: /home/luna/tluna/lang/ruby/rails/thin-app
+environment: development
+timeout: 30
+log: log/thin.log
+pid: tmp/pids/thin.pid
+max_conns: 1024
+max_persistent_conns: 512
+require: []
+wait: 30
+daemonize: true
+servers: 4
+user: luna
+group: luna
+socket: /tmp/thin/test-app.sock
