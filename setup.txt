@@ -1,11 +1,4 @@
 #!/bin/bash
-
-if [ -f /etc/redhat-release ] ; then
-if [ ! -f /usr/bin/tmux ] ; then
-bash ./centos-initial-install.txt
-fi
-fi
-
 #delete links
 rm  ~/.w3m
 rm  ~/.gitconfig
