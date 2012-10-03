@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "worktime";
+$route['default_controller'] = "contentlist";
 $route['404_override'] = '';
 
 
