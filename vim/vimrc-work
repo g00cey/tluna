@@ -1,0 +1,112 @@
+"Vundle
+if has("win32") || has("win64")
+  set rtp+=~/vimfiles/vundle/
+  let $DOTVIM = expand('~/vimfiles')
+else 
+  set rtp+=~/.vim/vundle/
+  let $DOTVIM = expand('~/.vim')
+endif
+call vundle#rc('$DOTVIM/bundle')
+
+"tags
+set tags=~/.tags
+
+"original repos on github
+Bundle 'grep.vim'
+Bundle 'fugitive.vim'
+Bundle 'taglist.vim'
+Bundle 'vimgrep.vim'
+Bundle 'listtag'
+Bundle 'git://github.com/thinca/vim-ref.git'
+Bundle 'git://github.com/tpope/vim-rails.git'
+Bundle 'eruby.vim'
+Bundle 'ruby.vim'
+Bundle 'Align'
+Bundle 'matchit.zip'
+Bundle 'neocomplcache'
+Bundle 'EnhCommentify.vim'
+Bundle 'unite.vim'
+Bundle 'surround.vim'
+Bundle 'quickrun'
+Bundle 'superSnipMate'
+Bundle 'local_vimrc.vim'
+Bundle 'quickrun.vim'
+Bundle 'copypath.vim'
+
+syntax on
+filetype plugin indent on
+
+"filetype
+au! BufNewFile,BufRead *.changelog setf changelog
+
+" netrwは常にtree view
+let g:netrw_liststyle = 3
+" CVSと.で始まるファイルは表示しない
+let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
+" 'v'でファイルを開くときは右側に開く。(デフォルトが左側なので入れ替え)
+let g:netrw_altv = 1
+" 'o'でファイルを開くときは下側に開く。(デフォルトが上側なので入れ替え)
+let g:netrw_alto = 1
+
+
+" edit
+set autoindent
+set smartindent
+set showmatch
+set wildmenu
+set ruler
+
+"wildmode
+set wildmode=longest,list
+
+"tab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set expandtab
+set textwidth=80
+set list
+set lcs=tab:>.,trail:_,extends:\
+highlight SpecialKey cterm=NONE ctermfg=7 guifg=LightRed
+highlight JpSpace cterm=underline ctermfg=7 guifg=LightRed
+au BufRead,BufNew * match JpSpace /　/
+
+"display
+set number
+
+"print
+set printoptions=number:y
+set guifont=Osaka－等幅:h09:cSHIFTJIS
+
+"filebackup
+set backup
+set swapfile
+if has("win32") || has("win64")
+  set dir=~/vimfiles/swap
+  set backupdir=~/vimfiles/backup
+else 
+  set dir=~/.vim/swap
+  set backupdir=~/.vim/backup
+endif
+
+"fileenconrdings
+set fileencodings=utf-8,iso-2022-jp,sjis
+
+"php lint
+nmap ,l :execute '!php -l %'
+
+imap <C-Space> <C-x><C-o>
+"grep path
+set grepprg=grep.exe\ -nH
+let $PATH=expand($PATH) . ';\C:\bin'
+
+"align
+let g:Align_xstrlen = 3
+
+"localvimrc
+let g:local_vimrc=1
+
+"neocomplcache
+let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
+
