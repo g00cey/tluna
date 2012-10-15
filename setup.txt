@@ -13,20 +13,20 @@ rm  ~/.vim
 rm  ~/.tmux.conf
 
 #vim
-ln -s ~/tluna/vim/vimrc        ~/.vimrc
-ln -s ~/tluna/vim              ~/.vim
+ln -s ~/git/github/tluna/vim/vimrc        ~/.vimrc
+ln -s ~/git/github/tluna/vim              ~/.vim
 
 #another dot files and w3m cgi-bin
 
-ln -s ~/tluna/w3m/             ~/.w3m
-ln -s ~/tluna/gitconfig        ~/.gitconfig
-ln -s ~/tluna/irbrc            ~/.irbrc
-ln -s ~/tluna/cgi-bin/         ~/cgi-bin
-ln -s ~/tluna/bashrc           ~/.bashrc
-ln -s ~/tluna/tmux.conf        ~/.tmux.conf
-ln -s ~/tluna/bash_profile     ~/.bash_profile
-ln -s ~/tluna/ctags            ~/.ctags
-ln -s ~/tluna/bin/             ~/bin
+ln -s ~/git/github/tluna/w3m/             ~/.w3m
+ln -s ~/git/github/tluna/gitconfig        ~/.gitconfig
+ln -s ~/git/github/tluna/irbrc            ~/.irbrc
+ln -s ~/git/github/tluna/cgi-bin/         ~/cgi-bin
+ln -s ~/git/github/tluna/bashrc           ~/.bashrc
+ln -s ~/git/github/tluna/tmux.conf        ~/.tmux.conf
+ln -s ~/git/github/tluna/bash_profile     ~/.bash_profile
+ln -s ~/git/github/tluna/ctags            ~/.ctags
+ln -s ~/git/github/tluna/bin/             ~/bin
 
 #git settings
 git config --global user.name "t1una"
