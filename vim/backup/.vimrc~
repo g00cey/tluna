@@ -8,7 +8,7 @@ else
 endif
 call vundle#rc('$DOTVIM/bundle')
 
-colorscheme blue
+colorscheme murphy
 
 "templates
 augroup SkeletonAu
@@ -40,6 +40,7 @@ Bundle 'surround.vim'
 Bundle 'superSnipMate'
 Bundle 'local_vimrc.vim'
 Bundle 'quickrun.vim'
+Bundle 'copypath.vim'
 Bundle 'https://github.com/vim-scripts/DirDiff.vim.git'
 
 filetype plugin indent on
@@ -51,6 +52,15 @@ au! BufNewFile,BufRead *.changelog setf changelog
 "xpath-search
 "let g:loaded_xpath = 1
 
+" netrwは常にtree view
+let g:netrw_liststyle = 3
+" CVSと.で始まるファイルは表示しない
+let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
+" 'v'でファイルを開くときは右側に開く。(デフォルトが左側なので入れ替え)
+let g:netrw_altv = 1
+" 'o'でファイルを開くときは下側に開く。(デフォルトが上側なので入れ替え)
+let g:netrw_alto = 1
+
 "fold
 set foldmethod=syntax
 
@@ -59,18 +69,29 @@ set autoindent
 set smartindent
 set showmatch
 set wildmenu
+set ruler
 
 "wildmode
 set wildmode=longest,list
 
+filetype plugin indent on
+syntax on
 "tab
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set expandtab
 set autoindent
+set list
+set lcs=tab:>.,trail:_,extends:\
+set list
 
-"display 
-set         number
+highlight SpecialKey cterm=NONE ctermfg=7 guifg=LightRed
+highlight JpSpace cterm=underline ctermfg=7 guifg=LightRed
+au BufRead,BufNew * match JpSpace /　/
+"display
+set number
 
 "print
 set printoptions=number:y
