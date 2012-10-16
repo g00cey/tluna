@@ -11,6 +11,9 @@ call vundle#rc('$DOTVIM/bundle')
 "tags
 set tags=~/.tags
 
+"statusline
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+
 "original repos on github
 Bundle 'grep.vim'
 Bundle 'fugitive.vim'
