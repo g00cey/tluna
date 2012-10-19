@@ -1,18 +1,17 @@
 "Vundle
 if has("win32") || has("win64")
-  set rtp+=~/vimfiles/vundle/
-  let $DOTVIM = expand('~/vimfiles')
+  set rtp+=â€¾/vimfiles/vundle/
+  let $DOTVIM = expand('~vimfiles')
 else 
-  set rtp+=~/.vim/vundle/
+  set rtp+=â€¾/.vim/vundle/
   let $DOTVIM = expand('~/.vim')
 endif
 call vundle#rc('$DOTVIM/bundle')
 
-"tags
-set tags=~/.tags
+colorscheme murphy
 
 "statusline
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set statusline=%<%fÂ¥ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
 "original repos on github
 Bundle 'grep.vim'
@@ -25,6 +24,7 @@ Bundle 'git://github.com/tpope/vim-rails.git'
 Bundle 'eruby.vim'
 Bundle 'ruby.vim'
 Bundle 'Align'
+Bundle 'vcscommand.vim'
 Bundle 'matchit.zip'
 Bundle 'neocomplcache'
 Bundle 'EnhCommentify.vim'
@@ -35,6 +35,7 @@ Bundle 'superSnipMate'
 Bundle 'local_vimrc.vim'
 Bundle 'quickrun.vim'
 Bundle 'copypath.vim'
+Bundle 'https://github.com/vim-scripts/DirDiff.vim.git'
 
 syntax on
 filetype plugin indent on
@@ -42,15 +43,20 @@ filetype plugin indent on
 "filetype
 au! BufNewFile,BufRead *.changelog setf changelog
 
-" netrw‚Íí‚Étree view
+" netrwã¯å¸¸ã«tree view
+"let g:loaded_xpath = 1
+
+" netrwã¯å¸¸ã«tree view
 let g:netrw_liststyle = 3
-" CVS‚Æ.‚Ån‚Ü‚éƒtƒ@ƒCƒ‹‚Í•\¦‚µ‚È‚¢
-let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
-" 'v'‚Åƒtƒ@ƒCƒ‹‚ğŠJ‚­‚Æ‚«‚Í‰E‘¤‚ÉŠJ‚­B(ƒfƒtƒHƒ‹ƒg‚ª¶‘¤‚È‚Ì‚Å“ü‚ê‘Ö‚¦)
+" CVSã¨.ã§å§‹ã¾ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã¯è¡¨ç¤ºã—ãªã„
+let g:netrw_list_hide = 'CVS,Â¥(^Â¥|Â¥sÂ¥sÂ¥)Â¥zsÂ¥.Â¥SÂ¥+'
+" 'v'ã§ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãã¨ãã¯å³å´ã«é–‹ãã€‚(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãŒå·¦å´ãªã®ã§å…¥ã‚Œæ›¿ãˆ)
 let g:netrw_altv = 1
-" 'o'‚Åƒtƒ@ƒCƒ‹‚ğŠJ‚­‚Æ‚«‚Í‰º‘¤‚ÉŠJ‚­B(ƒfƒtƒHƒ‹ƒg‚ªã‘¤‚È‚Ì‚Å“ü‚ê‘Ö‚¦)
+" 'o'ã§ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãã¨ãã¯ä¸‹å´ã«é–‹ãã€‚(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãŒä¸Šå´ãªã®ã§å…¥ã‚Œæ›¿ãˆ)
 let g:netrw_alto = 1
 
+"fold
+set foldmethod=syntax
 
 " edit
 set autoindent
@@ -62,6 +68,8 @@ set ruler
 "wildmode
 set wildmode=longest,list
 
+filetype plugin indent on
+syntax on
 "tab
 set tabstop=4
 set shiftwidth=4
@@ -70,39 +78,39 @@ set tabstop=4
 set expandtab
 set textwidth=80
 set list
-set lcs=tab:>.,trail:_,extends:\
+set lcs=tab:>.,trail:_,extends:Â¥
 highlight SpecialKey cterm=NONE ctermfg=7 guifg=LightRed
 highlight JpSpace cterm=underline ctermfg=7 guifg=LightRed
-au BufRead,BufNew * match JpSpace /@/
+au BufRead,BufNew * match JpSpace /ã€€/
 
 "display
 set number
 
 "print
 set printoptions=number:y
-set guifont=Osaka|“™•:h09:cSHIFTJIS
+set guifont=Osakaâˆ’ç­‰å¹…:h09:cSHIFTJIS
 
 "filebackup
 set backup
 set swapfile
 if has("win32") || has("win64")
-  set dir=~/vimfiles/swap
-  set backupdir=~/vimfiles/backup
+  set dir=â€¾/vimfiles/swap
+  set backupdir=â€¾/vimfiles/backup
 else 
-  set dir=~/.vim/swap
-  set backupdir=~/.vim/backup
+  set dir=â€¾/.vim/swap
+  set backupdir=â€¾/.vim/backup
 endif
 
 "fileenconrdings
-set fileencodings=utf-8,iso-2022-jp,sjis
+set fileencodings=utf-8,iso-2022-jp,sjis,eucjp
 
 "php lint
 nmap ,l :execute '!php -l %'
 
 imap <C-Space> <C-x><C-o>
 "grep path
-set grepprg=grep.exe\ -nH
-let $PATH=expand($PATH) . ';\C:\bin'
+set grepprg=grep.exeÂ¥ -nH
+let $PATH=expand($PATH) . ';Â¥C:Â¥bin'
 
 "align
 let g:Align_xstrlen = 3
@@ -111,5 +119,5 @@ let g:Align_xstrlen = 3
 let g:local_vimrc=1
 
 "neocomplcache
-let g:neocomplcache_enable_at_startup = 1 " ‹N“®‚É—LŒø‰»
+let g:neocomplcache_enable_at_startup = 1 " èµ·å‹•æ™‚ã«æœ‰åŠ¹åŒ–
 

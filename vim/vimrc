@@ -1,10 +1,10 @@
 "Vundle
 if has("win32") || has("win64")
-  set rtp+=~/vimfiles/vundle/
-  let $DOTVIM = expand('~/vimfiles')
+  set rtp+=â€¾/vimfiles/vundle/
+  let $DOTVIM = expand('â€¾/vimfiles')
 else 
-  set rtp+=~/.vim/vundle/
-  let $DOTVIM = expand('~/.vim')
+  set rtp+=â€¾/.vim/vundle/
+  let $DOTVIM = expand('â€¾/.vim')
 endif
 call vundle#rc('$DOTVIM/bundle')
 
@@ -13,16 +13,20 @@ colorscheme murphy
 "templates
 augroup SkeletonAu
   autocmd!
-  autocmd BufNewFile *.html 0r ~/.vim/templates/skel.html
+  autocmd BufNewFile *.html 0r â€¾/.vim/templates/skel.html
 augroup END
 
 "tags
-set tags=~/.tags
+set tags=â€¾/.tags
+
+"statusline
+set statusline=%<%fÂ¥ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
 "original repos on github
 Bundle 'grep.vim'
 Bundle 'fugitive.vim'
 Bundle 'taglist.vim'
+Bundle 'vimgrep.vim'
 Bundle 'listtag'
 Bundle 'git://github.com/thinca/vim-ref.git'
 Bundle 'git://github.com/tpope/vim-rails.git'
@@ -43,8 +47,8 @@ Bundle 'quickrun.vim'
 Bundle 'copypath.vim'
 Bundle 'https://github.com/vim-scripts/DirDiff.vim.git'
 
-filetype plugin indent on
 syntax on
+filetype plugin indent on
 
 "filetype
 au! BufNewFile,BufRead *.changelog setf changelog
@@ -52,13 +56,13 @@ au! BufNewFile,BufRead *.changelog setf changelog
 "xpath-search
 "let g:loaded_xpath = 1
 
-" netrw‚Íí‚Étree view
+" netrwã¯å¸¸ã«tree view
 let g:netrw_liststyle = 3
-" CVS‚Æ.‚Ån‚Ü‚éƒtƒ@ƒCƒ‹‚Í•\¦‚µ‚È‚¢
-let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
-" 'v'‚Åƒtƒ@ƒCƒ‹‚ğŠJ‚­‚Æ‚«‚Í‰E‘¤‚ÉŠJ‚­B(ƒfƒtƒHƒ‹ƒg‚ª¶‘¤‚È‚Ì‚Å“ü‚ê‘Ö‚¦)
+" CVSã¨.ã§å§‹ã¾ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã¯è¡¨ç¤ºã—ãªã„
+let g:netrw_list_hide = 'CVS,Â¥(^Â¥|Â¥sÂ¥sÂ¥)Â¥zsÂ¥.Â¥SÂ¥+'
+" 'v'ã§ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãã¨ãã¯å³å´ã«é–‹ãã€‚(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãŒå·¦å´ãªã®ã§å…¥ã‚Œæ›¿ãˆ)
 let g:netrw_altv = 1
-" 'o'‚Åƒtƒ@ƒCƒ‹‚ğŠJ‚­‚Æ‚«‚Í‰º‘¤‚ÉŠJ‚­B(ƒfƒtƒHƒ‹ƒg‚ªã‘¤‚È‚Ì‚Å“ü‚ê‘Ö‚¦)
+" 'o'ã§ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãã¨ãã¯ä¸‹å´ã«é–‹ãã€‚(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãŒä¸Šå´ãªã®ã§å…¥ã‚Œæ›¿ãˆ)
 let g:netrw_alto = 1
 
 "fold
@@ -84,12 +88,12 @@ set tabstop=2
 set expandtab
 set autoindent
 set list
-set lcs=tab:>.,trail:_,extends:\
+set lcs=tab:>.,trail:_,extends:Â¥
 set list
-
+set lcs=tab:>.,trail:_,extends:Â¥
 highlight SpecialKey cterm=NONE ctermfg=7 guifg=LightRed
 highlight JpSpace cterm=underline ctermfg=7 guifg=LightRed
-au BufRead,BufNew * match JpSpace /@/
+au BufRead,BufNew * match JpSpace /ã€€/
 "display
 set number
 
@@ -100,16 +104,16 @@ set printoptions=number:y
 set backup
 set swapfile
 if has("win32") || has("win64")
-  set dir=~/vimfiles/swap
-  set backupdir=~/vimfiles/backup
+  set dir=â€¾/vimfiles/swap
+  set backupdir=â€¾/vimfiles/backup
 else 
-  set dir=~/.vim/swap
-  set backupdir=~/.vim/backup
+  set dir=â€¾/.vim/swap
+  set backupdir=â€¾/.vim/backup
 endif
 
 
 "fileenconrdings
-set fileencodings=utf-8,iso-2022-jp,sjis
+set fileencodings=utf-8,iso-2022-jp,sjis,eucjp
 
 "vim/ruby
 let g:rubycomplete_buffer_loading = 1
@@ -130,10 +134,10 @@ let g:netrw_altv = 1
 
 "grep
 if has("win32") || has("win64")
-  let Grep_Path             = 'C:\bin\yagrep.exe'
-  let Fgrep_Path            = 'C:\bin\yagrep.exe -F '
-  let Egrep_Path            = 'C:\bin\yagrep.exe -E '
-  let Grep_Find_Path        = 'C:\soft\gnu\bin\find.exe'
+  let Grep_Path             = 'C:Â¥binÂ¥yagrep.exe'
+  let Fgrep_Path            = 'C:Â¥binÂ¥yagrep.exe -F '
+  let Egrep_Path            = 'C:Â¥binÂ¥yagrep.exe -E '
+  let Grep_Find_Path        = 'C:Â¥softÂ¥gnuÂ¥binÂ¥find.exe'
   let Grep_Xargs_Path       = 'xargs'
   let Grep_Shell_Quote_Char = '"'
   let Grep_Skip_dirs = '.svn'
@@ -160,11 +164,11 @@ let g:local_vimrc=1
 nmap ,ra :<C-u>Ref alc<Space>
 "refe (ruby-refe)
 nmap ,rr :<C-u>Ref refe<Space>
-let g:ref_alc_start_linenumber = 100 "•\¦‚·‚és”
+let g:ref_alc_start_linenumber = 100 "è¡¨ç¤ºã™ã‚‹è¡Œæ•°
 let g:ref_alc_encoding = 'Shift-JIS'
 
 "neocomplcache
-let g:neocomplcache_enable_at_startup = 1 " ‹N“®‚É—LŒø‰»
+let g:neocomplcache_enable_at_startup = 1 " èµ·å‹•æ™‚ã«æœ‰åŠ¹åŒ–
 
 "DirDiff
 let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp"
@@ -173,7 +177,7 @@ let g:DirDiffSort = 1
 let g:DirDiffWindowSize = 14
 let g:DirDiffIgnoreCase = 0
 let g:DirDiffDynamicDiffText = 0
-let g:DirDiffTextFiles = "ƒtƒ@ƒCƒ‹"
-let g:DirDiffTextAnd = "‚Æ"
-let g:DirDiffTextDiffer = "‚Íˆá‚¢‚Ü‚·"
-let g:DirDiffTextOnlyIn = "‚¾‚¯‚É”­Œ©"
+let g:DirDiffTextFiles = "ãƒ•ã‚¡ã‚¤ãƒ«"
+let g:DirDiffTextAnd = "ã¨"
+let g:DirDiffTextDiffer = "ã¯é•ã„ã¾ã™"
+let g:DirDiffTextOnlyIn = "ã ã‘ã«ç™ºè¦‹"
