@@ -1,9 +1,9 @@
 "Vundle
 if has("win32") || has("win64")
-  set rtp+=‾/vimfiles/vundle/
+  set rtp+=~/vimfiles/vundle/
   let $DOTVIM = expand('~vimfiles')
 else 
-  set rtp+=‾/.vim/vundle/
+  set rtp+=~/.vim/vundle/
   let $DOTVIM = expand('~/.vim')
 endif
 call vundle#rc('$DOTVIM/bundle')
@@ -11,7 +11,7 @@ call vundle#rc('$DOTVIM/bundle')
 colorscheme murphy
 
 "statusline
-set statusline=%<%f¥ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 "original repos on github
 Bundle 'grep.vim'
@@ -94,11 +94,11 @@ set guifont=Osaka−等幅:h09:cSHIFTJIS
 set backup
 set swapfile
 if has("win32") || has("win64")
-  set dir=‾/vimfiles/swap
-  set backupdir=‾/vimfiles/backup
+  set dir=~/vimfiles/swap
+  set backupdir=~/vimfiles/backup
 else 
-  set dir=‾/.vim/swap
-  set backupdir=‾/.vim/backup
+  set dir=~/.vim/swap
+  set backupdir=~/.vim/backup
 endif
 
 "fileenconrdings
@@ -108,9 +108,6 @@ set fileencodings=utf-8,iso-2022-jp,sjis,eucjp
 nmap ,l :execute '!php -l %'
 
 imap <C-Space> <C-x><C-o>
-"grep path
-set grepprg=grep.exe¥ -nH
-let $PATH=expand($PATH) . ';¥C:¥bin'
 
 "align
 let g:Align_xstrlen = 3
