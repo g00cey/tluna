@@ -1,10 +1,10 @@
 "Vundle
 if has("win32") || has("win64")
-  set rtp+=‾/vimfiles/vundle/
-  let $DOTVIM = expand('‾/vimfiles')
+  set rtp+=~/vimfiles/vundle/
+  let $DOTVIM = expand('~vimfiles')
 else 
-  set rtp+=‾/.vim/vundle/
-  let $DOTVIM = expand('‾/.vim')
+  set rtp+=~/.vim/vundle/
+  let $DOTVIM = expand('~/.vim')
 endif
 call vundle#rc('$DOTVIM/bundle')
 
@@ -15,10 +15,6 @@ augroup SkeletonAu
   autocmd!
   autocmd BufNewFile *.html 0r ‾/.vim/templates/skel.html
 augroup END
-
-"tags
-set tags=‾/.tags
-
 "statusline
 set statusline=%<%f¥ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
@@ -89,11 +85,10 @@ set expandtab
 set autoindent
 set list
 set lcs=tab:>.,trail:_,extends:¥
-set list
-set lcs=tab:>.,trail:_,extends:¥
 highlight SpecialKey cterm=NONE ctermfg=7 guifg=LightRed
 highlight JpSpace cterm=underline ctermfg=7 guifg=LightRed
 au BufRead,BufNew * match JpSpace /　/
+
 "display
 set number
 
@@ -104,33 +99,22 @@ set printoptions=number:y
 set backup
 set swapfile
 if has("win32") || has("win64")
-  set dir=‾/vimfiles/swap
-  set backupdir=‾/vimfiles/backup
+  set dir=~/vimfiles/swap
+  set backupdir=~/vimfiles/backup
 else 
-  set dir=‾/.vim/swap
-  set backupdir=‾/.vim/backup
+  set dir=~/.vim/swap
+  set backupdir=~/.vim/backup
 endif
-
 
 "fileenconrdings
 set fileencodings=utf-8,iso-2022-jp,sjis,eucjp
+
+imap <C-Space> <C-x><C-o>
 
 "vim/ruby
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
-
-imap <C-Space> <C-x><C-o>
-
-"rails.vim
-let g:rails_dbext      = 1
-let g:rails_gnu_screen = 1
-let g:rails_modelines  = 1
-
-"netrw
-let g:netrw_liststyle = 3
-"let g:loaded_netrwPlugin = 1
-let g:netrw_altv = 1
 
 "grep
 if has("win32") || has("win64")
@@ -158,6 +142,11 @@ let g:Align_xstrlen = 3
 
 "localvimrc
 let g:local_vimrc=1
+
+"rails.vim
+let g:rails_dbext      = 1
+let g:rails_gnu_screen = 1
+let g:rails_modelines  = 1
 
 "ref
 "alc (eijirou)
