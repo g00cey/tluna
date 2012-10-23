@@ -16,7 +16,9 @@ augroup SkeletonAu
   autocmd BufNewFile *.html 0r ‾/.vim/templates/skel.html
 augroup END
 "statusline
-set statusline=%<%f¥ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set showcmd "ステータスラインにコマンドを表示
+set laststatus=2 "ステータスラインを常に表示
+set statusline=[%L]\ %t\ %y%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%r%m%=%c:%l/%L "ステータスラインの表示内容
 
 "original repos on github
 Bundle 'grep.vim'
