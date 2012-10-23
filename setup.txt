@@ -2,7 +2,6 @@
 #delete links
 rm  ~/.w3m
 rm  ~/.gitconfig
-rm  ~/cgi-bin
 rm  ~/.irbrc
 rm  ~/.bashrc
 rm  ~/.bash_profile
@@ -16,12 +15,11 @@ rm  ~/.tmux.conf
 ln -s ~/git/github/tluna/vim/vimrc        ~/.vimrc
 ln -s ~/git/github/tluna/vim              ~/.vim
 
-#another dot files and w3m cgi-bin
+#another dot files and w3m
 
 ln -s ~/git/github/tluna/w3m/             ~/.w3m
 ln -s ~/git/github/tluna/gitconfig        ~/.gitconfig
 ln -s ~/git/github/tluna/irbrc            ~/.irbrc
-ln -s ~/git/github/tluna/cgi-bin/         ~/cgi-bin
 ln -s ~/git/github/tluna/bashrc           ~/.bashrc
 ln -s ~/git/github/tluna/tmux.conf        ~/.tmux.conf
 ln -s ~/git/github/tluna/bash_profile     ~/.bash_profile
