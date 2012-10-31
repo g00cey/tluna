@@ -17,6 +17,8 @@ foreach ($file as $line) {
                     $work_time = intval($work_time_array[0]) * 60 + intval($work_time_array[1]);
 
                     fwrite($write_file, $line_args[0] . "\t");
+                    fwrite($write_file, date('H:i', $start) . "\t");
+                    fwrite($write_file, date('H:i', $end) . "\t");
                     fwrite($write_file, $work_time_str . "\t");
                     fwrite($write_file, $work_time);
                     fwrite($write_file, "\n");
