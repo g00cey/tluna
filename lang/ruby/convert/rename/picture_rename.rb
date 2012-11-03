@@ -1,13 +1,6 @@
 #!/opt/local/bin/ruby
-#Author : tluna(gushi)
-$KCODE = 'u'
+# -*- coding: utf-8 -*-
 
-if ARGV == "" then 
-  print <<DESCRIPT
-  第一引数:置き換える文字列(ファイル名の前につきます。)
-  第二引数:置換するディレクトリ名(ディレクトリ配下のjpgファイルを置換します。)
-DESCRIPT
-end
 
 def reNameFile
   Dir::glob("*.jpg").each do |file|
@@ -29,9 +22,16 @@ def setBaseDir(string = NULL)
     Dir::chdir(string)
   rescue
     p "ディレクトリが存在しません。"
-    p Errno
     return 0
   end
+end
+
+if ARGV.size == 0
+  print <<DESCRIPT
+  第一引数:置き換える文字列(ファイル名の前につきます。)
+  第二引数:置換するディレクトリ名(ディレクトリ配下のjpgファイルを置換します。)
+DESCRIPT
+exit
 end
 
 rename_string = "old"
