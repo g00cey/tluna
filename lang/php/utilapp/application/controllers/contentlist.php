@@ -4,11 +4,11 @@ class ContentList extends CI_Controller {
 
 	public function index()
 	{
-        $data = $this->load->helper('html');
-        $data['contents'] = array(
-            'worktime' => '作業時間管理',
-            'urlencode' => 'URLエンコード'
-        );
+		$data = $this->load->helper('html');
+		$data['contents'] = array(
+				'worktime' => '作業時間管理',
+				'urlencode' => 'URLエンコード'
+		);
 		$this->load->view('contentlist',$data);
 	}
 

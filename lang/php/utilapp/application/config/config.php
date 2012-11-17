@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://local-luna-utilapp:8080/';
+$config['base_url']	= 'http://luna-utilapp.com/';
 
 /*
 |--------------------------------------------------------------------------
