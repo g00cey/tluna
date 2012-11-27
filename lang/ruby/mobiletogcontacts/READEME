@@ -1,3 +1,0 @@
-このプロジェクトの大部分はtlunaがテスト用にGAE用にコードを書いたものです。
-単一のプログラムではない為、気をつけてくださいね。
-twitter clientを利用する場合には、git clone https://github.com/mikeknapp/AppEngine-OAuth-Library.gitwを行ってください。
