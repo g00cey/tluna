@@ -1,5 +1,7 @@
 if has("win32") || has("win64")
   set guifont=Osaka|“™•:h09:cSHIFTJIS
+elseif has("mac")
+  set guifont=Osaka-Mono:h12
 endif
 colorscheme  murphy
 
