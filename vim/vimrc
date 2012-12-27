@@ -13,7 +13,7 @@ colorscheme murphy
 "templates
 augroup SkeletonAu
   autocmd!
-  autocmd BufNewFile *.html 0r ‾/.vim/templates/skel.html
+  autocmd BufNewFile *.html 0r ?/.vim/templates/skel.html
 augroup END
 "statusline
 set showcmd "ステータスラインにコマンドを表示
@@ -39,6 +39,7 @@ Bundle 'EnhCommentify.vim'
 Bundle 'unite.vim'
 Bundle 'ZenCoding.vim'
 Bundle 'surround.vim'
+Bundle 'quickrun'
 Bundle 'superSnipMate'
 Bundle 'local_vimrc.vim'
 Bundle 'quickrun.vim'
@@ -57,7 +58,7 @@ au! BufNewFile,BufRead *.changelog setf changelog
 " netrwは常にtree view
 let g:netrw_liststyle = 3
 " CVSと.で始まるファイルは表示しない
-let g:netrw_list_hide = 'CVS,¥(^¥|¥s¥s¥)¥zs¥.¥S¥+'
+let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
 " 'v'でファイルを開くときは右側に開く。(デフォルトが左側なので入れ替え)
 let g:netrw_altv = 1
 " 'o'でファイルを開くときは下側に開く。(デフォルトが上側なので入れ替え)
@@ -86,7 +87,7 @@ set tabstop=2
 set expandtab
 set autoindent
 set list
-set lcs=tab:>.,trail:_,extends:¥
+set lcs=tab:>.,trail:_,extends:\
 highlight SpecialKey cterm=NONE ctermfg=7 guifg=LightRed
 highlight JpSpace cterm=underline ctermfg=7 guifg=LightRed
 au BufRead,BufNew * match JpSpace /　/
@@ -120,11 +121,11 @@ let g:rubycomplete_rails = 1
 
 "grep
 if has("win32") || has("win64")
-  let Grep_Path             = 'C:¥bin¥yagrep.exe'
-  let Fgrep_Path            = 'C:¥bin¥yagrep.exe -F '
-  let Egrep_Path            = 'C:¥bin¥yagrep.exe -E '
-  let Grep_Find_Path        = 'C:¥soft¥gnu¥bin¥find.exe'
-  let Grep_Xargs_Path       = 'xargs'
+  let Grep_Path             = 'C:\bin\yagrep.exe'
+  let Fgrep_Path            = 'C:\bin\yagrep.exe -F '
+  let Egrep_Path            = 'C:\bin\yagrep.exe -E '
+  let Grep_Find_Path        = 'C:\soft\gnu\bin\find.exe'
+  let Grep_Xargs_Path       = 'C:\soft\gnu\bin\xargs.exe'
   let Grep_Shell_Quote_Char = '"'
   let Grep_Skip_dirs = '.svn'
   let Grep_Skip_Files = '*.bak'

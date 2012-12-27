@@ -1,19 +1,18 @@
 "Vundle
 if has("win32") || has("win64")
   set rtp+=~/vimfiles/vundle/
-  let $DOTVIM = expand('~vimfiles')
-else 
+  let $DOTVIM = expand('~/vimfiles')
+else
   set rtp+=~/.vim/vundle/
   let $DOTVIM = expand('~/.vim')
 endif
 call vundle#rc('$DOTVIM/bundle')
 
-colorscheme murphy
+"tags
+set tags=~/.tags
 
 "statusline
-set showcmd "ステータスラインにコマンドを表示
-set laststatus=2 "ステータスラインを常に表示
-set statusline=[%L]\ %t\ %y%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%r%m%=%c:%l/%L "ステータスラインの表示内容
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
 "original repos on github
 Bundle 'grep.vim'
@@ -37,29 +36,21 @@ Bundle 'superSnipMate'
 Bundle 'local_vimrc.vim'
 Bundle 'quickrun.vim'
 Bundle 'copypath.vim'
-Bundle 'https://github.com/vim-scripts/DirDiff.vim.git'
+Bundle 'vcscommand.vim'
+Bundle 'https://github.com/wesleyche/SrcExpl.git'
+Bundle 'https://github.com/scrooloose/nerdtree.git'
+Bundle 'tabpage.vim'
+Bundle 'Source-Explorer-srcexpl.vim'
 
+
+""vim basic settings
 syntax on
 filetype plugin indent on
 
 "filetype
 au! BufNewFile,BufRead *.changelog setf changelog
 
-" netrwは常にtree view
-
-" netrwは常にtree view
-let g:netrw_liststyle = 3
-" CVSと.で始まるファイルは表示しない
-let g:netrw_list_hide = 'CVS,¥(^¥|¥s¥s¥)¥zs¥.¥S¥+'
-" 'v'でファイルを開くときは右側に開く。(デフォルトが左側なので入れ替え)
-let g:netrw_altv = 1
-" 'o'でファイルを開くときは下側に開く。(デフォルトが上側なので入れ替え)
-let g:netrw_alto = 1
-
-"fold
-set foldmethod=syntax
-
-" edit
+"edit
 set autoindent
 set smartindent
 set showmatch
@@ -69,8 +60,6 @@ set ruler
 "wildmode
 set wildmode=longest,list
 
-filetype plugin indent on
-syntax on
 "tab
 set tabstop=4
 set shiftwidth=4
@@ -79,17 +68,20 @@ set tabstop=4
 set expandtab
 set textwidth=80
 set list
-set lcs=tab:>.,trail:_,extends:¥
+set lcs=tab:>.,trail:_,extends:\
 highlight SpecialKey cterm=NONE ctermfg=7 guifg=LightRed
 highlight JpSpace cterm=underline ctermfg=7 guifg=LightRed
-au BufRead,BufNew * match JpSpace /　/
+au BufRead,BufNew * match JpSpace /�@/
 
 "display
 set number
 
 "print
 set printoptions=number:y
-set guifont=Osaka−等幅:h09:cSHIFTJIS
+set guifont=Osaka�|����:h09:cSHIFTJIS
+
+"fold
+"set foldmethod=syntax
 
 "filebackup
 set backup
@@ -97,7 +89,7 @@ set swapfile
 if has("win32") || has("win64")
   set dir=~/vimfiles/swap
   set backupdir=~/vimfiles/backup
-else 
+else
   set dir=~/.vim/swap
   set backupdir=~/.vim/backup
 endif
@@ -105,22 +97,21 @@ endif
 "fileenconrdings
 set fileencodings=utf-8,iso-2022-jp,sjis,eucjp
 
-imap <C-Space> <C-x><C-o>
-
-"php lint
-nmap ,l :execute '!php -l %'
+"grep path
+set grepprg=yagrep.exe\ -nH
+let $PATH=expand($PATH) . ';\C:\bin'
 
 "grep
 if has("win32") || has("win64")
-  let Grep_Path             = 'C:¥bin¥yagrep.exe'
-  let Fgrep_Path            = 'C:¥bin¥yagrep.exe -F '
-  let Egrep_Path            = 'C:¥bin¥yagrep.exe -E '
-  let Grep_Find_Path        = 'C:¥soft¥gnu¥bin¥find.exe'
-  let Grep_Xargs_Path       = 'xargs'
+  let Grep_Path             = 'C:\gnu\bin\grep.exe'
+  let Fgrep_Path            = 'C:\gnu\bin\fgrep.exe -F '
+  let Egrep_Path            = 'C:\gnu\bin\egrep.exe -E '
+  let Grep_Find_Path        = 'C:\gnu\bin\find.exe'
+  let Grep_Xargs_Path       = 'C:\gnu\bin\xargs.exe'
   let Grep_Shell_Quote_Char = '"'
-  let Grep_Skip_dirs = '.svn'
-  let Grep_Skip_Files = '*.bak'
-else 
+  let Grep_Skip_Dirs = '.svn'
+  let Grep_Skip_Files = '*.bak *~'
+else
   let Grep_Path             = 'grep'
   let Fgrep_Path            = 'fgrep'
   let Egrep_Path            = 'egrep'
@@ -131,6 +122,13 @@ else
   let Grep_Skip_Files = '*.bak'
 endif
 
+
+""vim extract settings
+"php lint
+nmap ,l :execute '!php -l %'
+
+imap <C-Space> <C-x><C-o>
+
 "align
 let g:Align_xstrlen = 3
 
@@ -138,16 +136,46 @@ let g:Align_xstrlen = 3
 let g:local_vimrc=1
 
 "neocomplcache
-let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
+let g:neocomplcache_enable_at_startup = 1 " �N�����ɗL����
 
-"DirDiff
-let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp"
-let g:DirDiffIgnore = "Id:,Revision:,Date:"
-let g:DirDiffSort = 1
-let g:DirDiffWindowSize = 14
-let g:DirDiffIgnoreCase = 0
-let g:DirDiffDynamicDiffText = 0
-let g:DirDiffTextFiles = "ファイル"
-let g:DirDiffTextAnd = "と"
-let g:DirDiffTextDiffer = "は違います"
-let g:DirDiffTextOnlyIn = "だけに発見"
+"cgi file-type php
+au! BufNewFile,BufRead *.cgi setf php
+
+"srcexplorer
+" // The switch of the Source Explorer 
+nmap <F8> :SrcExplToggle<CR> 
+
+" // Set the height of Source Explorer window 
+let g:SrcExpl_winHeight = 8 
+
+" // Set 100 ms for refreshing the Source Explorer 
+let g:SrcExpl_refreshTime = 100 
+
+" // Set "Enter" key to jump into the exact definition context 
+let g:SrcExpl_jumpKey = "<ENTER>" 
+
+" // Set "Space" key for back from the definition context 
+let g:SrcExpl_gobackKey = "<SPACE>" 
+
+" // In order to Avoid conflicts, the Source Explorer should know what plugins 
+" // are using buffers. And you need add their bufname into the list below 
+" // according to the command ":buffers!" 
+let g:SrcExpl_pluginList = [ 
+        \ "__Tag_List__", 
+        \ "_NERD_tree_", 
+        \ "Source_Explorer" 
+    \ ] 
+" // Enable/Disable the local definition searching, and note that this is not 
+" // guaranteed to work, the Source Explorer doesn't check the syntax for now. 
+" // It only searches for a match with the keyword according to command 'gd' 
+let g:SrcExpl_searchLocalDef = 1 
+
+" // Do not let the Source Explorer update the tags file when opening 
+let g:SrcExpl_isUpdateTags = 0 
+
+" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to 
+" //  create/update a tags file 
+let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
+
+" // Set "<F12>" key for updating the tags file artificially 
+let g:SrcExpl_updateTagsKey = "<F12>"
