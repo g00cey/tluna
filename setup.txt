@@ -8,7 +8,7 @@ rm  ~/.bash_profile
 rm  ~/.ctags
 rm  ~/bin
 rm  ~/.vimrc
-rm  ~/.vim
+rm -rf  ~/.vim
 rm  ~/.tmux.conf
 
 #vim
