@@ -8,6 +8,14 @@ else
 endif
 call vundle#rc('$DOTVIM/bundle')
 
+"ssh
+if (has('win32') || has('win64'))
+    "use scp
+    let g:netrw_scp_cmd = "C:\\soft\\putty\\pscp.exe -q batch"
+    let g:netrw_sftp_cmd = "C:\\soft\\putty\\psftp.exe"
+    let g:netrw_ssh_cmd = "C:\\soft\\putty\\plink.exe"
+endif
+
 "tags
 set tags=~/.tags
 
@@ -16,6 +24,7 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 
 "original repos on github
 Bundle 'grep.vim'
+Bundle 'Tailf'
 Bundle 'fugitive.vim'
 Bundle 'taglist.vim'
 Bundle 'vimgrep.vim'
@@ -41,6 +50,7 @@ Bundle 'https://github.com/wesleyche/SrcExpl.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
 Bundle 'tabpage.vim'
 Bundle 'Source-Explorer-srcexpl.vim'
+Bundle 'BlockDiff'
 
 
 ""vim basic settings
@@ -98,7 +108,7 @@ endif
 set fileencodings=utf-8,iso-2022-jp,sjis,eucjp
 
 "grep path
-set grepprg=yagrep.exe\ -nH
+set grepprg=yagrep.exe\ -nH\ --exclude-dir=CVS\ --exclude-dir=.svn
 let $PATH=expand($PATH) . ';\C:\bin'
 
 "grep
@@ -142,40 +152,40 @@ let g:neocomplcache_enable_at_startup = 1 " ‹N“®Žž‚É—LŒø‰»
 au! BufNewFile,BufRead *.cgi setf php
 
 "srcexplorer
-" // The switch of the Source Explorer 
-nmap <F8> :SrcExplToggle<CR> 
+" // The switch of the Source Explorer
+nmap <F8> :SrcExplToggle<CR>
 
-" // Set the height of Source Explorer window 
-let g:SrcExpl_winHeight = 8 
+" // Set the height of Source Explorer window
+let g:SrcExpl_winHeight = 8
 
-" // Set 100 ms for refreshing the Source Explorer 
-let g:SrcExpl_refreshTime = 100 
+" // Set 100 ms for refreshing the Source Explorer
+let g:SrcExpl_refreshTime = 100
 
-" // Set "Enter" key to jump into the exact definition context 
-let g:SrcExpl_jumpKey = "<ENTER>" 
+" // Set "Enter" key to jump into the exact definition context
+let g:SrcExpl_jumpKey = "<ENTER>"
 
-" // Set "Space" key for back from the definition context 
-let g:SrcExpl_gobackKey = "<SPACE>" 
+" // Set "Space" key for back from the definition context
+let g:SrcExpl_gobackKey = "<SPACE>"
 
-" // In order to Avoid conflicts, the Source Explorer should know what plugins 
-" // are using buffers. And you need add their bufname into the list below 
-" // according to the command ":buffers!" 
-let g:SrcExpl_pluginList = [ 
-        \ "__Tag_List__", 
-        \ "_NERD_tree_", 
-        \ "Source_Explorer" 
-    \ ] 
-" // Enable/Disable the local definition searching, and note that this is not 
-" // guaranteed to work, the Source Explorer doesn't check the syntax for now. 
-" // It only searches for a match with the keyword according to command 'gd' 
-let g:SrcExpl_searchLocalDef = 1 
+" // In order to Avoid conflicts, the Source Explorer should know what plugins
+" // are using buffers. And you need add their bufname into the list below
+" // according to the command ":buffers!"
+let g:SrcExpl_pluginList = [
+        \ "__Tag_List__",
+        \ "_NERD_tree_",
+        \ "Source_Explorer"
+    \ ]
+" // Enable/Disable the local definition searching, and note that this is not
+" // guaranteed to work, the Source Explorer doesn't check the syntax for now.
+" // It only searches for a match with the keyword according to command 'gd'
+let g:SrcExpl_searchLocalDef = 1
 
-" // Do not let the Source Explorer update the tags file when opening 
-let g:SrcExpl_isUpdateTags = 0 
+" // Do not let the Source Explorer update the tags file when opening
+let g:SrcExpl_isUpdateTags = 1
 
-" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to 
+" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to
 " //  create/update a tags file 
-let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
+let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
 
-" // Set "<F12>" key for updating the tags file artificially 
+" // Set "<F12>" key for updating the tags file artificially
 let g:SrcExpl_updateTagsKey = "<F12>"
