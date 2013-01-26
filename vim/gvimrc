@@ -2,8 +2,9 @@ if has("win32") || has("win64")
   set guifont=Osaka−等幅:h09:cSHIFTJIS
 elseif has("mac")
   set guifont=Osaka-Mono:h13
+  set transparency=30
+  colorscheme torte
 endif
-colorscheme torte
 
 " ツールバーを削除
 set guioptions-=T
