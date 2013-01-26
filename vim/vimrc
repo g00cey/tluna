@@ -44,6 +44,9 @@ Bundle 'local_vimrc.vim'
 Bundle 'quickrun.vim'
 Bundle 'copypath.vim'
 Bundle 'https://github.com/vim-scripts/DirDiff.vim.git'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Source-Explorer-srcexpl.vim'
+
 
 syntax on
 filetype plugin indent on
