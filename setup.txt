@@ -8,11 +8,13 @@ rm  ~/.bash_profile
 rm  ~/.ctags
 rm  ~/bin
 rm  ~/.vimrc
+rm  ~/.gvimrc
 rm -rf  ~/.vim
 rm  ~/.tmux.conf
 
 #vim
 ln -s ~/git/tluna/vim/vimrc        ~/.vimrc
+ln -s ~/git/tluna/vim/gvimrc       ~/.gvimrc
 ln -s ~/git/tluna/vim              ~/.vim
 
 #another dot files and w3m

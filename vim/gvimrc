@@ -1,12 +1,13 @@
 if has("win32") || has("win64")
-  set guifont=Osaka|“™•:h09:cSHIFTJIS
+  set guifont=Osakaâˆ’ç­‰å¹…:h09:cSHIFTJIS
 elseif has("mac")
-  set guifont=Osaka-Mono:h12
+  set guifont=Osaka-Mono:h13
+  set transparency=30
+  colorscheme torte
 endif
-colorscheme  murphy
 
-" ƒc[ƒ‹ƒo[‚ðíœ
+" ãƒ„ãƒ¼ãƒ«ãƒãƒ¼ã‚’å‰Šé™¤
 set guioptions-=T
 
-"ƒƒjƒ…[‚ðíœ
+"ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’å‰Šé™¤
 set guioptions-=m
