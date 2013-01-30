@@ -44,6 +44,8 @@ Bundle 'local_vimrc.vim'
 Bundle 'quickrun.vim'
 Bundle 'copypath.vim'
 Bundle 'https://github.com/vim-scripts/DirDiff.vim.git'
+Bundle 'https://github.com/scrooloose/nerdtree.git'
+Bundle 'Source-Explorer-srcexpl.vim'
 
 syntax on
 filetype plugin indent on
@@ -76,8 +78,6 @@ set ruler
 "wildmode
 set wildmode=longest,list
 
-filetype plugin indent on
-syntax on
 "tab
 set tabstop=2
 set shiftwidth=2

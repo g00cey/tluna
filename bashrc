@@ -6,7 +6,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
-PATH=~/bin/:~/.rvm/bin:~/bin:/var/lib/gems/1.8/bin/:/usr/local/gae/:/usr/local/sbin/:/usr/local/bin/:$PATH
+PATH=~/bin/:/sbin/:~/.rvm/bin:~/bin:/var/lib/gems/1.8/bin/:/usr/local/gae/:/usr/local/sbin/:/usr/local/bin/:$PATH
 export PATH
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
