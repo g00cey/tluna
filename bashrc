@@ -15,12 +15,6 @@ alias ssh-agent-run='exec ssh-agent bash'
 alias key-tluna='ssh-add /home/luna/.ssh/tluna_id_rsa'
 alias key-github='ssh-add /home/luna/.ssh/git_id_rsa'
 
-
-#refe ecu-jp to utf-8
-function refe() {
-  /usr/bin/refe $1 | iconv -f euc-jp -t utf-8 | cat
-}
-
 #各種ディストリとホストごとにあわせた環境パス設定
 if [ -f $redhatfile ]; then
   if [ $HOSTNAME == "centos.localdomain" ]; then

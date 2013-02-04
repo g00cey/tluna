@@ -2,7 +2,6 @@
 vim/swap/*
 vim/backup/*
 !vim/backup/init
-w3m/**
 w3m/*
 !w3m/bookmark.html
 !w3m/config
