@@ -12,8 +12,13 @@ export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export TERM=xterm-256color
 alias ssh-agent-run='exec ssh-agent bash'
-alias key-tluna='ssh-add /home/luna/.ssh/tluna_id_rsa'
-alias key-github='ssh-add /home/luna/.ssh/git_id_rsa'
+if [ `uname` = "Darwin" ]; then
+  alias key-tluna='ssh-add /Users/luna/.ssh/tluna_id_rsa'
+  alias key-github='ssh-add /Users/luna/.ssh/git_id_rsa'
+elif [ `uname` = "Linux" ]; then
+  alias key-tluna='ssh-add /home/luna/.ssh/tluna_id_rsa'
+  alias key-github='ssh-add /home/luna/.ssh/git_id_rsa'
+fi
 
 #各種ディストリとホストごとにあわせた環境パス設定
 if [ -f $redhatfile ]; then
