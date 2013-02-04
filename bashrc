@@ -12,14 +12,15 @@ export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export TERM=xterm-256color
 alias ssh-agent-run='exec ssh-agent bash'
-alias key-tluna='ssh-add /home/luna/.ssh/tluna_id_rsa'
-alias key-github='ssh-add /home/luna/.ssh/git_id_rsa'
+if [ `uname` = "Darwin" ]; then
+  alias key-tluna='ssh-add /Users/luna/.ssh/tluna_id_rsa'
+  alias key-github='ssh-add /Users/luna/.ssh/git_id_rsa'
+elif [ `uname` = "Linux" ]; then
+  alias key-tluna='ssh-add /home/luna/.ssh/tluna_id_rsa'
+  alias key-github='ssh-add /home/luna/.ssh/git_id_rsa'
+fi
 
 
-#refe ecu-jp to utf-8
-function refe() {
-  /usr/bin/refe $1 | iconv -f euc-jp -t utf-8 | cat
-}
 
 #各種ディストリとホストごとにあわせた環境パス設定
 if [ -f $redhatfile ]; then
