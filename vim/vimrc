@@ -1,10 +1,20 @@
-"Vundle
 if has("win32") || has("win64")
+  "Vundle
   set rtp+=~/vimfiles/vundle/
   let $DOTVIM = expand('~vimfiles')
-else 
+  let g:ref_phpmanual_path = 'C:\Documents\phpmanual'
+elseif has("mac")
+  "Vundle
   set rtp+=~/.vim/vundle/
   let $DOTVIM = expand('~/.vim')
+  "ref php
+  let g:ref_phpmanual_path = '/Users/luna/Document/manual/phpmanual'
+  "ref refe
+else
+  "Vundle
+  set rtp+=~/.vim/vundle/
+  let $DOTVIM = expand('~/.vim')
+  let g:ref_phpmanual_path = '/Users/luna/Document/manual/phpmanual'
 endif
 call vundle#rc('$DOTVIM/bundle')
 
@@ -27,7 +37,7 @@ Bundle 'fugitive.vim'
 Bundle 'taglist.vim'
 Bundle 'vimgrep.vim'
 Bundle 'listtag'
-Bundle 'git://github.com/thinca/vim-ref.git'
+Bundle 'thinca/vim-ref.git'
 Bundle 'yuratomo/w3m.vim.git'
 Bundle 'git://github.com/tpope/vim-rails.git'
 Bundle 'Tailf'
