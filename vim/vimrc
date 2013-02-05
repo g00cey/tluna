@@ -9,8 +9,8 @@ elseif has("mac")
   set rtp+=~/.vim/vundle/
   let $DOTVIM = expand('~/.vim')
   "ref php
-  let g:ref_phpmanual_path = '/Users/luna/Document/manual/php-chunked-xhtml'
-  let g:ref_refe_cmd = "/Users/luna/Doccument/manual/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3"
+  let g:ref_phpmanual_path = '/Users/luna/Documents/manual/phpmanual'
+  let g:ref_refe_cmd = "/Users/luna/Documents/manual/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3"
 else
   "Vundle
   set rtp+=~/.vim/vundle/
