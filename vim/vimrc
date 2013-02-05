@@ -2,19 +2,22 @@ if has("win32") || has("win64")
   "Vundle
   set rtp+=~/vimfiles/vundle/
   let $DOTVIM = expand('~vimfiles')
-  let g:ref_phpmanual_path = 'C:\Documents\phpmanual'
+  let g:ref_phpmanual_path = 'C:\Documents\manual\phpmanual'
+  let g:ref_refe_cmd = "C:\Documents\manual"
 elseif has("mac")
   "Vundle
   set rtp+=~/.vim/vundle/
   let $DOTVIM = expand('~/.vim')
   "ref php
-  let g:ref_phpmanual_path = '/Users/luna/Document/manual/phpmanual'
-  "ref refe
+  let g:ref_phpmanual_path = '/Users/luna/Document/manual/php-chunked-xhtml'
+  let g:ref_refe_cmd = "/Users/luna/Doccument/manual/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3"
 else
   "Vundle
   set rtp+=~/.vim/vundle/
   let $DOTVIM = expand('~/.vim')
-  let g:ref_phpmanual_path = '/Users/luna/Document/manual/phpmanual'
+  let g:ref_phpmanual_path = '/home/luna/manual/phpmanual'
+  let g:ref_phpmanual_path = '/home/luna/manual/php-chunked-xhtml'
+  let g:ref_refe_cmd = "/home/luna/manual/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3"
 endif
 call vundle#rc('$DOTVIM/bundle')
 
