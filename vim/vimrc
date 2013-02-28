@@ -36,14 +36,13 @@ set statusline=[%L]\ %t\ %y%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%r%m%=%c:%l/
 "original repos on github
 Bundle 'grep.vim'
 Bundle 'sudo.vim'
-Bundle 'fugitive.vim'
 Bundle 'taglist.vim'
+Bundle 'git://github.com/tpope/vim-fugitive.git'
 Bundle 'vimgrep.vim'
 Bundle 'listtag'
 Bundle 'thinca/vim-ref.git'
 Bundle 'yuratomo/w3m.vim.git'
 Bundle 'git://github.com/tpope/vim-rails.git'
-Bundle 'Tailf'
 Bundle 'eruby.vim'
 Bundle 'ruby.vim'
 Bundle 'Align'
@@ -59,9 +58,8 @@ Bundle 'superSnipMate'
 Bundle 'local_vimrc.vim'
 Bundle 'quickrun.vim'
 Bundle 'copypath.vim'
-Bundle 'https://github.com/vim-scripts/DirDiff.vim.git'
-Bundle 'Source-Explorer-srcexpl.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'https://github.com/vim-scripts/Source-Explorer-srcexpl.vim.git'
 
 syntax on
 filetype plugin indent on
