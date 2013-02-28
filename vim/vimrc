@@ -43,7 +43,6 @@ Bundle 'listtag'
 Bundle 'thinca/vim-ref.git'
 Bundle 'yuratomo/w3m.vim.git'
 Bundle 'git://github.com/tpope/vim-rails.git'
-Bundle 'Tailf'
 Bundle 'eruby.vim'
 Bundle 'ruby.vim'
 Bundle 'Align'
@@ -59,7 +58,6 @@ Bundle 'superSnipMate'
 Bundle 'local_vimrc.vim'
 Bundle 'quickrun.vim'
 Bundle 'copypath.vim'
-Bundle 'https://github.com/vim-scripts/DirDiff.vim.git'
 Bundle 'Source-Explorer-srcexpl.vim'
 Bundle 'scrooloose/nerdtree'
 
@@ -176,15 +174,3 @@ let g:ref_alc_encoding = 'Shift-JIS'
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
-
-"DirDiff
-let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp"
-let g:DirDiffIgnore = "Id:,Revision:,Date:"
-let g:DirDiffSort = 1
-let g:DirDiffWindowSize = 14
-let g:DirDiffIgnoreCase = 0
-let g:DirDiffDynamicDiffText = 0
-let g:DirDiffTextFiles = "ファイル"
-let g:DirDiffTextAnd = "と"
-let g:DirDiffTextDiffer = "は違います"
-let g:DirDiffTextOnlyIn = "だけに発見"
