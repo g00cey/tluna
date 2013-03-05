@@ -39,7 +39,6 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 "original repos on github
 Bundle 'grep.vim'
 Bundle 'fugitive.vim'
-Bundle 'taglist.vim'
 Bundle 'vimgrep.vim'
 Bundle 'listtag'
 Bundle 'git://github.com/thinca/vim-ref.git'
@@ -61,9 +60,17 @@ Bundle 'copypath.vim'
 Bundle 'vcscommand.vim'
 Bundle 'https://github.com/wesleyche/SrcExpl.git'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
+Bundle 'https://github.com/wesleyche/Trinity.git'
+Bundle 'taglist.vim'
 Bundle 'tabpage.vim'
-Bundle 'Source-Explorer-srcexpl.vim'
-Bundle 'BlockDiff'
+if has("win32") || has("win64")
+  Bundle 'BlockDiff'
+  Bundle 'DirDiff'
+elseif has("mac")
+  Bundle 'DirDiff.vim'
+else
+  Bundle 'DirDiff.vim'
+endif
 
 
 ""vim basic settings
@@ -137,9 +144,11 @@ set fileencodings=utf-8,iso-2022-jp,sjis,eucjp
 
 imap <C-Space> <C-x><C-o>
 
-"grep path
-set grepprg=yagrep.exe\ -nH\ --exclude-dir=CVS\ --exclude-dir=.svn
-let $PATH=expand($PATH) . ';\C:\bin'
+if has("win32") || has("win64")
+  "grep path
+  set grepprg=yagrep.exe\ -nH\ --exclude-dir=CVS\ --exclude-dir=.svn
+  let $PATH=expand($PATH) . ';\C:\bin'
+endif
 
 "grep
 if has("win32") || has("win64")
