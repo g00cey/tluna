@@ -1,18 +1,15 @@
+"Vundle refe
 if has("win32") || has("win64")
-  "Vundle
   set rtp+=~/vimfiles/vundle/
-  let $DOTVIM = expand('~vimfiles')
-  let g:ref_phpmanual_path = 'C:\Documents\manual\phpmanual'
-  let g:ref_refe_cmd = "C:\Documents\manual"
+  let $DOTVIM = expand('~/vimfiles')
+  let g:ref_phpmanual_path = 'C:\Users\a_gushi\Documents\manual\phpmanual'
+  let g:ref_refe_cmd = "C:\Users\a_gushi\Documents\manual"
 elseif has("mac")
-  "Vundle
   set rtp+=~/.vim/vundle/
   let $DOTVIM = expand('~/.vim')
-  "ref php
   let g:ref_phpmanual_path = '/Users/luna/Documents/manual/phpmanual'
   let g:ref_refe_cmd = "/Users/luna/Documents/manual/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3"
 else
-  "Vundle
   set rtp+=~/.vim/vundle/
   let $DOTVIM = expand('~/.vim')
   let g:ref_phpmanual_path = '/home/luna/manual/phpmanual'
@@ -21,7 +18,13 @@ else
 endif
 call vundle#rc('$DOTVIM/bundle')
 
-colorscheme murphy
+"ssh
+if (has('win32') || has('win64'))
+    "use scp
+    let g:netrw_scp_cmd = "C:\\soft\\putty\\pscp.exe -q batch"
+    let g:netrw_sftp_cmd = "C:\\soft\\putty\\psftp.exe"
+    let g:netrw_ssh_cmd = "C:\\soft\\putty\\plink.exe"
+endif
 
 "templates
 augroup SkeletonAu
@@ -31,37 +34,39 @@ augroup END
 "statusline
 set showcmd "ステータスラインにコマンドを表示
 set laststatus=2 "ステータスラインを常に表示
-set statusline=[%L]\ %t\ %y%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%r%m%=%c:%l/%L "ステータスラインの表示内容
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
 "original repos on github
 Bundle 'grep.vim'
-Bundle 'sudo.vim'
+Bundle 'fugitive.vim'
 Bundle 'taglist.vim'
-Bundle 'git://github.com/tpope/vim-fugitive.git'
 Bundle 'vimgrep.vim'
 Bundle 'listtag'
-Bundle 'thinca/vim-ref.git'
-Bundle 'yuratomo/w3m.vim.git'
+Bundle 'git://github.com/thinca/vim-ref.git'
 Bundle 'git://github.com/tpope/vim-rails.git'
 Bundle 'eruby.vim'
 Bundle 'ruby.vim'
 Bundle 'Align'
 Bundle 'vcscommand.vim'
 Bundle 'matchit.zip'
-Bundle 'Rubytest.vim'
 Bundle 'neocomplcache'
 Bundle 'EnhCommentify.vim'
 Bundle 'unite.vim'
-Bundle 'ZenCoding.vim'
 Bundle 'surround.vim'
 Bundle 'quickrun'
 Bundle 'superSnipMate'
 Bundle 'local_vimrc.vim'
 Bundle 'quickrun.vim'
 Bundle 'copypath.vim'
-Bundle 'https://github.com/vim-scripts/Source-Explorer-srcexpl.vim.git'
-Bundle 'scrooloose/nerdtree'
+Bundle 'vcscommand.vim'
+Bundle 'https://github.com/wesleyche/SrcExpl.git'
+Bundle 'https://github.com/scrooloose/nerdtree.git'
+Bundle 'tabpage.vim'
+Bundle 'Source-Explorer-srcexpl.vim'
+Bundle 'BlockDiff'
 
+
+""vim basic settings
 syntax on
 filetype plugin indent on
 
@@ -118,7 +123,7 @@ set swapfile
 if has("win32") || has("win64")
   set dir=~/vimfiles/swap
   set backupdir=~/vimfiles/backup
-else 
+else
   set dir=~/.vim/swap
   set backupdir=~/.vim/backup
 endif
@@ -141,9 +146,9 @@ if has("win32") || has("win64")
   let Grep_Find_Path        = 'C:\soft\gnu\bin\find.exe'
   let Grep_Xargs_Path       = 'C:\soft\gnu\bin\xargs.exe'
   let Grep_Shell_Quote_Char = '"'
-  let Grep_Skip_dirs = '.svn'
+  let Grep_Skip_Dirs = '.svn'
   let Grep_Skip_Files = '*.bak'
-else 
+else
   let Grep_Path             = 'grep'
   let Fgrep_Path            = 'fgrep'
   let Egrep_Path            = 'egrep'
@@ -153,6 +158,13 @@ else
   let Grep_Skip_dirs = '.svn'
   let Grep_Skip_Files = '*.bak'
 endif
+
+
+""vim extract settings
+"php lint
+nmap ,l :execute '!php -l %'
+
+imap <C-Space> <C-x><C-o>
 
 "align
 let g:Align_xstrlen = 3
@@ -176,6 +188,9 @@ let g:ref_alc_encoding = 'Shift-JIS'
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
 
+"cgi file-type php
+au! BufNewFile,BufRead *.cgi setf php
+
 "srcexplorer
 " // The switch of the Source Explorer
 nmap <F8> :SrcExplToggle<CR>
@@ -187,34 +202,31 @@ let g:SrcExpl_winHeight = 8
 let g:SrcExpl_refreshTime = 100
 
 " // Set "Enter" key to jump into the exact definition context
-" let g:SrcExpl_jumpKey = "<ENTER>"
+let g:SrcExpl_jumpKey = "<ENTER>"
 
 " // Set "Space" key for back from the definition context
 let g:SrcExpl_gobackKey = "<SPACE>"
 
-" // In order to Avoid conflicts, the Source Explorer should know what
-" plugins
+" // In order to Avoid conflicts, the Source Explorer should know what plugins
 " // are using buffers. And you need add their bufname into the list below
 " // according to the command ":buffers!"
 let g:SrcExpl_pluginList = [
       \ "__Tag_List__",
       \ "_NERD_tree_",
       \ "Source_Explorer"
-      \ ]
+    \ ]
 
 " // Enable/Disable the local definition searching, and note that this is not
 " // guaranteed to work, the Source Explorer doesn't check the syntax for now.
 " // It only searches for a match with the keyword according to command 'gd'
 let g:SrcExpl_searchLocalDef = 1
 
-" // Do not let the Source Explorer update the
-"tags file when opening
-let g:SrcExpl_isUpdateTags = 0
+" // Do not let the Source Explorer update the tags file when opening
+let g:SrcExpl_isUpdateTags = 1
 
-" // Use 'Exuberant Ctags' with '--sort=foldcase
-"-R .' or '-L cscope.files' to
+" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to
 " //  create/update a tags file
 let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
 
-" // Set "<F12>" key for updating the tags file artificially 
+" // Set "<F12>" key for updating the tags file artificially
 let g:SrcExpl_updateTagsKey = "<F12>"

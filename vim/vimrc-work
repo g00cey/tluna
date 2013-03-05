@@ -1,10 +1,20 @@
-"Vundle
+"Vundle refe
 if has("win32") || has("win64")
   set rtp+=~/vimfiles/vundle/
   let $DOTVIM = expand('~/vimfiles')
+  let g:ref_phpmanual_path = 'C:\Users\a_gushi\Documents\manual\phpmanual'
+  let g:ref_refe_cmd = "C:\Users\a_gushi\Documents\manual"
+elseif has("mac")
+  set rtp+=~/.vim/vundle/
+  let $DOTVIM = expand('~/.vim')
+  let g:ref_phpmanual_path = '/Users/luna/Documents/manual/phpmanual'
+  let g:ref_refe_cmd = "/Users/luna/Documents/manual/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3"
 else
   set rtp+=~/.vim/vundle/
   let $DOTVIM = expand('~/.vim')
+  let g:ref_phpmanual_path = '/home/luna/manual/phpmanual'
+  let g:ref_phpmanual_path = '/home/luna/manual/php-chunked-xhtml'
+  let g:ref_refe_cmd = "/home/luna/manual/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3"
 endif
 call vundle#rc('$DOTVIM/bundle')
 
@@ -16,15 +26,18 @@ if (has('win32') || has('win64'))
     let g:netrw_ssh_cmd = "C:\\soft\\putty\\plink.exe"
 endif
 
-"tags
-set tags=~/.tags
-
+"templates
+augroup SkeletonAu
+  autocmd!
+  autocmd BufNewFile *.html 0r ?/.vim/templates/skel.html
+augroup END
 "statusline
+set showcmd "ステータスラインにコマンドを表示
+set laststatus=2 "ステータスラインを常に表示
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
 "original repos on github
 Bundle 'grep.vim'
-Bundle 'Tailf'
 Bundle 'fugitive.vim'
 Bundle 'taglist.vim'
 Bundle 'vimgrep.vim'
@@ -60,7 +73,22 @@ filetype plugin indent on
 "filetype
 au! BufNewFile,BufRead *.changelog setf changelog
 
-"edit
+"xpath-search
+"let g:loaded_xpath = 1
+
+" netrwは常にtree view
+let g:netrw_liststyle = 3
+" CVSと.で始まるファイルは表示しない
+let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
+" 'v'でファイルを開くときは右側に開く。(デフォルトが左側なので入れ替え)
+let g:netrw_altv = 1
+" 'o'でファイルを開くときは下側に開く。(デフォルトが上側なので入れ替え)
+let g:netrw_alto = 1
+
+"fold
+set foldmethod=syntax
+
+" edit
 set autoindent
 set smartindent
 set showmatch
@@ -107,6 +135,8 @@ endif
 "fileenconrdings
 set fileencodings=utf-8,iso-2022-jp,sjis,eucjp
 
+imap <C-Space> <C-x><C-o>
+
 "grep path
 set grepprg=yagrep.exe\ -nH\ --exclude-dir=CVS\ --exclude-dir=.svn
 let $PATH=expand($PATH) . ';\C:\bin'
@@ -114,13 +144,13 @@ let $PATH=expand($PATH) . ';\C:\bin'
 "grep
 if has("win32") || has("win64")
   let Grep_Path             = 'C:\gnu\bin\grep.exe'
-  let Fgrep_Path            = 'C:\gnu\bin\fgrep.exe -F '
-  let Egrep_Path            = 'C:\gnu\bin\egrep.exe -E '
+  let Fgrep_Path            = 'C:\gnu\bin\fgrep.exe -F'
+  let Egrep_Path            = 'C:\gnu\bin\egrep.exe -E'
   let Grep_Find_Path        = 'C:\gnu\bin\find.exe'
   let Grep_Xargs_Path       = 'C:\gnu\bin\xargs.exe'
   let Grep_Shell_Quote_Char = '"'
   let Grep_Skip_Dirs = '.svn'
-  let Grep_Skip_Files = '*.bak *~'
+  let Grep_Skip_Files = '*.bak'
 else
   let Grep_Path             = 'grep'
   let Fgrep_Path            = 'fgrep'
@@ -144,6 +174,19 @@ let g:Align_xstrlen = 3
 
 "localvimrc
 let g:local_vimrc=1
+
+"rails.vim
+let g:rails_dbext      = 1
+let g:rails_gnu_screen = 1
+let g:rails_modelines  = 1
+
+"ref
+"alc (eijirou)
+nmap ,ra :<C-u>Ref alc<Space>
+"refe (ruby-refe)
+nmap ,rr :<C-u>Ref refe<Space>
+let g:ref_alc_start_linenumber = 100 "表示する行数
+let g:ref_alc_encoding = 'Shift-JIS'
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
@@ -171,10 +214,11 @@ let g:SrcExpl_gobackKey = "<SPACE>"
 " // are using buffers. And you need add their bufname into the list below
 " // according to the command ":buffers!"
 let g:SrcExpl_pluginList = [
-        \ "__Tag_List__",
-        \ "_NERD_tree_",
-        \ "Source_Explorer"
+      \ "__Tag_List__",
+      \ "_NERD_tree_",
+      \ "Source_Explorer"
     \ ]
+
 " // Enable/Disable the local definition searching, and note that this is not
 " // guaranteed to work, the Source Explorer doesn't check the syntax for now.
 " // It only searches for a match with the keyword according to command 'gd'
@@ -184,7 +228,7 @@ let g:SrcExpl_searchLocalDef = 1
 let g:SrcExpl_isUpdateTags = 1
 
 " // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to
-" //  create/update a tags file 
+" //  create/update a tags file
 let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
 
 " // Set "<F12>" key for updating the tags file artificially
