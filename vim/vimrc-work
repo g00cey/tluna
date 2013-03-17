@@ -2,8 +2,8 @@
 if has("win32") || has("win64")
   set rtp+=~/vimfiles/vundle/
   let $DOTVIM = expand('~/vimfiles')
-  let g:ref_phpmanual_path = 'C:\Users\a_gushi\Documents\manual\phpmanual'
-  let g:ref_refe_cmd = "C:\Users\a_gushi\Documents\manual"
+  let g:ref_phpmanual_path = 'C:Â¥UsersÂ¥a_gushiÂ¥DocumentsÂ¥manualÂ¥phpmanual'
+  let g:ref_refe_cmd = "C:Â¥UsersÂ¥a_gushiÂ¥DocumentsÂ¥manual"
 elseif has("mac")
   set rtp+=~/.vim/vundle/
   let $DOTVIM = expand('~/.vim')
@@ -21,9 +21,9 @@ call vundle#rc('$DOTVIM/bundle')
 "ssh
 if (has('win32') || has('win64'))
     "use scp
-    let g:netrw_scp_cmd = "C:\\soft\\putty\\pscp.exe -q batch"
-    let g:netrw_sftp_cmd = "C:\\soft\\putty\\psftp.exe"
-    let g:netrw_ssh_cmd = "C:\\soft\\putty\\plink.exe"
+    let g:netrw_scp_cmd = "C:Â¥Â¥softÂ¥Â¥puttyÂ¥Â¥pscp.exe -q batch"
+    let g:netrw_sftp_cmd = "C:Â¥Â¥softÂ¥Â¥puttyÂ¥Â¥psftp.exe"
+    let g:netrw_ssh_cmd = "C:Â¥Â¥softÂ¥Â¥puttyÂ¥Â¥plink.exe"
 endif
 
 "templates
@@ -32,8 +32,8 @@ augroup SkeletonAu
   autocmd BufNewFile *.html 0r ?/.vim/templates/skel.html
 augroup END
 "statusline
-set showcmd "ƒXƒe[ƒ^ƒXƒ‰ƒCƒ“‚ÉƒRƒ}ƒ“ƒh‚ğ•\¦
-set laststatus=2 "ƒXƒe[ƒ^ƒXƒ‰ƒCƒ“‚ğí‚É•\¦
+set showcmd "ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ©ã‚¤ãƒ³ã«ã‚³ãƒãƒ³ãƒ‰ã‚’è¡¨ç¤º
+set laststatus=2 "ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ©ã‚¤ãƒ³ã‚’å¸¸ã«è¡¨ç¤º
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
 "original repos on github
@@ -83,13 +83,13 @@ au! BufNewFile,BufRead *.changelog setf changelog
 "xpath-search
 "let g:loaded_xpath = 1
 
-" netrw‚Íí‚Étree view
+" netrwã¯å¸¸ã«tree view
 let g:netrw_liststyle = 3
-" CVS‚Æ.‚Ån‚Ü‚éƒtƒ@ƒCƒ‹‚Í•\¦‚µ‚È‚¢
-let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
-" 'v'‚Åƒtƒ@ƒCƒ‹‚ğŠJ‚­‚Æ‚«‚Í‰E‘¤‚ÉŠJ‚­B(ƒfƒtƒHƒ‹ƒg‚ª¶‘¤‚È‚Ì‚Å“ü‚ê‘Ö‚¦)
+" CVSã¨.ã§å§‹ã¾ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã¯è¡¨ç¤ºã—ãªã„
+let g:netrw_list_hide = 'CVS,\(^\|\s\sÂ¥)\zs\.\S\+'
+" 'v'ã§ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãã¨ãã¯å³å´ã«é–‹ãã€‚(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãŒå·¦å´ãªã®ã§å…¥ã‚Œæ›¿ãˆ)
 let g:netrw_altv = 1
-" 'o'‚Åƒtƒ@ƒCƒ‹‚ğŠJ‚­‚Æ‚«‚Í‰º‘¤‚ÉŠJ‚­B(ƒfƒtƒHƒ‹ƒg‚ªã‘¤‚È‚Ì‚Å“ü‚ê‘Ö‚¦)
+" 'o'ã§ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãã¨ãã¯ä¸‹å´ã«é–‹ãã€‚(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãŒä¸Šå´ãªã®ã§å…¥ã‚Œæ›¿ãˆ)
 let g:netrw_alto = 1
 
 "fold
@@ -113,17 +113,17 @@ set tabstop=4
 set expandtab
 set textwidth=80
 set list
-set lcs=tab:>.,trail:_,extends:\
+set lcs=tab:>.,trail:_,extends:Â¥
 highlight SpecialKey cterm=NONE ctermfg=7 guifg=LightRed
 highlight JpSpace cterm=underline ctermfg=7 guifg=LightRed
-au BufRead,BufNew * match JpSpace /@/
+au BufRead,BufNew * match JpSpace /ã€€/
 
 "display
 set number
 
 "print
 set printoptions=number:y
-set guifont=Osaka|“™•:h09:cSHIFTJIS
+set guifont=Osakaâˆ’ç­‰å¹…:h09:cSHIFTJIS
 
 "fold
 "set foldmethod=syntax
@@ -146,17 +146,17 @@ imap <C-Space> <C-x><C-o>
 
 if has("win32") || has("win64")
   "grep path
-  set grepprg=yagrep.exe\ -nH\ --exclude-dir=CVS\ --exclude-dir=.svn
-  let $PATH=expand($PATH) . ';\C:\bin'
+  set grepprg=yagrep.exeÂ¥ -nHÂ¥ --exclude-dir=CVSÂ¥ --exclude-dir=.svn
+  let $PATH=expand($PATH) . ';Â¥C:Â¥bin'
 endif
 
 "grep
 if has("win32") || has("win64")
-  let Grep_Path             = 'C:\gnu\bin\grep.exe'
-  let Fgrep_Path            = 'C:\gnu\bin\fgrep.exe -F'
-  let Egrep_Path            = 'C:\gnu\bin\egrep.exe -E'
-  let Grep_Find_Path        = 'C:\gnu\bin\find.exe'
-  let Grep_Xargs_Path       = 'C:\gnu\bin\xargs.exe'
+  let Grep_Path             = 'C:Â¥gnuÂ¥binÂ¥grep.exe'
+  let Fgrep_Path            = 'C:Â¥gnuÂ¥binÂ¥fgrep.exe -F'
+  let Egrep_Path            = 'C:Â¥gnuÂ¥binÂ¥egrep.exe -E'
+  let Grep_Find_Path        = 'C:Â¥gnuÂ¥binÂ¥find.exe'
+  let Grep_Xargs_Path       = 'C:Â¥gnuÂ¥binÂ¥xargs.exe'
   let Grep_Shell_Quote_Char = '"'
   let Grep_Skip_Dirs = '.svn'
   let Grep_Skip_Files = '*.bak'
@@ -194,11 +194,11 @@ let g:rails_modelines  = 1
 nmap ,ra :<C-u>Ref alc<Space>
 "refe (ruby-refe)
 nmap ,rr :<C-u>Ref refe<Space>
-let g:ref_alc_start_linenumber = 100 "•\¦‚·‚és”
+let g:ref_alc_start_linenumber = 100 "è¡¨ç¤ºã™ã‚‹è¡Œæ•°
 let g:ref_alc_encoding = 'Shift-JIS'
 
 "neocomplcache
-let g:neocomplcache_enable_at_startup = 1 " ‹N“®‚É—LŒø‰»
+let g:neocomplcache_enable_at_startup = 1 " èµ·å‹•æ™‚ã«æœ‰åŠ¹åŒ–
 
 "cgi file-type php
 au! BufNewFile,BufRead *.cgi setf php
