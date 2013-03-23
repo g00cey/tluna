@@ -26,7 +26,7 @@ if [ -f $redhatfile ]; then
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
     PATH=~/bin/:~/.rvm/bin:~/bin:/var/lib/gems/1.8/bin/:/usr/local/gae/:/usr/local/sbin/:/usr/local/bin/:$PATH
   fi
-  if [ $HOSTNAME == "luna-mac" ]; then
+  if [ $HOSTNAME == "luna-mac.local" ]; then
     PATH=$PATH:/Applications/android-sdk-macosx/platform-tools:$HOME/.rvm/bin # Add RVM to PATH for scripting
   fi
 fi
