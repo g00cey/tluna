@@ -51,5 +51,6 @@ git config --global user.email "totugekiluna@gmail.com"
 git config --global core.editor 'vim -c "set fenc=utf-8"'
 
 #submoudle
+cd ~/git/tluna/
 git submodule init
 git submodule update
