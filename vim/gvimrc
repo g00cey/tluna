@@ -1,7 +1,4 @@
-if has("win32") || has("win64")
-  set guifont=Osaka－等幅:h09:cSHIFTJIS
-  colorscheme torte
-elseif has("mac")
+if has("mac")
   set guifont=Osaka-Mono:h13
   set transparency=30
   colorscheme torte
