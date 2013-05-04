@@ -1,6 +1,6 @@
 if has("mac")
   set guifont=Osaka-Mono:h13
-  set transparency=30
+  set transparency=20
   colorscheme torte
 endif
 
