@@ -16,6 +16,7 @@ alias ssh-agent-run='exec ssh-agent bash'
 if [ `uname` = "Darwin" ]; then
   alias key-tluna='ssh-add /Users/luna/.ssh/tluna_id_rsa'
   alias key-github='ssh-add /Users/luna/.ssh/git_id_rsa'
+  alias key-ubuntu='ssh-add /Users/luna/.ssh/centos_local'
 elif [ `uname` = "Linux" ]; then
   alias key-tluna='ssh-add /home/luna/.ssh/tluna_id_rsa'
   alias key-github='ssh-add /home/luna/.ssh/git_id_rsa'
