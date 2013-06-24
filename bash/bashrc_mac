@@ -25,3 +25,5 @@ alias sudo="sudo env PATH=$PATH"
 #tailf
 alias tailf='tail -f'
 alias php-fpm='/usr/local/sbin/php-fpm --fpm-config=/usr/local/Cellar/php54/5.4.8/etc/php-fpm'
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
