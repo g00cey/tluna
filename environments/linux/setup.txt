@@ -35,6 +35,7 @@ ln -s ~/git/tluna/bash/bash_profile_vps        ~/.bash_profile
 git config --global user.name "t1una"
 git config --global user.email "totugekiluna@gmail.com"
 git config --global core.editor 'vim -c "set fenc=utf-8"'
+git config --global push.default matching
 
 #submoudle
 cd ~/git/tluna/
