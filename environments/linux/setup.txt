@@ -1,20 +1,17 @@
 #!/bin/bash
-#load hostname(vps mac workvm personalvm
-source ./hostname.conf
 
 #delete links
-source ./hostname.conf
-rm  ~/.w3m
-rm  ~/.gitconfig
-rm  ~/.irbrc
-rm  ~/.bashrc
-rm  ~/.bash_profile
-rm  ~/.ctags
-rm  ~/bin
-rm  ~/.vimrc
-rm  ~/.gvimrc
+rm -rf ~/.w3m
+rm ~/.gitconfig
+rm ~/.irbrc
+rm ~/.bashrc
+rm ~/.bash_profile
+rm ~/.ctags
+rm ~/bin
+rm ~/.vimrc
+rm ~/.gvimrc
 rm -rf  ~/.vim
-rm  ~/.tmux.conf
+rm ~/.tmux.conf
 
 #vim
 ln -s ~/git/tluna/vim/vimrc        ~/.vimrc
@@ -31,19 +28,8 @@ ln -s ~/git/tluna/ctags            ~/.ctags
 ln -s ~/git/tluna/bin/             ~/bin
 
 #bash
-if [ $HOSTNAME = $mac_hostname ]; then
-    ln -s ~/git/tluna/bash/bashrc_mac              ~/.bashrc
-    ln -s ~/git/tluna/bash/bash_profile_mac        ~/.bash_profile
-elif [ $HOSTNAME = $vps_hostname ]; then
-    ln -s ~/git/tluna/bash/bashrc_vps              ~/.bashrc
-    ln -s ~/git/tluna/bash/bash_profile_vps        ~/.bash_profile
-elif [ $HOSTNAME = $work_vm ]; then
-    ln -s ~/git/tluna/bash/bashrc_workvm           ~/.bashrc
-    ln -s ~/git/tluna/bash/bash_profile_workbm     ~/.bash_profile
-elif [ $HOSTNAME = $personal_vm ]; then
-    ln -s ~/git/tluna/bash/bashrc_personalvm       ~/.bashrc
-    ln -s ~/git/tluna/bash/bash_profile_personalvm ~/.bash_profile
-fi
+ln -s ~/git/tluna/bash/bashrc_vps              ~/.bashrc
+ln -s ~/git/tluna/bash/bash_profile_vps        ~/.bash_profile
 
 #git settings
 git config --global user.name "t1una"
