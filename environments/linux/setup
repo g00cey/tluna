@@ -1,0 +1,43 @@
+#!/bin/bash
+
+#delete links
+rm -rf ~/.w3m
+rm ~/.gitconfig
+rm ~/.irbrc
+rm ~/.bashrc
+rm ~/.bash_profile
+rm ~/.ctags
+rm ~/bin
+rm ~/.vimrc
+rm ~/.gvimrc
+rm -rf  ~/.vim
+rm ~/.tmux.conf
+
+#vim
+ln -s ~/git/tluna/vim/vimrc        ~/.vimrc
+ln -s ~/git/tluna/vim/gvimrc       ~/.gvimrc
+ln -s ~/git/tluna/vim              ~/.vim
+
+#another dot files and w3m
+
+ln -s ~/git/tluna/w3m/             ~/.w3m
+ln -s ~/git/tluna/gitconfig        ~/.gitconfig
+ln -s ~/git/tluna/irbrc            ~/.irbrc
+ln -s ~/git/tluna/tmux.conf        ~/.tmux.conf
+ln -s ~/git/tluna/ctags            ~/.ctags
+ln -s ~/git/tluna/bin/             ~/bin
+
+#bash
+ln -s ~/git/tluna/bash/bashrc_vps              ~/.bashrc
+ln -s ~/git/tluna/bash/bash_profile_vps        ~/.bash_profile
+
+#git settings
+git config --global user.name "t1una"
+git config --global user.email "totugekiluna@gmail.com"
+git config --global core.editor 'vim -c "set fenc=utf-8"'
+git config --global push.default matching
+
+#submoudle
+cd ~/git/tluna/
+git submodule init
+git submodule update

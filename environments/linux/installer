@@ -1,0 +1,2 @@
+sudo yum groupinstall "GNOME デスクトップ環境" "X Window System" "Development tools"
+sudo yum install -y tmux vim sqlite sqlite-devel mysql-server mysql-devel postgresql-server postgresql-devel memcached memcached-devel bzip2-devel zlib-devel xz-devel gcc parted auto-buildrequires fuse-devel scons gcc rpm-build ruby rubygems git subversion htop php php-pear php-fpm
