@@ -1,1 +1,1 @@
-gem install rails unicorn coffee-rails jbuilder jquery-rails mechanize mysql2 rails sass-rails sqlite3 therubyracer turbolinks uglifier pry pry-rails pg tokyotyrant
+gem install coffee-rails curl jbuilder jquery-rails kyototycoon mechanize mysql2 pg pry pry-rails rails sass-rails sqlite3 therubyracer turbolinks uglifier unicorn
