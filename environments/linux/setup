@@ -28,8 +28,8 @@ ln -s ~/src/git/github/tluna/ctags            ~/.ctags
 ln -s ~/src/git/github/tluna/bin/             ~/bin
 
 #bash
-ln -s ~/src/git/github/tluna/environments/linux/bashrc_vps              ~/.bashrc
-ln -s ~/src/git/github/tluna/environments/linux/bash_profile_vps        ~/.bash_profile
+ln -s ~/src/git/github/tluna/environments/linux/bashrc_homeserver              ~/.bashrc
+ln -s ~/src/git/github/tluna/environments/linux/bash_profile_homeserver        ~/.bash_profile
 
 #git settings
 git config --global user.name "t1una"
