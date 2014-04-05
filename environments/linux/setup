@@ -14,22 +14,22 @@ rm -rf  ~/.vim
 rm ~/.tmux.conf
 
 #vim
-ln -s ~/git/tluna/vim/vimrc        ~/.vimrc
-ln -s ~/git/tluna/vim/gvimrc       ~/.gvimrc
-ln -s ~/git/tluna/vim              ~/.vim
+ln -s ~/src/git/github/tluna/vim/vimrc        ~/.vimrc
+ln -s ~/src/git/github/tluna/vim/gvimrc       ~/.gvimrc
+ln -s ~/src/git/github/tluna/vim              ~/.vim
 
 #another dot files and w3m
 
-ln -s ~/git/tluna/w3m/             ~/.w3m
-ln -s ~/git/tluna/gitconfig        ~/.gitconfig
-ln -s ~/git/tluna/irbrc            ~/.irbrc
-ln -s ~/git/tluna/tmux.conf        ~/.tmux.conf
-ln -s ~/git/tluna/ctags            ~/.ctags
-ln -s ~/git/tluna/bin/             ~/bin
+ln -s ~/src/git/github/tluna/w3m/             ~/.w3m
+ln -s ~/src/git/github/tluna/gitconfig        ~/.gitconfig
+ln -s ~/src/git/github/tluna/irbrc            ~/.irbrc
+ln -s ~/src/git/github/tluna/tmux.conf        ~/.tmux.conf
+ln -s ~/src/git/github/tluna/ctags            ~/.ctags
+ln -s ~/src/git/github/tluna/bin/             ~/bin
 
 #bash
-ln -s ~/git/tluna/bash/bashrc_vps              ~/.bashrc
-ln -s ~/git/tluna/bash/bash_profile_vps        ~/.bash_profile
+ln -s ~/src/git/github/tluna/environments/linux/bashrc_vps              ~/.bashrc
+ln -s ~/src/git/github/tluna/environments/linux/bash_profile_vps        ~/.bash_profile
 
 #git settings
 git config --global user.name "t1una"
@@ -38,6 +38,6 @@ git config --global core.editor 'vim -c "set fenc=utf-8"'
 git config --global push.default matching
 
 #submoudle
-cd ~/git/tluna/
+cd ~/src/git/github/tluna/
 git submodule init
 git submodule update
