@@ -1,0 +1,39 @@
+#!/bin/bash
+rm  -rf ~/.w3m
+rm  ~/.gitconfig
+rm  ~/.irbrc
+rm  ~/.bashrc
+rm  ~/.bash_profile
+rm  ~/.ctags
+rm  ~/bin
+rm  ~/.vimrc
+rm  ~/.gvimrc
+rm -rf  ~/.vim
+rm  ~/.tmux.conf
+
+#vim
+ln -s /mnt/3tv2/src/git/github/tluna/vim/vimrc        ~/.vimrc
+ln -s /mnt/3tv2/src/git/github/tluna/vim/gvimrc       ~/.gvimrc
+ln -s /mnt/3tv2/src/git/github/tluna/vim              ~/.vim
+
+#another dot files and w3m
+ln -s /mnt/3tv2/src/git/github/tluna/w3m/             ~/.w3m
+ln -s /mnt/3tv2/src/git/github/tluna/gitconfig        ~/.gitconfig
+ln -s /mnt/3tv2/src/git/github/tluna/irbrc            ~/.irbrc
+ln -s /mnt/3tv2/src/git/github/tluna/tmux.conf        ~/.tmux.conf
+ln -s /mnt/3tv2/src/git/github/tluna/ctags            ~/.ctags
+ln -s /mnt/3tv2/src/git/github/tluna/bin/             ~/bin
+
+#bash
+ln -s /mnt/3tv2/src/git/github/tluna/bash/bashrc_homeserver              ~/.bashrc
+ln -s /mnt/3tv2/src/git/github/tluna/bash/bash_profile_homeserver        ~/.bash_profile
+
+#git settings
+git config --global user.name "t1una"
+git config --global user.email "totugekiluna@gmail.com"
+git config --global core.editor 'vim -c "set fenc=utf-8"'
+
+#submoudle
+cd /mnt/3tv2/src/git/github/tluna/
+git submodule init
+git submodule update

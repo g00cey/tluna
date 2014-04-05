@@ -4,6 +4,8 @@
 [core]
 	editor = vim -c \"set fenc=utf-8\"
 	excludesfile = /Users/luna/.gitignore_global
+<<<<<<< HEAD
+=======
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -12,3 +14,4 @@
 	trustExitCode = true
 [push]
 	default = matching
+>>>>>>> 323cde64ad43b97104f5014ad16078a8eb0dbe44
