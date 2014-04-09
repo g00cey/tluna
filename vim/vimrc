@@ -93,7 +93,7 @@ let g:netrw_altv = 1
 let g:netrw_alto = 1
 
 "fold
-set foldmethod=syntax
+set foldmethod=manual
 
 " edit
 set autoindent
