@@ -1,4 +1,3 @@
-sudo yum groupinstall "GNOME デスクトップ環境" "X Window System" "Development tools"
 sudo yum install -y \
 tmux \
 vim \
