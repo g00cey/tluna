@@ -1,0 +1,10 @@
+ディレクトリ以下のファイルが何を指しているのかわらかなくなったので、まとめました。
+
+bash_profile_homeserver
+ bash_rc
+bashrc_homeserver
+ bash_rc homeserver
+geminstall
+ gemでよくつかっているものをまとめたもの
+installer
+ 大盛りなyumでのinstall
