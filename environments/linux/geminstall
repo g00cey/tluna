@@ -1,3 +1,7 @@
+\curl -sSL https://get.rvm.io | bash
+source ~/.profile
+source ~/.bashrc
+rvm install 2.1
 gem install \
 coffee-rails \
 passenger \
