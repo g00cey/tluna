@@ -54,4 +54,5 @@ jasper-devel \
 bzip2-devel \
 giflib-devel \
 ghostscript-devel \
-imagemagick
+imagemagick \
+postgresql-server
