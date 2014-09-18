@@ -1,0 +1,5 @@
+\curl -sSL https://get.rvm.io | bash
+source ~/.profile
+source ~/.bashrc
+rvm install 2.1
+rvm use 2.1 --default
