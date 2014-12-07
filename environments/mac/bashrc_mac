@@ -18,3 +18,5 @@ alias sudo="sudo env PATH=$PATH"
 
 #tailf
 alias tailf='tail -f'
+#perlbrew
+source /Users/luna/.perlbrew/etc/bashrc
