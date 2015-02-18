@@ -15,4 +15,5 @@ alias key-github='ssh-add ~/keys/git_id_rsa'
 
 alias sudo="sudo env PATH=$PATH"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$HOME/.phpenv/bin:$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+eval "$(phpenv init -)"
