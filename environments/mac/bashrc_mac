@@ -11,12 +11,17 @@ export EDITOR=vim
 export TERM=xterm-256color
 #ssh-agent ssh-add alias
 alias ssh-agent-run='exec ssh-agent bash'
-alias key-tluna='ssh-add /Users/luna/.ssh/tluna_id_rsa'
-alias key-github='ssh-add /Users/luna/.ssh/git_id_rsa'
-alias key-ubuntu='ssh-add /Users/luna/.ssh/centos_local'
+alias key-tluna='ssh-add /Volumes/ouhdd/Dropbox/key/tluna_id_rsa'
+alias key-github='ssh-add /Volumes/ouhdd/Dropbox/key/git_id_rsa'
+alias key-ubuntu='ssh-add /Volumes/ouhdd/Dropbox/key/centos_local'
 alias sudo="sudo env PATH=$PATH"
 
 #tailf
 alias tailf='tail -f'
 #perlbrew
 source /Users/luna/.perlbrew/etc/bashrc
+#vagrant
+export VAGRANT_HOME='/Volumes/ouhdd/vagrant/'
+
+#oracle_client
+source ~/.oracle_client
