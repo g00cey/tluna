@@ -6,6 +6,7 @@ endif
 
 " ツールバーを削除
 set guioptions-=T
+set showtabline=2
 
 "メニューを削除
 set guioptions-=m
