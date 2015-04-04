@@ -10,6 +10,7 @@ export PATH=~/bin/:~/.rvm/bin:/usr/local/gae/:/usr/local/sbin/:/usr/local/bin/:$
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export TERM=xterm-256color
+export VAGRANT_HOME=/mnt/2tv1/
 alias ssh-agent-run='exec ssh-agent bash'
 alias key-github='ssh-add ~/.ssh/git_id_rsa'
 
