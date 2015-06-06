@@ -134,7 +134,7 @@ if has("win32") || has("win64")
 else
   set dir=~/.vim/swap
   set backupdir=~/.vim/backup
-  set undodir=~/vimfiles/undo
+  set undodir=~/.vim/undo
 endif
 
 "fileenconrdings
