@@ -15,7 +15,10 @@ alias ssh-agent-run='exec ssh-agent bash'
 alias key-github='ssh-add ~/.ssh/git_id_rsa'
 
 alias sudo="sudo env PATH=$PATH"
+<<<<<<< HEAD
 
 #export PATH="$HOME/.phpenv/bin:$PATH:$HOME/.rvm/bin"
 #eval "$(phpenv init -)"
 #source ~/perl5/perlbrew/etc/bashrc
+=======
+>>>>>>> a2543aad6660ff0f571d814aadda02bd113511dc

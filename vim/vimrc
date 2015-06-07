@@ -130,9 +130,11 @@ set swapfile
 if has("win32") || has("win64")
   set dir=~/vimfiles/swap
   set backupdir=~/vimfiles/backup
+  set undodir=~/vimfiles/undo
 else
   set dir=~/.vim/swap
   set backupdir=~/.vim/backup
+  set undodir=~/.vim/undo
 endif
 
 "fileenconrdings
@@ -147,11 +149,11 @@ let g:rubycomplete_rails = 1
 
 "grep
 if has("win32") || has("win64")
-  let Grep_Path             = 'C:¥gnu¥bin¥grep.exe'
-  let Fgrep_Path            = 'C:¥gnu¥bin¥fgrep.exe -F'
-  let Egrep_Path            = 'C:¥gnu¥bin¥egrep.exe -E'
-  let Grep_Find_Path        = 'C:¥gnu¥bin¥find.exe'
-  let Grep_Xargs_Path       = 'C:¥gnu¥bin¥xargs.exe'
+  let Grep_Path             = 'C:\gnu\bin\grep.exe'
+  let Fgrep_Path            = 'C:\gnu\bin\fgrep.exe -F'
+  let Egrep_Path            = 'C:\gnu\bin\egrep.exe -E'
+  let Grep_Find_Path        = 'C:\gnu\bin\find.exe'
+  let Grep_Xargs_Path       = 'C:\gnu\bin\xargs.exe'
   let Grep_Shell_Quote_Char = '"'
   let Grep_Skip_Dirs = '.svn'
   let Grep_Skip_Files = '*.bak'
