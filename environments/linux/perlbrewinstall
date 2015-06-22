@@ -1,4 +1,0 @@
-#!/bin/bash
-#http://d.hatena.ne.jp/dimgraycat/20150203/1422951110
-curl -kL http://install.perlbrew.pl | sed "/\$PERLBREWDOWNLOAD/{N;s|$|sed -i -r '/@INC/ s/([)][}])/ vendorlib vendorarch\\\1/' \\\$LOCALINSTALLER\n|}" | bash
-source ~/perl5/perlbrew/etc/bashrc

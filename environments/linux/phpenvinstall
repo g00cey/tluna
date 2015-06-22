@@ -1,6 +1,0 @@
-#!/bin/bash
-cd ~/src/git/github/
-git clone https://github.com/CHH/phpenv.git
-cd phpenv/bin
-./phpenv-install.sh
-source ~/.bashrc
