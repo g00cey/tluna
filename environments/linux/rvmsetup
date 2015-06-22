@@ -1,3 +1,4 @@
+yum install make gcc autoconf
 \curl -sSL https://get.rvm.io | bash
 source ~/.profile
 source ~/.bashrc
