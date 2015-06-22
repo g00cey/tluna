@@ -30,8 +30,13 @@ ln -s ~/src/git/github/tluna/bin/             ~/bin
 ln -s ~/src/git/github/tluna/dotfiles/my.cnf  ~/.my.cnf
 
 #bash
-ln -s ~/src/git/github/tluna/environments/linux/bashrc_homeserver              ~/.bashrc
-ln -s ~/src/git/github/tluna/environments/linux/bash_profile_homeserver        ~/.bash_profile
+if [ `hostname` == 'e420.tluna.mydns.jp' ]; then
+   ln -s ~/src/git/github/tluna/environments/linux/bashrc_homeserver_e420                     ~/.bashrc
+   ln -s ~/src/git/github/tluna/environments/linux/bash_profile_homeserver_e420               ~/.bash_profile
+elif [ `hostname` == 'express5100.tluna.mydns.jp' ]; then 
+   ln -s ~/src/git/github/tluna/environments/linux/bashrc_homeserver_express5100              ~/.bashrc
+   ln -s ~/src/git/github/tluna/environments/linux/bash_profile_homeserver_express5100        ~/.bash_profile
+fi
 
 #git settings
 git config --global user.name "t1una"
