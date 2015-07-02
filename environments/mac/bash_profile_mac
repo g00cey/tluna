@@ -8,4 +8,7 @@ fi
 # User specific environment and startup programs
 export WORDCHARS='?_-.[]~=&;!#$%^(){}<>'
 
+export ORACLE_HOME=~/bin/sqlplus/instantclient_11_2
+export PATH=$ORACLE_HOME:$PATH export DYLD_LIBRARY_PATH=~/bin/sqlplus/instantclient_11_2
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
