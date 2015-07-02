@@ -20,5 +20,14 @@ alias tailf='tail -f'
 #perlbrew
 export PERLBREW_ROOT=$HOME/.perlbrew
 source /Users/luna/.perlbrew/etc/bashrc
-#phpenv
 eval "$(phpenv init -)"
+#vagrant
+export VAGRANT_HOME='/Volumes/ouhdd/vagrant/'
+
+#oracle_client
+source ~/.oracle_client
+
+#boot2docker
+    export DOCKER_HOST=tcp://192.168.59.104:2376
+    export DOCKER_CERT_PATH=/Users/luna/.boot2docker/certs/boot2docker-vm
+    export DOCKER_TLS_VERIFY=1

@@ -1,6 +1,10 @@
 if has("mac")
   set guifont=Osaka-Mono:h13
-  set transparency=20
+  set transparency=200
+  colorscheme torte
+elseif has("win32") || has("win64")
+  set guifont=MS_Gothic:h10:cSHIFTJIS
+  set transparency=200
   colorscheme torte
 endif
 
