@@ -5,7 +5,11 @@ rm -rf ~/.w3m
 rm ~/.gitconfig
 rm ~/.irbrc
 rm ~/.bashrc
-rm ~/.bash_profile
+if [ -e /etc/debian_version ]; then
+  rm ~/.profile
+else
+  rm ~/.bash_profile
+fi
 rm ~/.ctags
 rm ~/bin
 rm ~/.vimrc
@@ -30,12 +34,17 @@ ln -s ~/src/git/github/tluna/bin/             ~/bin
 ln -s ~/src/git/github/tluna/dotfiles/my.cnf  ~/.my.cnf
 
 #bash
-if [ `hostname` == 'e420.tluna.mydns.jp' ]; then
-   ln -s ~/src/git/github/tluna/environments/linux/bashrc_homeserver_e420                     ~/.bashrc
-   ln -s ~/src/git/github/tluna/environments/linux/bash_profile_homeserver_e420               ~/.bash_profile
-elif [ `hostname` == 'express5100.tluna.mydns.jp' ]; then 
-   ln -s ~/src/git/github/tluna/environments/linux/bashrc_homeserver_express5100              ~/.bashrc
-   ln -s ~/src/git/github/tluna/environments/linux/bash_profile_homeserver_express5100        ~/.bash_profile
+if [ -e /etc/redhat-release ]; then
+  if [ `hostname` == 'edge' ]; then
+     ln -s ~/src/git/github/tluna/environments/linux/bashrc/homeserver_e420              ~/.bashrc
+     ln -s ~/src/git/github/tluna/environments/linux/bash_profile/homeserver_e420        ~/.bash_profile
+  elif [ `hostname` == 'express5100' ]; then 
+     ln -s ~/src/git/github/tluna/environments/linux/bashrc/homeserver_express5100       ~/.bashrc
+     ln -s ~/src/git/github/tluna/environments/linux/bash_profile/homeserver_express5100 ~/.bash_profile
+  fi
+elif [ -e /etc/debian_version ]; then
+  ln -s ~/src/git/github/tluna/environments/linux/bashrc/debian_e420                     ~/.bashrc
+  ln -s ~/src/git/github/tluna/environments/linux/bash_profile/debian_e420               ~/.profile
 fi
 
 #git settings
