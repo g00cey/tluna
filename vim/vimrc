@@ -38,6 +38,7 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 
 "original repos on github
 Bundle 'grep.vim'
+Bundle 'vimshell.vim'
 Bundle 'dbext.vim'
 Bundle 'fugitive.vim'
 Bundle 'vimgrep.vim'
