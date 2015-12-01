@@ -9,12 +9,20 @@ fi
 # User specific aliases and functions
 export LANG=ja_JP.UTF8
 
-export PATH=~/bin/:$PATH
+#export PATH=~/.linuxbrew/bin:~/node_modules/.bin:~/bin:$PATH
+export PATH=~/bin:$PATH
+#export MANPATH=~/.linuxbrew/share/man:$MANPATH
+#export INFOPATH=~/.linuxbrew/share/info:$INFOPATH
+#export LD_LIBRARY_PATH=~/.linuxbrew/lib:$LD_LIBRARY_PATH
 export EDITOR=vim
 export TERM=xterm-256color
-export VAGRANT_HOME=/mnt/2tv1/
+export VAGRANT_HOME=/mnt/2tv1/vagrant/
+alias sudo="sudo env PATH=$PATH"
 alias ssh-agent-run='exec ssh-agent bash'
 alias key-github='ssh-add ~/.ssh/git_id_rsa'
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
-alias sudo="sudo env PATH=$PATH"
-
+#japanese input 
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
