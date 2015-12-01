@@ -35,16 +35,15 @@ ln -s ~/src/git/github/tluna/dotfiles/my.cnf  ~/.my.cnf
 
 #bash
 if [ -e /etc/redhat-release ]; then
-  if [ `hostname` == 'edge' ]; then
+  #if [ `hostname` == 'tluna' ]; then
      ln -s ~/src/git/github/tluna/environments/linux/bashrc/homeserver_e420              ~/.bashrc
      ln -s ~/src/git/github/tluna/environments/linux/bash_profile/homeserver_e420        ~/.bash_profile
-  elif [ `hostname` == 'express5100' ]; then 
-     ln -s ~/src/git/github/tluna/environments/linux/bashrc/homeserver_express5100       ~/.bashrc
-     ln -s ~/src/git/github/tluna/environments/linux/bash_profile/homeserver_express5100 ~/.bash_profile
-  fi
+  #fi
 elif [ -e /etc/debian_version ]; then
-  ln -s ~/src/git/github/tluna/environments/linux/bashrc/debian_e420                     ~/.bashrc
-  ln -s ~/src/git/github/tluna/environments/linux/bash_profile/debian_e420               ~/.profile
+  #if [ `hostname` == 'tluna' ]; then
+     ln -s ~/src/git/github/tluna/environments/linux/bashrc/debian_e420                     ~/.bashrc
+     ln -s ~/src/git/github/tluna/environments/linux/bash_profile/debian_e420               ~/.profile
+  #fi
 fi
 
 #git settings
