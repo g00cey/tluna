@@ -23,7 +23,7 @@ ln -s ~/src/git/github/tluna/gitconfig        ~/.gitconfig
 ln -s ~/src/git/github/tluna/irbrc            ~/.irbrc
 ln -s ~/src/git/github/tluna/tmux.conf        ~/.tmux.conf
 ln -s ~/src/git/github/tluna/ctags            ~/.ctags
-ln -s ~/src/git/github/tluna/bin/             ~/bin
+ln -s ~/src/git/github/tluna/bin              ~/bin
 
 #bash
 ln -s ~/src/git/github/tluna/environments/mac/bashrc_mac              ~/.bashrc
@@ -46,6 +46,6 @@ rm ~/.vim/vimrc
 rm ~/.vim/vimrc-work
 
 #cpanm
-cd /Volumes/sd/src/git/github/tluna/bin/
-curl -LOk http://xrl.us/cpanm
-chmod u+x cpanm
+#cd /Volumes/3tv1/src/git/github/tluna/bin/
+#curl -LOk http://xrl.us/cpanm
+#chmod u+x cpanm
