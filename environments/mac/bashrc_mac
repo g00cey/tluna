@@ -19,16 +19,16 @@ alias sudo="sudo env PATH=$PATH"
 #tailf
 alias tailf='tail -f'
 #perlbrew
-export PERLBREW_ROOT=$HOME/.perlbrew
-source ~/.perlbrew/etc/bashrc 
+#export PERLBREW_ROOT=$HOME/.perlbrew
+#source ~/.perlbrew/etc/bashrc 
 #source /Users/luna/.perlbrew/etc/bashrc
 #phpenv
-eval "$(phpenv init -)"
+#eval "$(phpenv init -)"
 #vagrant
-export VAGRANT_HOME='/Volumes/ouhdd/vagrant/'
+#export VAGRANT_HOME='/Volumes/ouhdd/vagrant/'
 
 #oracle_client
-source ~/.oracle_client
+#source ~/.oracle_client
 
 #boot2docker
 machine_name='default'
