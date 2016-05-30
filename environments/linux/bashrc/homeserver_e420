@@ -23,6 +23,6 @@ alias key-github='ssh-add ~/.ssh/git_id_rsa'
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 #japanese input 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+#export GTK_IM_MODULE=ibus
+#export XMODIFIERS=@im=ibus
+#export QT_IM_MODULE=ibus
