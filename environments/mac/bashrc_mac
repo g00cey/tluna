@@ -8,7 +8,7 @@ export PATH=~/bin:/usr/local/bin:/usr/local/gae:/usr/local/sbin:/usr/local/bin:/
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export TERM=xterm-256color
-export VAGRANT_HOME=/Volumes/ouhdd/vagrant
+export VAGRANT_HOME=/Volumes/1tv2/vms/vagrant
 #ssh-agent ssh-add alias
 alias ssh-agent-run='exec ssh-agent bash'
 alias key-tluna='ssh-add /Users/luna/.ssh/tluna_id_rsa'
@@ -25,23 +25,22 @@ alias tailf='tail -f'
 #phpenv
 #eval "$(phpenv init -)"
 #vagrant
-export VAGRANT_HOME='/Volumes/3tv1/vagrant'
 
 #oracle_client
 #source ~/.oracle_client
 
 #boot2docker
-machine_name='defaults'
-docker_machine_status=`""docker-machine status ""$machine_name""`
-#なかったら
-if [ "$docker_machine_status" = "" ]; then
-  docker-machine create --driver=virtualbox "$machine_name"
-fi
-#あったら
-echo "$docker_machine_status"
-if [ "$docker_machine_status" = 'Stopped' ]; then
-    docker-machine start $machine_name
-fi
-if [ "$docker_machine_status" = 'Running' ]; then
-  eval "$(docker-machine env $machine_name)"
-fi
+#machine_name='defaults'
+#docker_machine_status=`""docker-machine status ""$machine_name""`
+##なかったら
+#if [ "$docker_machine_status" = "" ]; then
+#  docker-machine create --driver=virtualbox "$machine_name"
+#fi
+##あったら
+#echo "$docker_machine_status"
+#if [ "$docker_machine_status" = 'Stopped' ]; then
+#    docker-machine start $machine_name
+#fi
+#if [ "$docker_machine_status" = 'Running' ]; then
+#  eval "$(docker-machine env $machine_name)"
+#fi
