@@ -4,7 +4,8 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
-export PATH=~/bin:/usr/local/bin:/usr/local/gae:/usr/local/sbin:/usr/local/bin:/sbin:$PATH
+export PATH=~/bin:/Volumes/2tv1/homebrew/bin:~/.nodebrew/current/bin:/usr/local/bin:/usr/local/gae:/usr/local/sbin:/usr/local/bin:/sbin:$PATH
+
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export TERM=xterm-256color
@@ -18,29 +19,8 @@ alias sudo="sudo env PATH=$PATH"
 
 #tailf
 alias tailf='tail -f'
-#perlbrew
-#export PERLBREW_ROOT=$HOME/.perlbrew
-#source ~/.perlbrew/etc/bashrc 
-#source /Users/luna/.perlbrew/etc/bashrc
-#phpenv
-#eval "$(phpenv init -)"
-#vagrant
 
-#oracle_client
-#source ~/.oracle_client
+export HOMEBREW_GITHUB_API_TOKEN="3b21e93ebac5c3ecbe9d9b98166931c30451e468"
 
-#boot2docker
-#machine_name='defaults'
-#docker_machine_status=`""docker-machine status ""$machine_name""`
-##なかったら
-#if [ "$docker_machine_status" = "" ]; then
-#  docker-machine create --driver=virtualbox "$machine_name"
-#fi
-##あったら
-#echo "$docker_machine_status"
-#if [ "$docker_machine_status" = 'Stopped' ]; then
-#    docker-machine start $machine_name
-#fi
-#if [ "$docker_machine_status" = 'Running' ]; then
-#  eval "$(docker-machine env $machine_name)"
-#fi
+#phpbrew
+#source ~/.phpbrew/bashrc

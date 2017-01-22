@@ -44,8 +44,3 @@ cp -rf ~/src/git/github/tluna/vim ~/.vim
 rm ~/.vim/gvimrc
 rm ~/.vim/vimrc
 rm ~/.vim/vimrc-work
-
-#cpanm
-#cd /Volumes/3tv1/src/git/github/tluna/bin/
-#curl -LOk http://xrl.us/cpanm
-#chmod u+x cpanm
