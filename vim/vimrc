@@ -17,6 +17,9 @@ else
   let g:ref_refe_cmd = "/home/luna/manual/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3"
 endif
 call vundle#rc('$DOTVIM/bundle')
+if $MACHINE_NAME=='aspire_one'
+  let $HOME=('D:\luna')
+endif
 
 "ssh
 if (has('win32') || has('win64'))
@@ -24,6 +27,11 @@ if (has('win32') || has('win64'))
     let g:netrw_scp_cmd = "C:\\soft\\putty\\pscp.exe -q batch"
     let g:netrw_sftp_cmd = "C:\\soft\\putty\\psftp.exe"
     let g:netrw_ssh_cmd = "C:\\soft\\putty\\plink.exe"
+    if $MACHINE_NAME=='aspire_one'
+      let g:netrw_scp_cmd = "D:\\soft\\puttyjp\\pscp.exe -q batch"
+      let g:netrw_sftp_cmd = "D:\\soft\\puttyjp\\psftp.exe"
+      let g:netrw_ssh_cmd = "D:\\soft\\puttyjp\\plink.exe"
+    endif
 endif
 
 "templates
@@ -37,9 +45,11 @@ set laststatus=2 "ステータスラインを常に表示
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
 "original repos on github
+Bundle 'CtrlP.vim'
 Bundle 'grep.vim'
 Bundle 'vimshell.vim'
 Bundle 'dbext.vim'
+Bundle 'Shougo/vimfiler.vim'
 Bundle 'fugitive.vim'
 Bundle 'vimgrep.vim'
 Bundle 'listtag'
@@ -151,14 +161,25 @@ let g:rubycomplete_rails = 1
 
 "grep
 if has("win32") || has("win64")
-  let Grep_Path             = 'C:\gnu\bin\grep.exe'
-  let Fgrep_Path            = 'C:\gnu\bin\fgrep.exe -F'
-  let Egrep_Path            = 'C:\gnu\bin\egrep.exe -E'
-  let Grep_Find_Path        = 'C:\gnu\bin\find.exe'
-  let Grep_Xargs_Path       = 'C:\gnu\bin\xargs.exe'
-  let Grep_Shell_Quote_Char = '"'
-  let Grep_Skip_Dirs = '.svn'
-  let Grep_Skip_Files = '*.bak'
+  if $MACHINE_NAME=='aspire_one'
+    let Grep_Path             = 'D:\bin\bin\grep.exe'
+    let Fgrep_Path            = 'D:\bin\bin\fgrep.exe -F'
+    let Egrep_Path            = 'D:\bin\bin\egrep.exe -E'
+    let Grep_Find_Path        = 'D:\bin\bin\find.exe'
+    let Grep_Xargs_Path       = 'D:\bin\bin\xargs.exe'
+    let Grep_Shell_Quote_Char = '"'
+    let Grep_Skip_Dirs = '.svn'
+    let Grep_Skip_Files = '*.bak'
+  else
+    let Grep_Path             = 'C:\gnu\bin\grep.exe'
+    let Fgrep_Path            = 'C:\gnu\bin\fgrep.exe -F'
+    let Egrep_Path            = 'C:\gnu\bin\egrep.exe -E'
+    let Grep_Find_Path        = 'C:\gnu\bin\find.exe'
+    let Grep_Xargs_Path       = 'C:\gnu\bin\xargs.exe'
+    let Grep_Shell_Quote_Char = '"'
+    let Grep_Skip_Dirs = '.svn'
+    let Grep_Skip_Files = '*.bak'
+  endif
 else
   let Grep_Path             = 'grep'
   let Fgrep_Path            = 'fgrep'
@@ -246,3 +267,20 @@ let g:SrcExpl_updateTagsKey = "<F12>"
 if filereadable(expand('~/rcfiles/dbsettings'))
   source ~/rcfiles/dbsettings
 endif
+
+"unite
+" 大文字小文字を区別しない
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+" grep検索
+nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+
+" unite grep に ag(The Silver Searcher) を使う
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+  let g:ctrlp_use_caching=0 " CtrlPのキャッシュを使わない
+  let g:ctrlp_user_command='ag %s -i --hidden -g ""' " 「ag」の検索設定
+endif
+
