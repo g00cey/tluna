@@ -8,5 +8,6 @@ w3m/*
 vim/bundle/*
 bin/cpanm
 lang/php/basic_auth/mydns.jp.setting.php
+dotfiles/anyenv/
 
 /vim/.netrwhist

@@ -1,22 +1,23 @@
 #!/bin/bash
 
 #delete links
-rm -rf ~/.w3m
-rm ~/.gitconfig
-rm ~/.irbrc
-rm ~/.bashrc
+unlink -rf ~/.w3m
+unlink ~/.gitconfig
+unlink ~/.irbrc
+unlink ~/.bashrc
 if [ -e /etc/debian_version ]; then
-  rm ~/.profile
+  unlink ~/.profile
 else
-  rm ~/.bash_profile
+  unlink ~/.bash_profile
 fi
-rm ~/.ctags
-rm ~/bin
-rm ~/.vimrc
-rm ~/.gvimrc
-rm -rf  ~/.vim
-rm ~/.tmux.conf
-rm ~/.my.cnf
+unlink ~/.ctags
+unlink ~/bin
+unlink ~/.vimrc
+unlink ~/.gvimrc
+unlink -rf  ~/.vim
+unlink ~/.tmux.conf
+unlink ~/.my.cnf
+unlink ~/.anyenv
 
 #vim
 ln -s ~/src/git/github/tluna/vim/vimrc        ~/.vimrc
@@ -24,7 +25,6 @@ ln -s ~/src/git/github/tluna/vim/gvimrc       ~/.gvimrc
 ln -s ~/src/git/github/tluna/vim              ~/.vim
 
 #another dot files and w3m
-
 ln -s ~/src/git/github/tluna/w3m/             ~/.w3m
 ln -s ~/src/git/github/tluna/gitconfig        ~/.gitconfig
 ln -s ~/src/git/github/tluna/irbrc            ~/.irbrc
@@ -32,6 +32,7 @@ ln -s ~/src/git/github/tluna/tmux.conf        ~/.tmux.conf
 ln -s ~/src/git/github/tluna/ctags            ~/.ctags
 ln -s ~/src/git/github/tluna/bin/             ~/bin
 ln -s ~/src/git/github/tluna/dotfiles/my.cnf  ~/.my.cnf
+#ln -s ~/src/git/github/tluna/dotfiles/anyenv  ~/.anyenv
 
 #bash
 if [ -e /etc/redhat-release ]; then
