@@ -120,3 +120,5 @@ export EDITOR=vim
 export VAGRANT_HOME=/mnt/2tv1/
 alias ssh-agent-run='exec ssh-agent bash'
 alias key-github='ssh-add ~/.ssh/git_id_rsa'
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
