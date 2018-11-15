@@ -7,6 +7,7 @@ w3m/*
 !w3m/config
 vim/bundle/*
 bin/cpanm
+bin/tig
 lang/php/basic_auth/mydns.jp.setting.php
 dotfiles/anyenv/
 
