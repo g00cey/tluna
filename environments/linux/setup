@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #delete links
-unlink -rf ~/.w3m
+unlink ~/.w3m
 unlink ~/.gitconfig
 unlink ~/.irbrc
 unlink ~/.bashrc
@@ -14,7 +14,7 @@ unlink ~/.ctags
 unlink ~/bin
 unlink ~/.vimrc
 unlink ~/.gvimrc
-unlink -rf  ~/.vim
+unlink ~/.vim
 unlink ~/.tmux.conf
 unlink ~/.my.cnf
 unlink ~/.anyenv
@@ -32,18 +32,18 @@ ln -s ~/src/git/github/tluna/tmux.conf        ~/.tmux.conf
 ln -s ~/src/git/github/tluna/ctags            ~/.ctags
 ln -s ~/src/git/github/tluna/bin/             ~/bin
 ln -s ~/src/git/github/tluna/dotfiles/my.cnf  ~/.my.cnf
-#ln -s ~/src/git/github/tluna/dotfiles/anyenv  ~/.anyenv
+ln -s ~/src/git/github/anyenv                 ~/.anyenv
 
 #bash
 if [ -e /etc/redhat-release ]; then
   #if [ `hostname` == 'tluna' ]; then
-     ln -s ~/src/git/github/tluna/environments/linux/bashrc/homeserver_e420              ~/.bashrc
-     ln -s ~/src/git/github/tluna/environments/linux/bash_profile/homeserver_e420        ~/.bash_profile
+     ln -s ~/src/git/github/tluna/environments/linux/bashrc/redhat              ~/.bashrc
+     ln -s ~/src/git/github/tluna/environments/linux/bash_profile/redhat        ~/.bash_profile
   #fi
 elif [ -e /etc/debian_version ]; then
   #if [ `hostname` == 'tluna' ]; then
-     ln -s ~/src/git/github/tluna/environments/linux/bashrc/debian_e420                     ~/.bashrc
-     ln -s ~/src/git/github/tluna/environments/linux/bash_profile/debian_e420               ~/.profile
+     ln -s ~/src/git/github/tluna/environments/linux/bashrc/debian              ~/.bashrc
+     ln -s ~/src/git/github/tluna/environments/linux/bash_profile/debian        ~/.profile
   #fi
 fi
 
