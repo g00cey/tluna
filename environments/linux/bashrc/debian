@@ -117,8 +117,8 @@ if ! shopt -oq posix; then
 fi
 export PATH=~/bin/:~/.rvm/bin:/usr/local/gae/:/usr/local/sbin/:/usr/local/bin/:$PATH
 export EDITOR=vim
-export VAGRANT_HOME=/mnt/1tv1/vagrant
-export VBOX_USER_HOME=/mnt/1tv1/virtualboxdir
+#export VAGRANT_HOME=/mnt/1tv1/vagrant
+#export VBOX_USER_HOME=/mnt/1tv1/virtualboxdir
 alias ssh-agent-run='exec ssh-agent bash'
 alias key-github='ssh-add ~/.ssh/git_id_rsa'
 export PATH="$HOME/.anyenv/bin:$PATH"
