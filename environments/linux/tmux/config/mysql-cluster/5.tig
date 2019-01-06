@@ -1,0 +1,5 @@
+### 5th Window
+## rename window
+new-window
+rename-window -t 4 tig
+send-keys -t tig.0 'cd workspace/Knights/mysql-cluster; tig' C-m

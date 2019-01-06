@@ -32,7 +32,7 @@ ln -s ~/src/git/github/tluna/tmux.conf        ~/.tmux.conf
 ln -s ~/src/git/github/tluna/ctags            ~/.ctags
 ln -s ~/src/git/github/tluna/bin/             ~/bin
 ln -s ~/src/git/github/tluna/dotfiles/my.cnf  ~/.my.cnf
-ln -s ~/src/git/github/anyenv  ~/.anyenv
+ln -s ~/src/git/github/anyenv                 ~/.anyenv
 
 #bash
 if [ -e /etc/redhat-release ]; then

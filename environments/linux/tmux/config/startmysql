@@ -1,0 +1,5 @@
+source-file ~/tmux/config/mysql-cluster/1.ansible
+source-file ~/tmux/config/mysql-cluster/2.vim
+source-file ~/tmux/config/mysql-cluster/3.vagrant
+source-file ~/tmux/config/mysql-cluster/4.vagrant-ssh
+source-file ~/tmux/config/mysql-cluster/5.tig
