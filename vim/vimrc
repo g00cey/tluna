@@ -142,8 +142,8 @@ set backup
 set swapfile
 if has("win32") || has("win64")
   set dir=~/vimfiles/swap
-  set backupdir=~/vimfiles/backup
-  set undodir=~/vimfiles/undo
+  set backupdir=~/_vim/backup
+  set undodir=~/_vim/undo
 else
   set dir=~/.vim/swap
   set backupdir=~/.vim/backup
