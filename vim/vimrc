@@ -1,9 +1,9 @@
 "Vundle refe
 if has("win32") || has("win64")
-  set rtp+=~/vimfiles/vundle/
-  let $DOTVIM = expand('~/vimfiles')
-  let g:ref_phpmanual_path = 'C:\Users\a_gushi\Documents\manual\phpmanual'
-  let g:ref_refe_cmd = "C:\Users\a_gushi\Documents\manual"
+  set rtp+=~/_vim/vundle/
+  let $DOTVIM = expand('~/_vim')
+  let g:ref_phpmanual_path = 'C:\Users\luna\Documents\manual\phpmanual'
+  let g:ref_refe_cmd = "C:\Users\luna\Documents\manual"
 elseif has("mac")
   set rtp+=~/.vim/vundle/
   let $DOTVIM = expand('~/.vim')
