@@ -1,6 +1,0 @@
-OS:
-ProductName:
-ProductCode:
-AntiVirus:OK or NG(カスペルスキーの場合はシリアルも)
-office:
-soft:
