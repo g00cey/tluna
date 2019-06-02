@@ -1,6 +1,7 @@
 "Vundle refe
 if has("win32") || has("win64")
   set rtp+=~/_vim/vundle/
+  "set rtp+=~/_vim/after/
   let $DOTVIM = expand('~/_vim')
   let g:ref_phpmanual_path = 'C:\Users\luna\Documents\manual\phpmanual'
   let g:ref_refe_cmd = "C:\Users\luna\Documents\manual"
@@ -45,6 +46,7 @@ set laststatus=2 "ステータスラインを常に表示
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
 "original repos on github
+Bundle 'vim-google-scribe'
 Bundle 'CtrlP.vim'
 Bundle 'grep.vim'
 "Bundle 'shougo/vimproc'
@@ -63,7 +65,7 @@ Bundle 'vcscommand.vim'
 Bundle 'matchit.zip'
 Bundle 'neocomplcache'
 Bundle 'EnhCommentify.vim'
-Bundle 'unite.vim'
+"Bundle 'unite.vim'
 Bundle 'surround.vim'
 Bundle 'quickrun'
 Bundle 'superSnipMate'
@@ -78,7 +80,7 @@ Bundle 'taglist.vim'
 Bundle 'tabpage.vim'
 if has("win32") || has("win64")
   Bundle 'BlockDiff'
-  Bundle 'DirDiff'
+  Bundle 'DirDiff.vim'
 elseif has("mac")
   Bundle 'DirDiff.vim'
 else
@@ -109,9 +111,8 @@ let g:netrw_alto = 1
 set foldmethod=manual
 
 " edit
-set autoindent
-set smartindent
 set showmatch
+set matchtime=1
 set wildmenu
 set ruler
 
@@ -119,12 +120,6 @@ set ruler
 set wildmode=longest,list
 
 "tab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-set expandtab
-set autoindent
 set list
 set lcs=tab:>.,trail:_,extends:\
 highlight SpecialKey cterm=NONE ctermfg=7 guifg=LightRed
@@ -271,17 +266,17 @@ endif
 
 "unite
 " 大文字小文字を区別しない
-let g:unite_enable_ignore_case = 1
-let g:unite_enable_smart_case = 1
+"let g:unite_enable_ignore_case = 1
+"let g:unite_enable_smart_case = 1
 " grep検索
-nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+"nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 
 " unite grep に ag(The Silver Searcher) を使う
-if executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-  let g:unite_source_grep_recursive_opt = ''
-  let g:ctrlp_use_caching=0 " CtrlPのキャッシュを使わない
-  let g:ctrlp_user_command='ag %s -i --hidden -g ""' " 「ag」の検索設定
-endif
+"if executable('ag')
+"  let g:unite_source_grep_command = 'ag'
+"  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+"  let g:unite_source_grep_recursive_opt = ''
+"  let g:ctrlp_use_caching=0 " CtrlPのキャッシュを使わない
+"  let g:ctrlp_user_command='ag %s -i --hidden -g ""' " 「ag」の検索設定
+"endif
 
