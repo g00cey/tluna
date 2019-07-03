@@ -4,3 +4,6 @@
 [submodule "dotfiles/anyenv"]
 	path = dotfiles/anyenv
 	url = https://github.com/riywo/anyenv
+[submodule "anyenv"]
+	path = anyenv
+	url = https://github.com/anyenv/anyenv.git
