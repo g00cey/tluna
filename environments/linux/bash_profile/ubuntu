@@ -1,0 +1,4 @@
+export PATH="/mnt/usb1/anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
