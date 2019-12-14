@@ -1,39 +1,53 @@
-"Vundle refe
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+"original repos on github
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'go.vim'
+Plugin 'CtrlP.vim'
+Plugin 'grep.vim'
+"Bundle 'shougo/vimproc'
+Plugin 'shougo/vimshell'
+Plugin 'dbext.vim'
+Plugin 'Shougo/vimfiler.vim'
+Plugin 'fugitive.vim'
+Plugin 'vimgrep.vim'
+Plugin 'listtag'
+Plugin 'git://github.com/thinca/vim-ref.git'
+Plugin 'git://github.com/tpope/vim-rails.git'
+Plugin 'eruby.vim'
+Plugin 'ruby.vim'
+Plugin 'Align'
+Plugin 'vcscommand.vim'
+Plugin 'matchit.zip'
+Plugin 'neocomplcache'
+Plugin 'EnhCommentify.vim'
+"Bundle 'unite.vim'
+Plugin 'surround.vim'
+Plugin 'quickrun'
+Plugin 'superSnipMate'
+Plugin 'local_vimrc.vim'
+Plugin 'quickrun.vim'
+Plugin 'copypath.vim'
+Plugin 'vcscommand.vim'
+Plugin 'https://github.com/wesleyche/SrcExpl.git'
+Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'https://github.com/wesleyche/Trinity.git'
+Plugin 'taglist.vim'
+Plugin 'tabpage.vim'
 if has("win32") || has("win64")
-  set rtp+=~/_vim/vundle/
-  "set rtp+=~/_vim/after/
-  let $DOTVIM = expand('~/_vim')
-  let g:ref_phpmanual_path = 'C:\Users\luna\Documents\manual\phpmanual'
-  let g:ref_refe_cmd = "C:\Users\luna\Documents\manual"
-elseif has("mac")
-  set rtp+=~/.vim/vundle/
-  let $DOTVIM = expand('~/.vim')
-  let g:ref_phpmanual_path = '/Users/luna/Documents/manual/phpmanual'
-  let g:ref_refe_cmd = "/Users/luna/Documents/manual/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3"
+  Plugin 'BlockDiff'
+  Plugin 'DirDiff.vim'
 else
-  set rtp+=~/.vim/vundle/
-  let $DOTVIM = expand('~/.vim')
-  let g:ref_phpmanual_path = '/home/luna/manual/phpmanual'
-  let g:ref_phpmanual_path = '/home/luna/manual/php-chunked-xhtml'
-  let g:ref_refe_cmd = "/home/luna/manual/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3"
-endif
-call vundle#rc('$DOTVIM/bundle')
-if $MACHINE_NAME=='aspire_one'
-  let $HOME=('D:\luna')
+  Plugin 'DirDiff.vim'
 endif
 
-"ssh
-if (has('win32') || has('win64'))
-    "use scp
-    let g:netrw_scp_cmd = "C:\\soft\\putty\\pscp.exe -q batch"
-    let g:netrw_sftp_cmd = "C:\\soft\\putty\\psftp.exe"
-    let g:netrw_ssh_cmd = "C:\\soft\\putty\\plink.exe"
-    if $MACHINE_NAME=='aspire_one'
-      let g:netrw_scp_cmd = "D:\\soft\\puttyjp\\pscp.exe -q batch"
-      let g:netrw_sftp_cmd = "D:\\soft\\puttyjp\\psftp.exe"
-      let g:netrw_ssh_cmd = "D:\\soft\\puttyjp\\plink.exe"
-    endif
-endif
+call vundle#end()
+"vim basic settings
+filetype plugin indent on
+syntax on
 
 "templates
 augroup SkeletonAu
@@ -44,53 +58,6 @@ augroup END
 set showcmd "ステータスラインにコマンドを表示
 set laststatus=2 "ステータスラインを常に表示
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
-
-"original repos on github
-Bundle 'go.vim'
-Bundle 'CtrlP.vim'
-Bundle 'grep.vim'
-"Bundle 'shougo/vimproc'
-Bundle 'shougo/vimshell'
-Bundle 'dbext.vim'
-Bundle 'Shougo/vimfiler.vim'
-Bundle 'fugitive.vim'
-Bundle 'vimgrep.vim'
-Bundle 'listtag'
-Bundle 'git://github.com/thinca/vim-ref.git'
-Bundle 'git://github.com/tpope/vim-rails.git'
-Bundle 'eruby.vim'
-Bundle 'ruby.vim'
-Bundle 'Align'
-Bundle 'vcscommand.vim'
-Bundle 'matchit.zip'
-Bundle 'neocomplcache'
-Bundle 'EnhCommentify.vim'
-"Bundle 'unite.vim'
-Bundle 'surround.vim'
-Bundle 'quickrun'
-Bundle 'superSnipMate'
-Bundle 'local_vimrc.vim'
-Bundle 'quickrun.vim'
-Bundle 'copypath.vim'
-Bundle 'vcscommand.vim'
-Bundle 'https://github.com/wesleyche/SrcExpl.git'
-Bundle 'https://github.com/scrooloose/nerdtree.git'
-Bundle 'https://github.com/wesleyche/Trinity.git'
-Bundle 'taglist.vim'
-Bundle 'tabpage.vim'
-if has("win32") || has("win64")
-  Bundle 'BlockDiff'
-  Bundle 'DirDiff.vim'
-elseif has("mac")
-  Bundle 'DirDiff.vim'
-else
-  Bundle 'DirDiff.vim'
-endif
-
-
-""vim basic settings
-syntax on
-filetype plugin indent on
 
 "filetype
 au! BufNewFile,BufRead *.changelog setf changelog
@@ -106,6 +73,19 @@ let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_altv = 1
 " 'o'でファイルを開くときは下側に開く。(デフォルトが上側なので入れ替え)
 let g:netrw_alto = 1
+
+"ssh
+if (has('win32') || has('win64'))
+    "use scp
+    let g:netrw_scp_cmd = "C:\\soft\\putty\\pscp.exe -q batch"
+    let g:netrw_sftp_cmd = "C:\\soft\\putty\\psftp.exe"
+    let g:netrw_ssh_cmd = "C:\\soft\\putty\\plink.exe"
+    if $MACHINE_NAME=='aspire_one'
+      let g:netrw_scp_cmd = "D:\\soft\\puttyjp\\pscp.exe -q batch"
+      let g:netrw_sftp_cmd = "D:\\soft\\puttyjp\\psftp.exe"
+      let g:netrw_ssh_cmd = "D:\\soft\\puttyjp\\plink.exe"
+    endif
+endif
 
 "fold
 set foldmethod=manual

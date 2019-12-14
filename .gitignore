@@ -6,6 +6,7 @@ w3m/*
 !w3m/bookmark.html
 !w3m/config
 vim/bundle/*
+!vim/bundle/Vundle.vim
 bin/cpanm
 bin/tig
 lang/php/basic_auth/mydns.jp.setting.php

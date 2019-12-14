@@ -121,5 +121,5 @@ export EDITOR=vim
 #export VBOX_USER_HOME=/mnt/1tv1/virtualboxdir
 alias ssh-agent-run='exec ssh-agent bash'
 alias key-github='ssh-add ~/.ssh/git_id_rsa'
-export PATH="$HOME/src/git/github/tluna/anyenv/bin:$PATH"
+export PATH="~/Android/Sdk/platform-tools:~/src/git/github/tluna/anyenv/bin:$PATH"
 eval "$(anyenv init -)"
