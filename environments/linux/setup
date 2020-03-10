@@ -18,7 +18,6 @@ unlink ~/.vim
 unlink ~/.tmux.conf
 unlink ~/.my.cnf
 unlink ~/.anyenv
-unlink ~/.anyenv
 unlink ~/.tmuxfiles
 
 #vim
@@ -35,7 +34,7 @@ ln -s ~/src/git/github/tluna/ctags            ~/.ctags
 ln -s ~/src/git/github/tluna/bin/             ~/bin
 ln -s ~/src/git/github/tluna/dotfiles/my.cnf  ~/.my.cnf
 #anyenv
-ln -s ~/src/git/github/tluna/.anyenv  ~/.anyenv
+ln -s ~/src/git/github/tluna/dotfiles/anyenv  ~/.anyenv
 ln -s ~/src/git/github/tluna/dotfiles/tmuxfiles/ ~/.tmuxfiles
 
 #bash
