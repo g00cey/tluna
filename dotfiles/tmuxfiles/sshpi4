@@ -1,0 +1,12 @@
+# 一番初めのpaneを選択
+select-pane -t 0
+# 上下にウィンドウを分割する
+split-window -v
+split-window -h
+# 1番目(下側)のウィンドウを選択
+select-pane -t 0
+# 左右にウィンドウを分割
+split-window -h
+send-keys -t 1 'ssh pi4-2' C-m
+send-keys -t 2 'ssh pi4-3' C-m
+send-keys -t 3 'ssh pi4-4' C-m
