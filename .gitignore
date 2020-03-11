@@ -8,6 +8,7 @@ w3m/*
 vim/bundle/*
 !vim/bundle/Vundle.vim
 bin/cpanm
+bin/openvpn.sh
 bin/tig
 lang/php/basic_auth/mydns.jp.setting.php
 dotfiles/anyenv/
