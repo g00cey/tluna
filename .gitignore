@@ -11,7 +11,6 @@ bin/cpanm
 bin/openvpn.sh
 bin/tig
 lang/php/basic_auth/mydns.jp.setting.php
-dotfiles/anyenv/
 .idea
 
 /vim/.netrwhist
