@@ -4,12 +4,7 @@
 unlink ~/.w3m
 unlink ~/.gitconfig
 unlink ~/.irbrc
-unlink ~/.bashrc
-if [ -e /etc/debian_version ]; then
-  unlink ~/.profile
-else
-  unlink ~/.bash_profile
-fi
+
 unlink ~/.ctags
 unlink ~/bin
 unlink ~/.vimrc
@@ -37,21 +32,8 @@ ln -s ~/src/git/github/tluna/dotfiles/my.cnf  ~/.my.cnf
 ln -s ~/src/git/github/tluna/dotfiles/anyenv  ~/.anyenv
 ln -s ~/src/git/github/tluna/dotfiles/tmuxfiles/ ~/.tmuxfiles
 
-#bash
-if [ -e /etc/redhat-release ]; then
-  #if [ `hostname` == 'tluna' ]; then
-     ln -s ~/src/git/github/tluna/environments/linux/bashrc/redhat              ~/.bashrc
-     ln -s ~/src/git/github/tluna/environments/linux/bash_profile/redhat        ~/.bash_profile
-  #fi
-elif [ -e /etc/debian_version ]; then
-  #if [ `hostname` == 'tluna' ]; then
-     ln -s ~/src/git/github/tluna/environments/linux/bashrc/debian              ~/.bashrc
-     ln -s ~/src/git/github/tluna/environments/linux/bash_profile/debian        ~/.profile
-  #fi
-fi
-
 #git settings
-git config --global user.name "t1una"
+git config --global user.name "g00chy"
 git config --global user.email "totugekiluna@gmail.com"
 git config --global core.editor 'vim -c "set fenc=utf-8"'
 git config --global push.default matching
