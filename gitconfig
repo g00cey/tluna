@@ -1,10 +1,10 @@
 [user]
-	name = t1una
+	name = g00chy
 	email = totugekiluna@gmail.com
 [core]
 	editor = vim -c \"set fenc=utf-8\"
 	excludesfile = /Users/luna/.gitignore_global
-	autocrlf = input
+	autocrlf = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
