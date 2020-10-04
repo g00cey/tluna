@@ -16,7 +16,6 @@ Set-ExecutionPolicy RemoteSigned
 .\install-dev.ps1
 .\install-gaming.ps1
 
-
 ### git
 
 git config --global core.autocrlf false
