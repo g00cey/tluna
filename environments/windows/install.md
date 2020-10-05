@@ -10,8 +10,7 @@
 Set-ExecutionPolicy RemoteSigned
 ```
 
-## devインストール後
-
+## chocoでインストール
 .\install-media.ps1
 .\install-dev.ps1
 .\install-gaming.ps1
@@ -25,3 +24,5 @@ git config --global user.email totugekiluna@gmail.com
 ### 接続情報
 
 .sshフォルダを持ってくる
+
+### WSL2
