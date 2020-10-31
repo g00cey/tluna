@@ -11,6 +11,7 @@ Set-ExecutionPolicy RemoteSigned
 ```
 
 ## chocoでインストール
+
 .\install-media.ps1
 .\install-dev.ps1
 .\install-gaming.ps1
@@ -30,3 +31,11 @@ git config --global user.email totugekiluna@gmail.com
 - [Updating the WSL 2 Linux kernel \| Microsoft Docs](https://docs.microsoft.com/en-us/windows/wsl/wsl2-kernel)  
   - install wsl2 linux kernel
 - adminでwsl2.ps1実行
+- wslの中で下記を実行
+
+```shell
+sudo tee /etc/wsl.conf <<EOF >/dev/null
+[automount]
+options = "metadata"
+EOF
+```
