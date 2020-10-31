@@ -26,3 +26,7 @@ git config --global user.email totugekiluna@gmail.com
 .sshフォルダを持ってくる
 
 ### WSL2
+
+- [Updating the WSL 2 Linux kernel \| Microsoft Docs](https://docs.microsoft.com/en-us/windows/wsl/wsl2-kernel)  
+  - install wsl2 linux kernel
+- adminでwsl2.ps1実行
