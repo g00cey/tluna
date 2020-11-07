@@ -1,4 +1,0 @@
-#catalyst
-cpanm install local::lib
-cpanm install YAML
-cpanm install Catalyst::Devel
