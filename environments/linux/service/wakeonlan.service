@@ -1,0 +1,10 @@
+[Unit]
+Description=Enable Wake-On-LAN
+
+[Service]
+Type=simple
+ExecStart=/home/luna/bin/wol-enable.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
