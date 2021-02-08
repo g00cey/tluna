@@ -1,14 +1,16 @@
 [Unit]
 Description=Enable Wake-On-LAN
-After=NetworkManager.service
+After = systemd-networkd-wait-online.service 
 
 [Service]
 Type=simple
-ExecStartPre = /usr/bin/timeout 60 /bin/sh -c 'until /bin/nc -w 5 -z 192.168.0.10 3389; do sleep 1; done'
-ExecStart=/home/luna/bin/wol-enable.sh
-Restart=always
+#ExecStartPre = /usr/bin/timeout 60 /bin/sh -c 'until /bin/nc -w 5 -z 192.168.0.9 3389; do sleep 1; done'
+ExecStart=/home/luna/bin/tiny-wol-enable.sh
+#Restart=always
 User=root
 Group=root
+Restart = always
+Type = simple
 
 [Install]
 WantedBy=multi-user.target
