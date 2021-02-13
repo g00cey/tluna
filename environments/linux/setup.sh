@@ -42,3 +42,5 @@ git config --global push.default matching
 cd ~/src/git/github/tluna/
 git submodule init
 git submodule update
+
+sudo apt install build-essential
