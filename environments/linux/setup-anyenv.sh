@@ -29,6 +29,8 @@ sudo apt install -y \
    re2c \
    zlib1g-dev
 
+anyenv install --init
+
 source ~/.profile
 
 anyenv install phpenv
