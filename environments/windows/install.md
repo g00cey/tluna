@@ -34,8 +34,6 @@ git config --global user.email totugekiluna@gmail.com
 - wslの中で下記を実行
 
 ```shell
-sudo tee /etc/wsl.conf <<EOF >/dev/null
-[automount]
-options = "metadata"
-EOF
+cp .wslconfig /mnt/c/Users/totug/.wslconfig
+sudo cp wsl.config /etc/wsl.config
 ```
