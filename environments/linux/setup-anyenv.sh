@@ -1,5 +1,10 @@
 #!/bin/bash
 
+result=`grep '$HOME/.anyenv/bin' ~/.profile`
+if [ -n "$result" ]; then
+	echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.profile
+fi
+
 sudo apt install -y \
    autoconf \
    automake \
@@ -29,7 +34,13 @@ sudo apt install -y \
    re2c \
    zlib1g-dev
 
+source ~/.profile
 anyenv install --init
+
+result=`grep 'anyenv init' ~/.profile`
+if [ -n "$result" ]; then
+	echo 'eval "$(anyenv init -)"' >> ~/.profile
+fi
 
 source ~/.profile
 
