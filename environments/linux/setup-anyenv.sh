@@ -1,7 +1,7 @@
 #!/bin/bash
 
 result=`grep '$HOME/.anyenv/bin' ~/.profile`
-if [ -n "$result" ]; then
+if [ $? -eq 1 ]; then
 	echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.profile
 fi
 
@@ -38,7 +38,7 @@ source ~/.profile
 anyenv install --init
 
 result=`grep 'anyenv init' ~/.profile`
-if [ -n "$result" ]; then
+if [ $? -eq 1 ]; then
 	echo 'eval "$(anyenv init -)"' >> ~/.profile
 fi
 
