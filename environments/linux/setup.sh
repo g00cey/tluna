@@ -28,8 +28,6 @@ ln -s ~/src/git/github/tluna/tmux.conf        ~/.tmux.conf
 ln -s ~/src/git/github/tluna/ctags            ~/.ctags
 ln -s ~/src/git/github/tluna/bin/             ~/bin
 ln -s ~/src/git/github/tluna/dotfiles/my.cnf  ~/.my.cnf
-#anyenv
-ln -s ~/src/git/github/tluna/dotfiles/anyenv  ~/.anyenv
 ln -s ~/src/git/github/tluna/dotfiles/tmuxfiles/ ~/.tmuxfiles
 
 #git settings
@@ -42,5 +40,7 @@ git config --global push.default matching
 cd ~/src/git/github/tluna/
 git submodule init
 git submodule update
+#anyenv
+ln -s ~/src/git/github/tluna/dotfiles/anyenv  ~/.anyenv
 
 sudo apt install build-essential
