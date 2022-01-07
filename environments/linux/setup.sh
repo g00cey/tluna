@@ -10,6 +10,7 @@ unlink ~/bin
 unlink ~/.vimrc
 unlink ~/.gvimrc
 unlink ~/.vim
+unlink ~/nvim
 unlink ~/.tmux.conf
 unlink ~/.my.cnf
 unlink ~/.anyenv
@@ -19,6 +20,7 @@ unlink ~/.tmuxfiles
 ln -s ~/src/git/github/tluna/vim/vimrc        ~/.vimrc
 ln -s ~/src/git/github/tluna/vim/gvimrc       ~/.gvimrc
 ln -s ~/src/git/github/tluna/vim/             ~/.vim
+ln -s ~/src/git/github/tluna/nvim/             ~/nvim
 
 #another dot files and w3m
 ln -s ~/src/git/github/tluna/w3m/             ~/.w3m
@@ -31,10 +33,10 @@ ln -s ~/src/git/github/tluna/dotfiles/my.cnf  ~/.my.cnf
 ln -s ~/src/git/github/tluna/dotfiles/tmuxfiles/ ~/.tmuxfiles
 
 #git settings
-git config --global user.name "g00chy"
-git config --global user.email "totugekiluna@gmail.com"
-git config --global core.editor 'vim -c "set fenc=utf-8"'
-git config --global push.default matching
+#git config --global user.name "g00chy"
+#git config --global user.email "totugekiluna@gmail.com"
+#git config --global core.editor 'vim -c "set fenc=utf-8"'
+#git config --global push.default matching
 
 #submoudle
 cd ~/src/git/github/tluna/
