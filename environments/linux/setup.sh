@@ -1,35 +1,38 @@
 #!/bin/bash
 
 #delete links
+if [ ! -d ~/.config ]; then
+  mkdir ~/.config
+fi
 unlink ~/.w3m
 unlink ~/.gitconfig
-unlink ~/.irbrc
 
 unlink ~/.ctags
 unlink ~/bin
 unlink ~/.vimrc
 unlink ~/.gvimrc
 unlink ~/.vim
-unlink ~/nvim
+unlink ~/.config/nvim
 unlink ~/.tmux.conf
 unlink ~/.my.cnf
 unlink ~/.anyenv
 unlink ~/.tmuxfiles
+unlink ~/.zshrc
 
 #vim
-ln -s ~/src/git/github/tluna/vim/vimrc        ~/.vimrc
-ln -s ~/src/git/github/tluna/vim/gvimrc       ~/.gvimrc
-ln -s ~/src/git/github/tluna/vim/             ~/.vim
-ln -s ~/src/git/github/tluna/nvim/             ~/nvim
+ln -s ~/src/git/github/tluna/dotfiles/vim/vimrc  ~/.vimrc
+ln -s ~/src/git/github/tluna/dotfiles/vim/gvimrc ~/.gvimrc
+ln -s ~/src/git/github/tluna/dotfiles/vim/       ~/.vim
+ln -s ~/src/git/github/tluna/dotfiles/nvim/      ~/.config/nvim
 
-#another dot files and w3m
-ln -s ~/src/git/github/tluna/w3m/             ~/.w3m
-ln -s ~/src/git/github/tluna/gitconfig        ~/.gitconfig
-ln -s ~/src/git/github/tluna/irbrc            ~/.irbrc
-ln -s ~/src/git/github/tluna/tmux.conf        ~/.tmux.conf
-ln -s ~/src/git/github/tluna/ctags            ~/.ctags
-ln -s ~/src/git/github/tluna/bin/             ~/bin
-ln -s ~/src/git/github/tluna/dotfiles/my.cnf  ~/.my.cnf
+#another dot files
+ln -s ~/src/git/github/tluna/dotfiles/zshrc      ~/.zshrc
+ln -s ~/src/git/github/tluna/dotfiles/w3m/       ~/.w3m
+ln -s ~/src/git/github/tluna/bin/                ~/bin
+ln -s ~/src/git/github/tluna/dotfiles/gitconfig  ~/.gitconfig
+ln -s ~/src/git/github/tluna/dotfiles/tmux.conf  ~/.tmux.conf
+ln -s ~/src/git/github/tluna/dotfiles/ctags      ~/.ctags
+ln -s ~/src/git/github/tluna/dotfiles/my.cnf     ~/.my.cnf
 ln -s ~/src/git/github/tluna/dotfiles/tmuxfiles/ ~/.tmuxfiles
 
 #git settings
@@ -45,4 +48,8 @@ git submodule update
 #anyenv
 ln -s ~/src/git/github/tluna/dotfiles/anyenv  ~/.anyenv
 
-sudo apt install build-essential
+sudo apt install build-essential zsh fzf tig
+result_starship=`whereis starship | wc -l`
+if [ $result_starship -lt 0 ]; then
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+fi

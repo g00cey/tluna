@@ -8,7 +8,6 @@ endif
 call vundle#begin()
 
 "original repos on github
-Plugin 'VundleVim/Vundle.vim'
 Plugin 'go.vim'
 Plugin 'CtrlP.vim'
 Plugin 'grep.vim'

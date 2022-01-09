@@ -1,3 +1,0 @@
-encoding UTF-8 UTF-8
-hardstatus string "%?%h%:%t (screen #%n on %H)%?"
-caption always "%?%F%{= wk}%:%{= ww}%?%-w%{=u Wk}%n %t%{-}%+w"

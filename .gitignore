@@ -1,7 +1,14 @@
 # dont look swap and backup files
-vim/swap/*
-vim/backup/*
-!vim/backup/init
+dotfiles/vim/swap/*
+dotfiles/vim/backup/*
+dotfiles/vim/after/*
+dotfiles/vim/bundle/*
+dotfiles/vim/backup/*
+!dotfiles/vim/backup/init
+dotfiles/vim/.netrwhist
+dotfiles/nvim/swap/*
+dotfiles/nvim/backup/*
+!dotfiles/nvim/backup/init
 w3m/*
 !w3m/bookmark.html
 !w3m/config
@@ -11,7 +18,3 @@ bin/cpanm
 bin/openvpn.sh
 bin/tig
 lang/php/basic_auth/mydns.jp.setting.php
-.idea
-
-/vim/.netrwhist
-/bin/idea
