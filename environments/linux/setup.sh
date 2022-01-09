@@ -52,7 +52,7 @@ ln -s ~/src/git/github/tluna/dotfiles/anyenv  ~/.anyenv
 
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y build-essential zsh tig fzf
+sudo apt install -y build-essential zsh tig fzf unzip
 
 #make dir
 dir='/home/luna/.cache/shell/'
