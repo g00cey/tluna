@@ -58,3 +58,7 @@ pyenv global $pyversion
 goenv global $goversion
 phpenv global $phpversion
 nodenv global $nodeversion
+
+# install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup component add rustfmt

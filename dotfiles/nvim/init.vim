@@ -1,26 +1,22 @@
-if has("win32") || has("win64")
-  set rtp+=~/.config/nvim/bundle/Vundle.vim
-else
-  set rtp+=~/.config/nvim/bundle/Vundle.vim
-endif
+call plug#begin()
 
-call vundle#begin()
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+Plug 'lambdalisue/fern.vim'
+Plug 'yuki-yano/fern-preview.vim'
+Plug 'lambdalisue/gina.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'machakann/vim-sandwich'
+Plug 'vim-scripts/grep.vim'
+Plug 'thinca/vim-quickrun'
+Plug 'taku-o/vim-copypath'
+Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'will133/vim-dirdiff'
+Plug 'tpope/vim-fugitive'
+Plug 'rust-lang/rust.vim'
 
-Plugin 'neoclide/coc.nvim'
-Plugin 'junegunn/fzf'
-Plugin 'yuki-yano/fzf-preview.vim'
-Plugin 'lambdalisue/gina.vim'
-Plugin 'go.vim'
-Plugin 'dbext.vim'
-Plugin 'vimgrep.vim'
-Plugin 'Align'
-Plugin 'quickrun.vim'
-Plugin 'copypath.vim'
-Plugin 'https://github.com/scrooloose/nerdtree.git'
-Plugin 'DirDiff.vim'
-Plugin 'tpope/vim-fugitive'
-
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on
 syntax on
