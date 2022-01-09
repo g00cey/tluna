@@ -12,6 +12,9 @@ zstyle ':chpwd:*' recent-dirs-pushd true
 # starship
 eval "$(starship init zsh)"
 
+# anyenv
+eval "$(anyenv init -)"
+
 # fzf-cdr
 alias cdd='fzf-cdr'
 function fzf-cdr() {

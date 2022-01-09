@@ -55,7 +55,6 @@ sudo apt upgrade -y
 sudo apt install -y build-essential zsh tig fzf
 
 #make dir
-
 dir='/home/luna/.cache/shell/'
 if [ ! -d $dir ]; then
   mkdir $dir
