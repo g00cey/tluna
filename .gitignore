@@ -6,12 +6,9 @@ dotfiles/vim/bundle/*
 dotfiles/vim/backup/*
 !dotfiles/vim/backup/init
 dotfiles/vim/.netrwhist
-dotfiles/nvim/swap/*
-dotfiles/nvim/backup/*
-!dotfiles/nvim/backup/init
-w3m/*
-!w3m/bookmark.html
-!w3m/config
+dotfiles/w3m/*
+!dotfiles/w3m/bookmark.html
+!dotfiles/w3m/config
 vim/bundle/*
 !vim/bundle/Vundle.vim
 bin/cpanm

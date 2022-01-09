@@ -6,7 +6,7 @@ endif
 
 call vundle#begin()
 
-"Plugin 'neoclide/coc.nvim'
+Plugin 'neoclide/coc.nvim'
 Plugin 'junegunn/fzf'
 Plugin 'yuki-yano/fzf-preview.vim'
 Plugin 'lambdalisue/gina.vim'
@@ -24,6 +24,7 @@ call vundle#end()
 
 filetype plugin indent on
 syntax on
+set statusline=%F%m%h%w\ %<[ENC=%{&fenc!=''?&fenc:&enc}]\ [FMT=%{&ff}]\ [TYPE=%Y]\ %=[CODE=0x%02B]\ [POS=%l/%L(%02v)]
 
 "display
 set number
