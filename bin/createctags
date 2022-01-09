@@ -1,6 +1,0 @@
-ctags -f ~/tags/github-tluna -R ~/git/github/tluna
-#ctags -f ~/tags/cloudtluna   -R ~/git/cloudcore/tluna
-#ctags -f ~/tags/syabette     -R ~/svn/src_syabette
-#ctags -f ~/tags/konkon       -R ~/svn/cgi/va
-#ctags -f ~/tags/memoinfo     -R ~/svn/src_ic_memoinfo
-ctags -f ~/tags/reportlog    -R ~/svn/reportlog

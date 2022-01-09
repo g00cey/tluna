@@ -11,15 +11,15 @@ Plug 'machakann/vim-sandwich'
 Plug 'vim-scripts/grep.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'taku-o/vim-copypath'
-Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'scrooloose/nerdtree'
 Plug 'will133/vim-dirdiff'
 Plug 'tpope/vim-fugitive'
 Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
+syntax enable
 filetype plugin indent on
-syntax on
 set statusline=%F%m%h%w\ %<[ENC=%{&fenc!=''?&fenc:&enc}]\ [FMT=%{&ff}]\ [TYPE=%Y]\ %=[CODE=0x%02B]\ [POS=%l/%L(%02v)]
 
 "display
