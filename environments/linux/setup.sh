@@ -5,7 +5,6 @@ if [ ! -d ~/.config ]; then
   mkdir ~/.config
 fi
 unlink ~/.w3m
-unlink ~/.gitconfig
 
 unlink ~/.ctags
 unlink ~/bin
@@ -31,7 +30,6 @@ ln -s ~/src/git/github/tluna/dotfiles/zshrc      ~/.zshrc
 ln -s ~/src/git/github/tluna/dotfiles/zshenv     ~/.zshenv
 ln -s ~/src/git/github/tluna/dotfiles/w3m/       ~/.w3m
 ln -s ~/src/git/github/tluna/bin/                ~/bin
-ln -s ~/src/git/github/tluna/dotfiles/gitconfig  ~/.gitconfig
 ln -s ~/src/git/github/tluna/dotfiles/tmux.conf  ~/.tmux.conf
 ln -s ~/src/git/github/tluna/dotfiles/ctags      ~/.ctags
 ln -s ~/src/git/github/tluna/dotfiles/my.cnf     ~/.my.cnf
@@ -43,10 +41,8 @@ if [ ! -f ~/.config ]; then
 fi
 
 #git settings
-#git config --global user.name "g00chy"
-#git config --global user.email "totugekiluna@gmail.com"
-#git config --global core.editor 'vim -c "set fenc=utf-8"'
-#git config --global push.default matching
+git config --global core.editor 'nvim -c "set fenc=utf-8"'
+git config --global push.default matching
 
 #submoudle
 cd ~/src/git/github/tluna/
