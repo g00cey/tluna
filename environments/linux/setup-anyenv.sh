@@ -46,19 +46,4 @@ echo $phpversion
 nodeversion=`nodenv install --list | egrep '[1-9]+.*' | egrep -v '[a-z]' | tail -1`
 echo $nodeversion
 
-pyenv install $pyversion
-goenv install $goversion
-phpenv install $phpversion
-nodenv install $nodeversion
-
-mkdir -p "$(nodenv root)/plugins"
-git clone https://github.com/pine/nodenv-yarn-install.git "$(nodenv root)/plugins/nodenv-yarn-install"
-
-pyenv global $pyversion
-goenv global $goversion
-phpenv global $phpversion
-nodenv global $nodeversion
-
-# install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-rustup component add rustfmt
+(exec $SHELL -l)
