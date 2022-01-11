@@ -12,3 +12,8 @@ sudo apt -y install language-pack-ja-base language-pack-ja
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo apt update 
 sudo apt install -y google-chrome-stable
+
+#setup-nvim
+sudo snap install nvim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
