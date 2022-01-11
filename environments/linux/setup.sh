@@ -37,6 +37,11 @@ ln -s ~/src/git/github/tluna/dotfiles/ctags      ~/.ctags
 ln -s ~/src/git/github/tluna/dotfiles/my.cnf     ~/.my.cnf
 ln -s ~/src/git/github/tluna/dotfiles/tmuxfiles/ ~/.tmuxfiles
 
+# zshenv
+if [ ! -f ~/.config ]; then
+  cp ~/src/git/github/tluna/dotfiles/zshdisplayenv ~/.config/displayenv
+fi
+
 #git settings
 #git config --global user.name "g00chy"
 #git config --global user.email "totugekiluna@gmail.com"
