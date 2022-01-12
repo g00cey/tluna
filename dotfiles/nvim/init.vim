@@ -1,22 +1,4 @@
-call plug#begin()
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
-Plug 'lambdalisue/fern.vim'
-Plug 'yuki-yano/fern-preview.vim'
-Plug 'lambdalisue/gina.vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'machakann/vim-sandwich'
-Plug 'vim-scripts/grep.vim'
-Plug 'thinca/vim-quickrun'
-Plug 'taku-o/vim-copypath'
-Plug 'scrooloose/nerdtree'
-Plug 'will133/vim-dirdiff'
-Plug 'tpope/vim-fugitive'
-Plug 'rust-lang/rust.vim'
-
-call plug#end()
+source ~/.config/nvim/plug-setting/plugin-install.vim
 
 syntax enable
 filetype plugin indent on
@@ -76,3 +58,5 @@ if filereadable(expand('~/rcfiles/dbsettings'))
   source ~/rcfiles/dbsettings
 endif
 
+source ~/.config/nvim/plug-setting/fern.vim
+source ~/.config/nvim/plug-setting/nerdtree.vim
