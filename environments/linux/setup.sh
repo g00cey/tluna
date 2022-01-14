@@ -53,7 +53,10 @@ ln -s ~/src/git/github/tluna/dotfiles/anyenv  ~/.anyenv
 
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y build-essential zsh tig fzf unzip
+sudo apt install -y build-essential zsh tig fzf unzip ripgrep
+bat_file_url=`curl https://api.github.com/repos/sharkdp/bat/releases/latest | jq '. | .assets[] | select(.name | contains("amd64.deb")) | select(.name | contains("musl")|not) | .browser_download_url'`
+wget $bat_file_url
+#★todo ファイル名取得 sudo apt install ./
 
 #make dir
 dir='/home/luna/.cache/shell/'
