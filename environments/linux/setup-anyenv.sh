@@ -35,7 +35,7 @@ anyenv install pyenv
 anyenv install goenv
 anyenv install nodenv
 
-source ~/.profile
+source ~/.zshrc
 
 pyversion=`pyenv install --list | egrep ' [0-9]+.*' | egrep -v '[a-z]' | tail -1`
 echo $pyversion
