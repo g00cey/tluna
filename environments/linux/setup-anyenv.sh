@@ -16,7 +16,6 @@ sudo apt install -y \
    libonig-dev \
    libpng-dev \
    libreadline-dev \
-   libsqlite-dev \
    libssl-dev \
    libtidy-dev \
    libxml2-dev \
