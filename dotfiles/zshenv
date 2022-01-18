@@ -1,4 +1,18 @@
 export PATH=~/.anyenv/bin:/usr/local/bin:$PATH
+
+# starship
+eval "$(starship init zsh)"
+
+if [ -e "$HOME/.anyenv" ]
+then
+    export ANYENV_ROOT="$HOME/.anyenv"
+    export PATH="$ANYENV_ROOT/bin:$PATH"
+    if command -v anyenv 1>/dev/null 2>&1
+    then
+        eval "$(anyenv init -)"
+    fi
+fi
+
 export EDITOR=nvim
 export PAGER='lv -c'
 export LANG='ja_JP.UTF-8'

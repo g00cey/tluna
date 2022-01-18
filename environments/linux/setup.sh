@@ -14,7 +14,6 @@ unlink ~/.vim
 unlink ~/.config/nvim
 unlink ~/.tmux.conf
 unlink ~/.my.cnf
-unlink ~/.anyenv
 unlink ~/.tmuxfiles
 unlink ~/.zshrc
 unlink ~/.zshenv
@@ -48,8 +47,6 @@ git config --global push.default matching
 cd ~/src/git/github/tluna/
 git submodule init
 git submodule update
-#anyenv
-ln -s ~/src/git/github/tluna/dotfiles/anyenv  ~/.anyenv
 
 sudo apt update
 sudo apt upgrade -y

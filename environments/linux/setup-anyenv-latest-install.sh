@@ -1,4 +1,6 @@
 #!/bin/zsh
+source ~/.zshrc
+
 pyversion=`pyenv install --list | egrep ' [0-9]+.*' | egrep -v '[a-z]' | tail -1 | sed 's/ //g'`
 echo $pyversion
 goversion=`goenv install --list | egrep ' [0-9]+.*' | egrep -v '[a-z]' | tail -1 | sed 's/ //g'`

@@ -28,21 +28,10 @@ sudo apt install -y \
    re2c \
    zlib1g-dev
 
+git clone https://github.com/anyenv/anyenv ~/.anyenv
+
 anyenv install --init
 anyenv install phpenv
 anyenv install pyenv
 anyenv install goenv
 anyenv install nodenv
-
-source ~/.zshrc
-
-pyversion=`pyenv install --list | egrep ' [0-9]+.*' | egrep -v '[a-z]' | tail -1`
-echo $pyversion
-goversion=`goenv install --list | egrep ' [0-9]+.*' | egrep -v '[a-z]' | tail -1`
-echo $goversion
-phpversion=`phpenv install --list | egrep ' [0-9]+.*' | egrep -v '[a-z]' | tail -1`
-echo $phpversion
-nodeversion=`nodenv install --list | egrep '[1-9]+.*' | egrep -v '[a-z]' | tail -1`
-echo $nodeversion
-
-(exec $SHELL -l)
