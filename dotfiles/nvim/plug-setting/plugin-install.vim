@@ -20,5 +20,6 @@ Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'embear/vim-localvimrc'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
