@@ -29,3 +29,6 @@ snap_bin_path="/snap/bin"
 if [ -n "${PATH##*${snap_bin_path}}" -a -n "${PATH##*${snap_bin_path}:*}" ]; then
     export PATH=$PATH:${snap_bin_path}
 fi
+
+# nvim
+alias vim='nvim'
