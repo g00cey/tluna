@@ -35,9 +35,7 @@ ln -s ~/src/git/github/tluna/dotfiles/my.cnf     ~/.my.cnf
 ln -s ~/src/git/github/tluna/dotfiles/tmuxfiles/ ~/.tmuxfiles
 
 # zshenv
-if [ ! -f ~/.config ]; then
-  cp ~/src/git/github/tluna/dotfiles/zshdisplayenv ~/.config/displayenv
-fi
+touch ~/.zshenv-local
 
 #git settings
 git config --global core.editor 'nvim -c "set fenc=utf-8"'
