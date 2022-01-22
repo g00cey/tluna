@@ -14,7 +14,6 @@ unlink ~/.vim
 unlink ~/.config/nvim
 unlink ~/.tmux.conf
 unlink ~/.my.cnf
-unlink ~/.anyenv
 unlink ~/.tmuxfiles
 unlink ~/.zshrc
 unlink ~/.zshenv
@@ -48,22 +47,19 @@ git config --global push.default matching
 cd ~/src/git/github/tluna/
 git submodule init
 git submodule update
-#anyenv
-ln -s ~/src/git/github/tluna/dotfiles/anyenv  ~/.anyenv
 
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y build-essential zsh tig fzf unzip ripgrep
+sudo apt install -y build-essential zsh tig fzf unzip ripgrep jq lv
 bat_file_url=`curl https://api.github.com/repos/sharkdp/bat/releases/latest | jq '. | .assets[] | select(.name | contains("amd64.deb")) | select(.name | contains("musl")|not) | .browser_download_url'`
 echo $bat_file_url
 #★todo ファイル名取得 sudo apt install ./
 
 #make dir
-dir='/home/luna/.cache/shell/'
+dir=~/.cache/shell/chpwd-recent-dirs
 if [ ! -d $dir ]; then
-  mkdir $dir
+  mkdir -p $dir
 fi
-result_starship=`whereis starship | wc -l`
-if [ $result_starship -lt 0 ]; then
-  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-fi
+
+#startship
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
