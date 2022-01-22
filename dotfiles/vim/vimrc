@@ -1,4 +1,5 @@
 set nocompatible
+
 filetype off
 if has("win32") || has("win64")
   set rtp+=~/_vim/bundle/Vundle.vim
@@ -8,10 +9,6 @@ endif
 call vundle#begin()
 
 "original repos on github
-Plugin 'go.vim'
-Plugin 'CtrlP.vim'
-Plugin 'grep.vim'
-Plugin 'gabrielelana/vim-markdown'
 Plugin 'shougo/vimshell'
 Plugin 'dbext.vim'
 Plugin 'Shougo/vimfiler.vim'
@@ -37,6 +34,7 @@ Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/wesleyche/Trinity.git'
 Plugin 'taglist.vim'
 Plugin 'tabpage.vim'
+
 if has("win32") || has("win64")
   Plugin 'BlockDiff'
   Plugin 'DirDiff.vim'

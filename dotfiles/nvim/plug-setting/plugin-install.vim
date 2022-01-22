@@ -9,7 +9,6 @@ Plug 'yuki-yano/fern-preview.vim'
 Plug 'lambdalisue/gina.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'machakann/vim-sandwich'
-Plug 'vim-scripts/grep.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'taku-o/vim-copypath'
 Plug 'scrooloose/nerdtree'
