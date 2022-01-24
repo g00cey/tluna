@@ -54,9 +54,13 @@ echo $bat_file_url
 #★todo ファイル名取得 sudo apt install ./
 
 #make dir
-dir=~/.cache/shell/chpwd-recent-dirs
+dir=~/.cache/shell
+file=~/.cache/shell/chpwd-recent-dirs
 if [ ! -d $dir ]; then
   mkdir -p $dir
+fi
+if [ ! -e $file ]; then
+  touch $file
 fi
 
 #startship
