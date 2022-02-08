@@ -12,6 +12,9 @@ zstyle ':chpwd:*' recent-dirs-default true
 zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/shell/chpwd-recent-dirs"
 zstyle ':chpwd:*' recent-dirs-pushd true
 
+zstyle ':completion:*:*:make:*' tag-order 'targets'
+autoload -U compinit && compinit
+
 
 # fzf-cdr
 alias cdd='fzf-cdr'
