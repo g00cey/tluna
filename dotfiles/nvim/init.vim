@@ -4,6 +4,8 @@ syntax enable
 filetype plugin indent on
 set statusline=%F%m%h%w\ %<[ENC=%{&fenc!=''?&fenc:&enc}]\ [FMT=%{&ff}]\ [TYPE=%Y]\ %=[CODE=0x%02B]\ [POS=%l/%L(%02v)]
 
+set clipboard=unnamed,unnamedplus
+
 "display
 set number
 

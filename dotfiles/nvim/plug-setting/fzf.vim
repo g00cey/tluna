@@ -11,6 +11,9 @@ fun! FzfOmniFiles()
 endfun
 nnoremap <C-p> :call FzfOmniFiles()<CR>
 
+" 貼り付け
+tnoremap <expr> <C-v> getreg("")
+
 " Ctrl+gで文字列検索を開く
 " <S-?>でプレビューを表示/非表示する
 command! -bang -nargs=* Rg
