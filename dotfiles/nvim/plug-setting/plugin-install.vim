@@ -21,5 +21,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'embear/vim-localvimrc'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'lambdalisue/fern-git-status.vim'
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 
 call plug#end()
