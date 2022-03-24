@@ -23,5 +23,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'NTBBloodbath/rest.nvim'
+Plug 'nvim-lua/plenary.nvim'
 
 call plug#end()
