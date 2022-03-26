@@ -1,5 +1,10 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
     "rust"
-  ]
+  ],
+  "jedi": {
+      "enable": true,
+      "startupMessage": false,
+      "executable.command": "~/.anyenv/envs/pyenv/versions/neovim3/bin/jedi-language-server"
+  }
 }

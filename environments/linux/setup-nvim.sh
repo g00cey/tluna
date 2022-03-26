@@ -7,3 +7,4 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 directory=`dirname $0`
 $directory/setup-anyenv.sh
 $directory/setup-anyenv-latest-install.sh
+pip3 install jedi-language-server
