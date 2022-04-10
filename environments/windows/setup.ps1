@@ -1,4 +1,21 @@
 # Start-Process powershell -Verb runas setup.ps1
-New-Item -Value C:\Users\luna\workspace\git\github\tluna\vim  -Path C:\Users\luna\ -Name _vim -ItemType symboliclink
-New-Item -Value C:\Users\luna\workspace\git\github\tluna\vim\gvimrc  -Path C:\Users\luna\ -Name _gvimrc -ItemType symboliclink
-New-Item -Value C:\Users\luna\workspace\git\github\tluna\vim\vimrc  -Path C:\Users\luna\ -Name _vimrc -ItemType symboliclink
+$localDir  = $Env:LOCALAPPDATA + "\nvim"
+If(-not (Test-Path $localDir)) {
+    mkdir $Env:LOCALAPPDATA/nvim
+}
+$initvim = Resolve-Path ..\..\dotfiles\nvim\init.vim
+If(-not (Test-Path $initvim)) {
+    New-Item -Value $initvim -Path $localDir -Name init.vim -ItemType symboliclink
+}
+
+$localAutoDir = $localDir + "\autoload"
+If(-not (Test-Path $localAutoDir)) {
+   mkdir $localAutoDir
+}
+$uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+(New-Object Net.WebClient).DownloadFile(
+  $uri,
+  $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath(
+    $localAutoDir + "\" +"plug.vim"
+  )
+)
