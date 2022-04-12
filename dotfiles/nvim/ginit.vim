@@ -1,1 +1,1 @@
-set guifont=Cica:10
+set guifont="Cica:10"
