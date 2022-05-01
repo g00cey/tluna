@@ -2,8 +2,12 @@
 bindkey -e
 
 # cdr, add-zsh-hook を有効にする
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook compinit
+compinit
 add-zsh-hook chpwd chpwd_recent_dirs
+if type "kubectl" > /dev/null 2>&1; then
+  source <(kubectl completion zsh)
+fi
 
 # cdr の設定
 zstyle ':completion:*' recent-dirs-insert both
@@ -13,7 +17,6 @@ zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/shell/chpwd-recent-dirs"
 zstyle ':chpwd:*' recent-dirs-pushd true
 
 zstyle ':completion:*:*:make:*' tag-order 'targets'
-autoload -U compinit && compinit
 
 
 # fzf-cdr
