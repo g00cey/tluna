@@ -25,5 +25,6 @@ Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'NTBBloodbath/rest.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'mopp/makecomp.vim'
 
 call plug#end()
