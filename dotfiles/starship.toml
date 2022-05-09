@@ -1,3 +1,6 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
 [directory]
 #ディレクトリ表示
 truncation_length = 10
@@ -31,3 +34,10 @@ discharging_symbol = "😨"
 #時間の表示をオンにして12時間表示に
 disabled = false
 use_12hr = true
+
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
+
