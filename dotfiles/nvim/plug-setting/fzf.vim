@@ -3,11 +3,11 @@
 " git管理されていれば:GFiles、そうでなければ:Filesを実行する
 fun! FzfOmniFiles()
   let is_git = system('git status')
-  if v:shell_error
+"  if v:shell_error
     :Files
-  else
-    :GFiles
-  endif
+"  else
+"    :GFiles
+"  endif
 endfun
 nnoremap <C-p> :call FzfOmniFiles()<CR>
 
