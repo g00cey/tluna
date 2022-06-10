@@ -35,6 +35,7 @@ anyenv install phpenv
 anyenv install pyenv
 anyenv install goenv
 anyenv install nodenv
+(exec $SHELL -l)
 # nodenv yarn
 mkdir -p "$(nodenv root)/plugins"
 git clone https://github.com/pine/nodenv-yarn-install.git "$(nodenv root)/plugins/nodenv-yarn-install"
