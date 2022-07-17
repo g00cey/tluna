@@ -1,6 +1,7 @@
 #!/bin/bash
 sudo apt install -y xrdp
+wget 
+https://github.com/Hinara/linux-vm-tools/blob/ubuntu20-04/ubuntu/22.04/install.sh
+sudo sed -e 's/rdp_layout_jp=jp/rdp_layout_jp=us/' -i /etc/xrdp/xrdp_keyboard.ini
 sudo systemctl enable xrdp
-sudo cp /etc/xrdp/km-00000409.ini /etc/xrdp/back-km-00000409.ini
-sudo cp /etc/xrdp/km-00000411.ini /etc/xrdp/km-00000409.ini
 sudo systemctl restart xrdp
