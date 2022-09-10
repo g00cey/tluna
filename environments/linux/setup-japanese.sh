@@ -21,4 +21,4 @@ find . -type f -name 'Cica*zip' -exec rm {} \;
 fc-cache -fv
 
 ## japanese ime
-sudo apt-get -y install fcitx-mozc fonts-noto-cjk dbus-x11
+sudo apt-get -y install fcitx5-mozc fonts-noto-cjk dbus-x11
