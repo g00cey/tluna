@@ -5,6 +5,7 @@ dotfiles/vim/after/*
 dotfiles/vim/bundle/*
 dotfiles/vim/backup/*
 dotfiles/nvim/autoload/*
+dotfiles/dconf/keybindings-dump
 !dotfiles/vim/backup/init
 dotfiles/vim/.netrwhist
 dotfiles/w3m/*
