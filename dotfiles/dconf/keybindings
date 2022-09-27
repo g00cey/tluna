@@ -1,6 +1,4 @@
 [/]
-move-to-monitor-down=@as []
-move-to-monitor-up=@as []
 move-to-workspace-left=['<Control><Shift><Super>Left']
 move-to-workspace-right=['<Control><Shift><Super>Right']
 switch-group=@as []
