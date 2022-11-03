@@ -8,6 +8,9 @@ add-zsh-hook chpwd chpwd_recent_dirs
 if type "kubectl" > /dev/null 2>&1; then
   source <(kubectl completion zsh)
 fi
+if type "helm" > /dev/null 2>&1; then
+  source <(helm completion zsh)
+fi
 
 # cdr の設定
 zstyle ':completion:*' recent-dirs-insert both
