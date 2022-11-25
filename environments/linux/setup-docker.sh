@@ -28,8 +28,8 @@ function install-debian() {
   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 }
 
-ubuntu=`uname -a | grep Ubuntu | wc -l`
-if [ $ubuntu -eq 1 ]; then
+ubuntu=`lsb_release -a | grep Ubuntu | wc -l`
+if [ $ubuntu -gt 1 ]; then
   install-ubuntu
 else
   install-debian
