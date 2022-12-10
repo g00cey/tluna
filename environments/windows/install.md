@@ -19,7 +19,7 @@ Set-ExecutionPolicy RemoteSigned
 ### git
 
 git config --global core.autocrlf false
-git config --global user.name g00chy
+git config --global user.name goocey
 git config --global user.email totugekiluna@gmail.com
 
 ### 接続情報
