@@ -17,6 +17,7 @@ unlink ~/.my.cnf
 unlink ~/.tmuxfiles
 unlink ~/.zshrc
 unlink ~/.zshenv
+unlink ~/.tigrc
 unlink ~/.config/starship.toml
 
 #vim
@@ -28,6 +29,7 @@ ln -s ~/src/git/github/tluna/dotfiles/nvim/      ~/.config/nvim
 #another dot files
 ln -s ~/src/git/github/tluna/dotfiles/zshrc           ~/.zshrc
 ln -s ~/src/git/github/tluna/dotfiles/zshenv          ~/.zshenv
+ln -s ~/src/git/github/tluna/dotfiles/tigrc           ~/.tigrc
 ln -s ~/src/git/github/tluna/dotfiles/w3m/            ~/.w3m
 ln -s ~/src/git/github/tluna/bin/                     ~/bin
 ln -s ~/src/git/github/tluna/dotfiles/tmux.conf       ~/.tmux.conf
