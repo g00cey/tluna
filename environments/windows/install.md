@@ -7,7 +7,7 @@
 ## powershell
 
 ```powershell
-Set-ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 ## chocoでインストール
