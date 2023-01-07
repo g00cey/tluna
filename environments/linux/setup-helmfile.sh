@@ -1,4 +1,5 @@
 #!/bin/bash
+helm plugin install https://github.com/databus23/helm-diff
 path=`curl -s https://api.github.com/repos/helmfile/helmfile/releases/latest | jq -r '.assets[] | select( .name | contains("linux_amd")) | .browser_download_url'`
 wget -O /tmp/helmfile.tar.gz $path
 tar xvzf /tmp/helmfile.tar.gz helmfile
