@@ -11,3 +11,5 @@ curl -L $helmfileUrl -o /tmp/helmfile.tgz
 tar xvzf /tmp/helmfile.tgz -C /tmp
 sudo chmod au+x /tmp/helmfile
 sudo mv /tmp/helmfile /usr/local/bin/
+rehash
+helm plugin install https://github.com/databus23/helm-diff
