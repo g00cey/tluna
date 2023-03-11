@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt install -y neovim git jq tmux zsh
+
 #delete links
 if [ ! -d ~/.config ]; then
   mkdir ~/.config
