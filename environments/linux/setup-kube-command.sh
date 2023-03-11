@@ -6,3 +6,8 @@ curl -L "https://storage.googleapis.com/kubernetes-release/release/$(curl -s htt
 chmod au+x /tmp/kubectl
 sudo mv /tmp/kubectl /usr/local/bin/
 
+helmfileUrl=`curl https://api.github.com/repos/helmfile/helmfile/releases | jq ".[].assets[].browser_download_url" | grep linux_amd64 | head -n 1 | tr -d '"'`
+curl -L $helmfileUrl -o /tmp/helmfile.tgz
+tar xvzf /tmp/helmfile.tgz -C /tmp
+sudo chmod au+x /tmp/helmfile
+sudo mv /tmp/helmfile /usr/local/bin/
