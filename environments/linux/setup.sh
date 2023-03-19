@@ -58,7 +58,7 @@ sudo apt update
 sudo apt upgrade -y
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-sudo apt install -y build-essential zsh tig fzf unzip ripgrep jq lv zsh unzip htop iftop iotop git tmux language-pack-ja curl nfs-common
+sudo apt install -y build-essential tig fzf unzip ripgrep lv zsh unzip htop iftop iotop git tmux curl nfs-common
 bat_file_url=`curl https://api.github.com/repos/sharkdp/bat/releases/latest | jq '. | .assets[] | select(.name | contains("amd64.deb")) | select(.name | contains("musl")|not) | .browser_download_url'`
 echo $bat_file_url
 #★todo ファイル名取得 sudo apt install ./
