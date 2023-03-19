@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install -y neovim git jq tmux zsh
+sudo apt install -y git jq tmux zsh
 
 #delete links
 if [ ! -d ~/.config ]; then
@@ -23,10 +23,12 @@ unlink ~/.tigrc
 unlink ~/.config/starship.toml
 
 #vim
-ln -s ~/src/git/github/tluna/dotfiles/vim/vimrc  ~/.vimrc
-ln -s ~/src/git/github/tluna/dotfiles/vim/gvimrc ~/.gvimrc
-ln -s ~/src/git/github/tluna/dotfiles/vim/       ~/.vim
-ln -s ~/src/git/github/tluna/dotfiles/nvim/      ~/.config/nvim
+ln -s ~/src/git/github/tluna/dotfiles/vim/vimrc          ~/.vimrc
+ln -s ~/src/git/github/tluna/dotfiles/vim/gvimrc         ~/.gvimrc
+ln -s ~/src/git/github/tluna/dotfiles/vim/               ~/.vim
+ln -s ~/src/git/github/tluna/dotfiles/nvim/              ~/.config/nvim
+mkdir -p ~/.config/coc/extensions
+ln -s ~/src/git/github/tluna/dotfiles/coc-package.json   ~/.config/coc/extensions/package.json
 
 #another dot files
 ln -s ~/src/git/github/tluna/dotfiles/zshrc           ~/.zshrc
