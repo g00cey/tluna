@@ -4,6 +4,7 @@ dotfiles/vim/backup/*
 dotfiles/vim/after/*
 dotfiles/vim/bundle/*
 dotfiles/vim/backup/*
+dotfiles/vim/sessions/*
 dotfiles/nvim/autoload/*
 dotfiles/dconf/keybindings-dump
 !dotfiles/vim/backup/init
