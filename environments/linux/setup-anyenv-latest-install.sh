@@ -20,4 +20,4 @@ goenv global $goversion
 phpenv global $phpversion
 nodenv global $nodeversion
 
-git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.anyenv/envs/pyenv/plugins/pyenv-virtualenv

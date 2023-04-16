@@ -10,6 +10,7 @@ then
     if command -v anyenv 1>/dev/null 2>&1
     then
         eval "$(anyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
     fi
 fi
 
