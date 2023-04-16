@@ -19,3 +19,5 @@ pyenv global $pyversion
 goenv global $goversion
 phpenv global $phpversion
 nodenv global $nodeversion
+
+git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
