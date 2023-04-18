@@ -1,6 +1,7 @@
 # emacs bind
 bindkey -e
 
+fpath+=~/.zfunc
 # cdr, add-zsh-hook を有効にする
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook compinit
 compinit

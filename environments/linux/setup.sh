@@ -21,6 +21,7 @@ unlink ~/.zshrc
 unlink ~/.zshenv
 unlink ~/.tigrc
 unlink ~/.config/starship.toml
+mkdir -p ~/.zfunc
 
 #vim
 ln -s ~/src/git/github/tluna/dotfiles/vim/vimrc          ~/.vimrc
