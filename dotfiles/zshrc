@@ -1,10 +1,10 @@
 # emacs bind
 bindkey -e
 
-fpath+=~/.zfunc
+fpath=(~/.zfunc $fpath)
 # cdr, add-zsh-hook を有効にする
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook compinit
-compinit
+autoload -Uz compinit && compinit -i
 add-zsh-hook chpwd chpwd_recent_dirs
 if type "kubectl" > /dev/null 2>&1; then
   source <(kubectl completion zsh)
