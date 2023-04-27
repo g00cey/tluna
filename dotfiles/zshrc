@@ -42,3 +42,16 @@ fi
 
 # nvim
 alias vim='nvim'
+
+#aws
+if type "aws" > /dev/null 2>&1; then
+  autoload bashcompinit && bashcompinit
+  autoload -Uz compinit && compinit
+  complete -C '/usr/local/bin/aws_completer' aws
+fi
+
+#xc
+if type "xc" > /dev/null 2>&1; then
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C ~/.anyenv/envs/goenv/shims/xc xc
+fi
