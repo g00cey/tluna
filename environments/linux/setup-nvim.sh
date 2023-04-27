@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ `lsb_release -id | grep "Debian" | wc -l` > 0 ]; then
+if [ `lsb_release -id | grep "Debian" | wc -l` -ne 0 ]; then
 	#debian
 	path=`curl -s https://api.github.com/repos/neovim/neovim/releases/latest | jq -r '.assets[] | select( .name | contains("linux64.deb")) | select( .name | contains("sha") | not) | .browser_download_url'`
 	echo $path
