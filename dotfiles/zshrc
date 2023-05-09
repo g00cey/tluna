@@ -19,7 +19,6 @@ zstyle ':chpwd:*' recent-dirs-max 500
 zstyle ':chpwd:*' recent-dirs-default true
 zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/shell/chpwd-recent-dirs"
 zstyle ':chpwd:*' recent-dirs-pushd true
-
 zstyle ':completion:*:*:make:*' tag-order 'targets'
 
 
@@ -40,6 +39,8 @@ if [ -n "${PATH##*${snap_bin_path}}" -a -n "${PATH##*${snap_bin_path}:*}" ]; the
     export PATH=$PATH:${snap_bin_path}
 fi
 
+export PATH=/opt/nvim/nvim-linux64/bin:$PATH
+
 # nvim
 alias vim='nvim'
 
@@ -55,3 +56,7 @@ if type "xc" > /dev/null 2>&1; then
   autoload -U +X bashcompinit && bashcompinit
   complete -o nospace -C ~/.anyenv/envs/goenv/shims/xc xc
 fi
+
+# starship
+eval "$(starship init zsh)"
+

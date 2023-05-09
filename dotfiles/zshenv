@@ -1,8 +1,5 @@
 export PATH=~/.anyenv/bin:/usr/local/bin:$PATH
 
-# starship
-eval "$(starship init zsh)"
-
 if [ -e "$HOME/.anyenv" ]
 then
     export ANYENV_ROOT="$HOME/.anyenv"
