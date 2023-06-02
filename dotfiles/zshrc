@@ -39,7 +39,7 @@ if [ -n "${PATH##*${snap_bin_path}}" -a -n "${PATH##*${snap_bin_path}:*}" ]; the
     export PATH=$PATH:${snap_bin_path}
 fi
 
-export PATH=/opt/nvim/nvim-linux64/bin:$PATH
+export PATH=/opt/nvim-linux64/bin:$PATH
 
 # nvim
 alias vim='nvim'
