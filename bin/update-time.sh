@@ -1,2 +1,2 @@
 #!/bin/zsh
-sudo ntpdate -B ntp.nict.jp
+sudo ntpdate -b ntp.nict.jp
