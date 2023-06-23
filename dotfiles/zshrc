@@ -64,7 +64,13 @@ if type "xc" > /dev/null 2>&1; then
 fi
 
 # starship
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
+if type "starship" > /dev/null 2>&1; then
+  STARSHIP_INIT=~/init/startship-completion
+  [[ ! -e "$STARSHIP_INIT" ]] && /usr/local/bin/starship init zsh --print-full-init > "$STARSHIP_INIT"
+  
+  source "$STARSHIP_INIT"
+fi
 
 if [ -f ~/.zshrc-local ]; then
   source ~/.zshrc-local
