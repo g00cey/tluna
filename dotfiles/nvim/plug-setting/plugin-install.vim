@@ -6,7 +6,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 Plug 'lambdalisue/fern.vim'
 Plug 'yuki-yano/fern-preview.vim'
-Plug 'lambdalisue/gina.vim'
+Plug 'vim-denops/denops.vim'
+Plug 'lambdalisue/gin.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'machakann/vim-sandwich'
 Plug 'thinca/vim-quickrun'
