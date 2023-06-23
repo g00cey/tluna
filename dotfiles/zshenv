@@ -1,13 +1,19 @@
 export PATH=~/.anyenv/bin:/usr/local/bin:$PATH
-
 if [ -e "$HOME/.anyenv" ]
 then
     export ANYENV_ROOT="$HOME/.anyenv"
     export PATH="$ANYENV_ROOT/bin:$PATH"
     if command -v anyenv 1>/dev/null 2>&1
     then
-        eval "$(anyenv init -)"
-	eval "$(pyenv virtualenv-init -)"
+	ANYENV_INIT=~/init/anyenvinit
+	[[ ! -e "$ANYENV_INIT" ]] && anyenv init - > "$ANYENV_INIT"
+
+	source "$ANYENV_INIT"
+
+	PYENV_VIRTUALENV_INIT=~/init/pyenv-virtualenv-init
+	[[ ! -e "$PYENV_VIRTUALENV_INIT" ]] && pyenv virtualenv-init - > "$PYENV_VIRTUALENV_INIT"
+
+	source "$PYENV_VIRTUALENV_INIT"
     fi
 fi
 
