@@ -6,11 +6,18 @@ fpath=(~/.zfunc $fpath)
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook compinit
 autoload -Uz compinit && compinit -i
 add-zsh-hook chpwd chpwd_recent_dirs
+
 if type "kubectl" > /dev/null 2>&1; then
-  source <(kubectl completion zsh)
+  KUBECTL_COMPLETION=~/init/kubectl-completion
+  [[ ! -e "$KUBECTL_COMPLETION" ]] && kubectl completion zsh > "$KUBECTL_COMPLETION"
+
+  source "$KUBECTL_COMPLETION"
 fi
 if type "helm" > /dev/null 2>&1; then
-  source <(helm completion zsh)
+  HELM_COMPLETION=~/init/helm-completion
+  [[ ! -e "$HELM_COMPLETION" ]] && kubectl completion zsh > "$HELM_COMPLETION"
+
+  source "$HELM_COMPLETION"
 fi
 
 # cdr の設定
@@ -43,7 +50,6 @@ export PATH=/opt/nvim-linux64/bin:$PATH
 
 # nvim
 alias vim='nvim'
-
 #aws
 if type "aws" > /dev/null 2>&1; then
   autoload bashcompinit && bashcompinit
