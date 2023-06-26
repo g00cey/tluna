@@ -3,7 +3,8 @@ bindkey -e
 
 fpath=(~/.zfunc $fpath)
 # cdr, add-zsh-hook を有効にする
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook compinit add-zsh-hook chpwd chpwd_recent_dirs
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook compinit
+add-zsh-hook chpwd chpwd_recent_dirs
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit -i
 
