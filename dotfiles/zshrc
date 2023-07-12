@@ -80,3 +80,6 @@ if [ -f ~/.zshrc-local ]; then
   source ~/.zshrc-local
 fi
 
+
+export DENO_INSTALL="/home/ns-atsushi-gushi/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
