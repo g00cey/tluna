@@ -81,5 +81,3 @@ if [ -f ~/.zshrc-local ]; then
 fi
 
 
-export DENO_INSTALL="/home/ns-atsushi-gushi/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
