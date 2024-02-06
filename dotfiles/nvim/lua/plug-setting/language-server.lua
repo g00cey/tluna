@@ -1,8 +1,8 @@
 require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
   use "neovim/nvim-lspconfig"
-  use "williambomanm/mason.nvim"
-  use "williambomanm/mason-lspconfig.nvim"
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
 
   if packer_bootstrap then
     require("packer").sync()
