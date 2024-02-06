@@ -1,17 +1,13 @@
-require("packer").startup(function(use)
-  use "wbthomason/packer.nvim"
-  use "neovim/nvim-lspconfig"
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
-
-  if packer_bootstrap then
-    require("packer").sync()
-  end
-end)
 vim.cmd([[autocmd BufWritePost init.lua source <afile> | PackerCompile]])
 
-local on_attach = function(client, bufnr)
+require('mason').setup {
+  ui = {
+    check_outdated_packages_on_open = false,
+    border = 'single',
+  },
+}
 
+local on_attach = function(client, bufnr)
   -- LSPサーバーのフォーマット機能を無効にするには下の行をコメントアウト
   -- 例えばtypescript-language-serverにはコードのフォーマット機能が付いているが代わりにprettierでフォーマットしたいときなどに使う
   -- client.resolved_capabilities.document_formatting = false
@@ -36,12 +32,17 @@ local on_attach = function(client, bufnr)
   set("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 end
 
-require("mason").setup()
-require("mason-lspconfig").setup()
-require("mason-lspconfig").setup_handlers {
-  function (server_name) -- default handler (optional)
-    require("lspconfig")[server_name].setup {
-      on_attach = on_attach
-    }
+require('mason').setup {
+  ui = {
+    check_outdated_packages_on_open = false,
+    border = 'single',
+  },
+}
+
+-- ここに追記
+require('mason-lspconfig').setup_handlers {
+  function(server_name)
+    require('lspconfig')[server_name].setup {}
   end,
 }
+
