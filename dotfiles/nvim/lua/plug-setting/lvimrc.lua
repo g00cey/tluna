@@ -1,0 +1,3 @@
+vim.cmd([[
+lvimrc#source()
+]])
