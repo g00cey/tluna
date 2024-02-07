@@ -38,4 +38,3 @@ fi
 
 . "$HOME/.cargo/env"
 source ~/.zshenv-local
-
