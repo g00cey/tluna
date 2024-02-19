@@ -4,7 +4,10 @@ return require('packer').startup(function(use)
 	use "hrsh7th/nvim-cmp"
 	use "hrsh7th/cmp-nvim-lsp"
 	use "hrsh7th/vim-vsnip"
-	use { "junegunn/fzf", run = "./install --bin" }
+	use {
+		'junegunn/fzf.vim',
+		requires = { 'junegunn/fzf', run = ':call fzf#install()' }
+	}
 	use { "wbthomason/packer.nvim" }
 	use { 'yuki-yano/fzf-preview.vim', branch = 'release/rpc' }
 	use { "ibhagwan/fzf-lua",
