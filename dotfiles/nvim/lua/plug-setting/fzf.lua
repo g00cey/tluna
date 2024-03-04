@@ -20,6 +20,7 @@ vim.keymap.set('n', '<C-g>', ':FzfPreviewProjectFilesRpc<CR>')
 vim.keymap.set('n', 'fr', ':FzfPreviewProjectFilesRpc <C-R>"<CR>')
 -- frで選択した単語をファイル検索する
 vim.keymap.set('x', 'fr', 'y:Rg <C-R>"<CR>')
+vim.keymap.set('n', 'fr', 'y:Rg')
 
 -- fbでバッファ検索を開く
 vim.keymap.set('n', 'fb', ':FzfPreviewAllBuffersRpc<CR>')
