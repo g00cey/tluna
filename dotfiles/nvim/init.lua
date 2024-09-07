@@ -2,6 +2,7 @@ require("util")
 require("plug-setting/plugin-install")
 
 require("plug-setting/fern")
+require("plug-setting/deno")
 require("plug-setting/nerdtree")
 require("plug-setting/fzf")
 require("plug-setting/localvimrc")
