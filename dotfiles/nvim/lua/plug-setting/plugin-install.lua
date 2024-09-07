@@ -33,7 +33,6 @@ return require('packer').startup(function(use)
 	use { 'lambdalisue/fern-git-status.vim' }
 	use { 'tpope/vim-dadbod' }
 	use { 'kristijanhusak/vim-dadbod-ui' }
-	use { 'NTBBloodbath/rest.nvim' }
 	use { 'nvim-lua/plenary.nvim' }
 	use { 'mopp/makecomp.vim' }
 	use {

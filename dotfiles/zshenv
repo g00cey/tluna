@@ -34,7 +34,7 @@ then
     export PATH="/opt/nvim-linux64/bin:$PATH"
 fi
 
-if [ -e "~/bin" ]
+if [ -e ~/bin ]
 then
     export PATH="~/bin:$PATH"
 fi
