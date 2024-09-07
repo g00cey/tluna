@@ -23,6 +23,12 @@ then
     export PATH="$PATH:$GOPATH/bin"
 fi
 
+if [ -e ~/.deno ]
+then
+  export DENO_INSTALL=~/.deno
+  export PATH="$DENO_INSTALL/bin:$PATH"
+fi
+
 if [ -e "/opt/nvim-linux64/bin" ]
 then
     export PATH="/opt/nvim-linux64/bin:$PATH"
