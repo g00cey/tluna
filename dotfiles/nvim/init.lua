@@ -9,4 +9,5 @@ require("plug-setting/localvimrc")
 require("plug-setting/language-server")
 require("keymap")
 vim.opt.guifont = 'Cica:10'
+vim.opt.termguicolors = true
 vim.wo.number = true
