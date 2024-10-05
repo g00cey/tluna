@@ -1,8 +1,8 @@
-export PATH=~/.anyenv/bin:/usr/local/bin:$PATH
+PATH=~/.anyenv/bin:/usr/local/bin:$PATH
 if [ -e "$HOME/.anyenv" ]
 then
     export ANYENV_ROOT="$HOME/.anyenv"
-    export PATH="$ANYENV_ROOT/bin:$PATH"
+    PATH="$ANYENV_ROOT/bin:$PATH"
     if command -v anyenv 1>/dev/null 2>&1
     then
 	ANYENV_INIT=~/init/anyenvinit
@@ -17,26 +17,31 @@ then
     fi
 
     export GOENV_ROOT="$HOME/.goenv"
-    export PATH="$GOENV_ROOT/bin:$PATH"
+    PATH="$GOENV_ROOT/bin:$PATH"
     eval "$(goenv init -)"
-    export PATH="$GOROOT/bin:$PATH"
-    export PATH="$PATH:$GOPATH/bin"
+    PATH="$GOROOT/bin:$PATH"
+    PATH="$PATH:$GOPATH/bin"
 fi
 
 if [ -e ~/.deno ]
 then
   export DENO_INSTALL=~/.deno
-  export PATH="$DENO_INSTALL/bin:$PATH"
+  PATH="$DENO_INSTALL/bin:$PATH"
+fi
+
+if [ -e ~/.krew/bin ]
+then
+  PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 fi
 
 if [ -e "/opt/nvim-linux64/bin" ]
 then
-    export PATH="/opt/nvim-linux64/bin:$PATH"
+    PATH="/opt/nvim-linux64/bin:$PATH"
 fi
 
 if [ -e ~/bin ]
 then
-    export PATH="~/bin:$PATH"
+    PATH="~/bin:$PATH"
 fi
 
 export EDITOR=nvim
@@ -48,5 +53,6 @@ then
     alias vim=nvim
 fi
 
+export PATH
 . "$HOME/.cargo/env"
 source ~/.zshenv-local
