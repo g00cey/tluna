@@ -1,5 +1,5 @@
 #!/bin/bash
-path=`curl -s https://api.github.com/repos/neovim/neovim/releases/latest | jq -r '.assets[] | select( .name | contains("linux64.tar.gz")) | select( .name | contains("sha") | not) | .browser_download_url'`
+path=`curl -s https://api.github.com/repos/neovim/neovim/releases/latest | jq -r '.assets[] | select( .name | contains("linux-x86_64.tar.gz")) | select( .name | contains("sha") | not) | .browser_download_url'`
 wget $path -O /tmp/nvim.tgz
 sudo tar xvzf /tmp/nvim.tgz -C /opt/
 sudo chmod uag+x /opt/nvim-linux64/bin/nvim
