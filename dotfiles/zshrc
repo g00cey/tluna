@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":~/.zsh/completions:"* ]]; then export FPATH="~/.zsh/completions:$FPATH"; fi
 # emacs bind
 bindkey -e
 
