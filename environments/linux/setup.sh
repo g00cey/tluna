@@ -40,6 +40,7 @@ ln -s ~/src/git/github/tluna/dotfiles/ctags           ~/.ctags
 ln -s ~/src/git/github/tluna/dotfiles/my.cnf          ~/.my.cnf
 ln -s ~/src/git/github/tluna/dotfiles/tmuxfiles/      ~/.tmuxfiles
 ln -s ~/src/git/github/tluna/dotfiles/starship.toml   ~/.config/starship.toml
+ln -s ~/src/git/github/tluna/dotfiles/gitconfig   ~/.gitconfig
 
 mkdir -p ~/init
 

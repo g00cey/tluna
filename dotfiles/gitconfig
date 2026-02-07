@@ -1,4 +1,10 @@
 [core]
 	editor = nvim -c \"set fenc=utf-8\"
 [push]
-	default = matching
+	default = simple
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
