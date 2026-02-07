@@ -47,10 +47,6 @@ mkdir -p ~/init
 # zshenv
 touch ~/.zshenv-local
 
-#git settings
-git config --global core.editor 'nvim -c "set fenc=utf-8"'
-git config --global push.default matching
-
 #submoudle
 cd ~/src/git/github/tluna/
 git submodule init
