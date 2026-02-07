@@ -9,3 +9,7 @@ nodenv hooks install
 mkdir -p $(anyenv root)/plugins
 git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
 anyenv update
+
+# pyenv virtualenv-init
+mkdir -p $(anyenv root)/plugins
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
