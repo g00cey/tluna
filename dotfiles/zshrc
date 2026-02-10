@@ -51,11 +51,7 @@ if [ -n "${PATH##*${snap_bin_path}}" -a -n "${PATH##*${snap_bin_path}:*}" ]; the
     export PATH=$PATH:${snap_bin_path}
 fi
 
-export PATH=/opt/nvim-linux-x86_64/bin:$PATH
 
-
-# nvim
-alias vim='nvim'
 #aws
 if type "aws" > /dev/null 2>&1; then
   complete -C '/usr/local/bin/aws_completer' aws
@@ -84,6 +80,3 @@ fi
 if [ -f ~/.zshrc-local ]; then
   source ~/.zshrc-local
 fi
-
-
-. "/home/luna/.deno/env"

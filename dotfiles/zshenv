@@ -1,4 +1,4 @@
-PATH=~/.anyenv/bin:/usr/local/bin:$PATH
+PATH=/usr/local/bin:$PATH
 if [ -e "$HOME/.anyenv" ]
 then
     export ANYENV_ROOT="$HOME/.anyenv"
@@ -39,9 +39,14 @@ then
     PATH="/opt/nvim-linux64/bin:$PATH"
 fi
 
-if [ -e ~/bin ]
+if [ -e "$HOME/bin" ]
 then
-    PATH="~/bin:$PATH"
+    PATH="$HOME/bin:$PATH"
+fi
+
+if [ -e "$HOME/.local/bin" ]
+then
+    PATH="$HOME/.local/bin:$PATH"
 fi
 
 export EDITOR=nvim
