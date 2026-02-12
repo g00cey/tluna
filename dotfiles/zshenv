@@ -34,9 +34,10 @@ then
   PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 fi
 
-if [ -e "/opt/nvim-linux64/bin" ]
+if [ -e "/opt/nvim-linux-x86_64/bin" ]
+
 then
-    PATH="/opt/nvim-linux64/bin:$PATH"
+    PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 fi
 
 if [ -e "$HOME/bin" ]
