@@ -29,6 +29,11 @@ then
   PATH="$DENO_INSTALL/bin:$PATH"
 fi
 
+if [ -e ~/.devcontainers/bin ]
+then
+  PATH="$HOME/.devcontainers/bin:$PATH"
+fi
+
 if [ -e ~/.krew/bin ]
 then
   PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
