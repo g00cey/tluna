@@ -40,7 +40,6 @@ then
 fi
 
 if [ -e "/opt/nvim-linux-x86_64/bin" ]
-
 then
     PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 fi
