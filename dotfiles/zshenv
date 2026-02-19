@@ -16,8 +16,8 @@ then
 	source "$PYENV_VIRTUALENV_INIT"
     fi
 
-    export GOENV_ROOT="$HOME/.goenv"
     PATH="$GOENV_ROOT/bin:$PATH"
+    export GOENV_PATH_ORDER=front
     eval "$(goenv init -)"
     PATH="$GOROOT/bin:$PATH"
     PATH="$PATH:$GOPATH/bin"
