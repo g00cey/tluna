@@ -15,12 +15,9 @@ then
 
 	source "$PYENV_VIRTUALENV_INIT"
     fi
-
-    PATH="$GOENV_ROOT/bin:$PATH"
-    export GOENV_PATH_ORDER=front
+    export GOENV_ROOT=$HOME/.goenv
+    export PATH=$GOENV_ROOT/bin:$PATH
     eval "$(goenv init -)"
-    PATH="$GOROOT/bin:$PATH"
-    PATH="$PATH:$GOPATH/bin"
 fi
 
 if [ -e ~/.deno ]
