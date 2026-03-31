@@ -1,5 +1,7 @@
 [core]
 	editor = nvim -c \"set fenc=utf-8\"
+[fetch]
+	prune = true
 [push]
 	default = simple
 [credential "https://github.com"]
