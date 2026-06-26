@@ -3,7 +3,9 @@ if [ -e "$HOME/.anyenv" ]
 then
     export ANYENV_ROOT="$HOME/.anyenv"
     PATH="$ANYENV_ROOT/bin:$PATH"
-    if command -v anyenv 1>/dev/null 2>&1
+    export GOENV_ROOT=$HOME/.goenv
+    export PATH=$GOENV_ROOT/bin:$PATH
+    if [[ -o interactive ]] && command -v anyenv 1>/dev/null 2>&1
     then
 	ANYENV_INIT=~/init/anyenvinit
 	[[ ! -e "$ANYENV_INIT" ]] && anyenv init - > "$ANYENV_INIT"
@@ -15,9 +17,9 @@ then
 
 	source "$PYENV_VIRTUALENV_INIT"
     fi
-    export GOENV_ROOT=$HOME/.goenv
-    export PATH=$GOENV_ROOT/bin:$PATH
-    eval "$(goenv init -)"
+    if [[ -o interactive ]]; then
+        eval "$(goenv init -)"
+    fi
 fi
 
 if [ -e ~/.deno ]
@@ -51,7 +53,6 @@ then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# opencode
 if [ -e "$HOME/.opencode/bin" ]
 then
     PATH="$HOME/.opencode/bin:$PATH"
