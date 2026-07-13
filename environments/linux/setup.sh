@@ -19,28 +19,31 @@ unlink ~/.zshrc
 unlink ~/.zshenv
 unlink ~/.tigrc
 unlink ~/.config/starship.toml
+unlink ~/.config/herdr/config.toml
 mkdir -p ~/.zfunc
+mkdir -p ~/.config/herdr
+mkdir -p ~/.config/coc/extensions
 
 #vim
 ln -s ~/src/git/github/tluna/dotfiles/vim/vimrc          ~/.vimrc
 ln -s ~/src/git/github/tluna/dotfiles/vim/gvimrc         ~/.gvimrc
 ln -s ~/src/git/github/tluna/dotfiles/vim/               ~/.vim
 ln -s ~/src/git/github/tluna/dotfiles/nvim/              ~/.config/nvim
-mkdir -p ~/.config/coc/extensions
 ln -s ~/src/git/github/tluna/dotfiles/coc-package.json   ~/.config/coc/extensions/package.json
 
 #another dot files
-ln -s ~/src/git/github/tluna/dotfiles/zshrc           ~/.zshrc
-ln -s ~/src/git/github/tluna/dotfiles/zshenv          ~/.zshenv
-ln -s ~/src/git/github/tluna/dotfiles/tigrc           ~/.tigrc
-ln -s ~/src/git/github/tluna/dotfiles/w3m/            ~/.w3m
-ln -s ~/src/git/github/tluna/bin/                     ~/bin
-ln -s ~/src/git/github/tluna/dotfiles/tmux.conf       ~/.tmux.conf
-ln -s ~/src/git/github/tluna/dotfiles/ctags           ~/.ctags
-ln -s ~/src/git/github/tluna/dotfiles/my.cnf          ~/.my.cnf
-ln -s ~/src/git/github/tluna/dotfiles/tmuxfiles/      ~/.tmuxfiles
-ln -s ~/src/git/github/tluna/dotfiles/starship.toml   ~/.config/starship.toml
-ln -s ~/src/git/github/tluna/dotfiles/gitconfig   ~/.gitconfig
+ln -s ~/src/git/github/tluna/dotfiles/zshrc              ~/.zshrc
+ln -s ~/src/git/github/tluna/dotfiles/zshenv             ~/.zshenv
+ln -s ~/src/git/github/tluna/dotfiles/tigrc              ~/.tigrc
+ln -s ~/src/git/github/tluna/dotfiles/w3m/               ~/.w3m
+ln -s ~/src/git/github/tluna/bin/                        ~/bin
+ln -s ~/src/git/github/tluna/dotfiles/tmux.conf          ~/.tmux.conf
+ln -s ~/src/git/github/tluna/dotfiles/ctags              ~/.ctags
+ln -s ~/src/git/github/tluna/dotfiles/my.cnf             ~/.my.cnf
+ln -s ~/src/git/github/tluna/dotfiles/tmuxfiles/         ~/.tmuxfiles
+ln -s ~/src/git/github/tluna/dotfiles/starship.toml      ~/.config/starship.toml
+ln -s ~/src/git/github/tluna/dotfiles/gitconfig          ~/.gitconfig
+ln -s ~/src/git/github/tluna/dotfiles/herdr/config.toml  ~/.config/herdr/config.toml
 
 mkdir -p ~/init
 
