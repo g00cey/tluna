@@ -15,5 +15,9 @@ auto_switch = false
 pane_history = true
 switch_ascii_input_source_in_prefix = true
 
+[keys]
+previous_agent = "prefix+alt+p"
+next_agent = "prefix+alt+n"
+
 [ui.sound]
 enabled = true
