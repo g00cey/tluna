@@ -1,0 +1,166 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "provider": {
+    "openrouter": {
+      "models": {
+        "openrouter/free": {
+          "options": {
+            "provider": {
+              "order": ["baseten"],
+              "allow_fallbacks": false
+            }
+          }
+        }
+      }
+    },
+    "ollama-geforce": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "ollama-geforce",
+      "options": {
+        "baseURL": "http://192.168.11.24:11434/v1",
+        "timeout": false
+      },
+      "models": {
+        "batiai/qwen3.6-35b:q3": {
+          "name": "batiai/qwen3.6-35b:q3"
+        },
+        "qwen3.5:9b": {
+          "name": "qwen3.5:9b"
+        },
+        "gemma4:e4b": {
+          "name": "gemma4:e4b"
+        }
+      }
+    },
+    "opencode-go": {},
+    "moonshot-direct": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Moonshot AI (direct)",
+      "options": { "baseURL": "https://api.moonshot.ai/v1" }
+    },
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (local / EVO-X2)",
+      "options": { "baseURL": "http://localhost:11434/v1" },
+      "models": {
+        "gpt-oss:120b": { "name": "gpt-oss 120B (local)" }
+      }
+    },
+    "bedrock": {
+      "options": { "region": "us-west-2" }
+    }
+  },
+
+  "mcp": {
+    "awslabs.aws-pricing-mcp-server": {
+      "type": "local",
+      "command": ["uvx", "awslabs.aws-pricing-mcp-server@latest"],
+      "environment": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "default",
+        "AWS_REGION": "us-east-1"
+      },
+      "enabled": true
+    }
+  },
+
+  "plugin": ["opencode-ignore"],
+
+  "permission": {
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "**/secrets/**": "deny"
+    }
+  },
+
+  "model": "opencode-go/deepseek-v4-pro",
+  "small_model": "opencode-go/mimo-v2.5",
+
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "model": "opencode-go/deepseek-v4-pro",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      },
+      "permission": {
+        "task": {
+          "*": "deny",
+          "general": "allow",
+          "explore": "allow",
+          "scout": "allow",
+          "reviewer": "allow",
+          "escalation": "ask"
+        }
+      }
+    },
+    "plan": {
+      "mode": "primary",
+      "model": "opencode-go/glm-5.2",
+      "temperature": 0.1,
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      },
+      "permission": {
+        "task": {
+          "*": "deny",
+          "explore": "allow",
+          "scout": "allow"
+        }
+      }
+    },
+    "general": {
+      "mode": "subagent",
+      "model": "opencode-go/minimax-m3",
+      "description": "複数ファイルにまたがる調査・並列作業単位の実行"
+    },
+    "explore": {
+      "mode": "subagent",
+      "model": "opencode-go/mimo-v2.5",
+      "description": "コードベース内の高速読み取り専用検索",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
+    },
+    "scout": {
+      "mode": "subagent",
+      "model": "opencode-go/deepseek-v4-flash",
+      "description": "外部依存関係・upstreamリポジトリの調査",
+      "tools": {
+        "write": false,
+        "edit": false
+      }
+    },
+    "reviewer": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "opencode-go/qwen3.7-max",
+      "description": "実装差分のレビュー。セキュリティ・保守性・パフォーマンスの観点で指摘のみ行う",
+      "temperature": 0.1,
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
+    },
+    "escalation": {
+      "mode": "subagent",
+      "hidden": true,
+      "model": "opencode-go/kimi-k3",
+      "description": "buildやreviewerが行き詰まった難問のみに使う高コスト・低頻度の切り札",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": true
+      }
+    }
+  }
+}

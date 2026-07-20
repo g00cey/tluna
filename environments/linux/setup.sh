@@ -20,9 +20,13 @@ unlink ~/.zshenv
 unlink ~/.tigrc
 unlink ~/.config/starship.toml
 unlink ~/.config/herdr/config.toml
+unlink ~/.config/opencode/opencode.jsonc
+unlink ~/.opencode/skills
 mkdir -p ~/.zfunc
 mkdir -p ~/.config/herdr
 mkdir -p ~/.config/coc/extensions
+mkdir -p ~/.config/opencode
+mkdir -p ~/.opencode
 
 #vim
 ln -s ~/src/git/github/tluna/dotfiles/vim/vimrc          ~/.vimrc
@@ -44,6 +48,8 @@ ln -s ~/src/git/github/tluna/dotfiles/tmuxfiles/         ~/.tmuxfiles
 ln -s ~/src/git/github/tluna/dotfiles/starship.toml      ~/.config/starship.toml
 ln -s ~/src/git/github/tluna/dotfiles/gitconfig          ~/.gitconfig
 ln -s ~/src/git/github/tluna/dotfiles/herdr/config.toml  ~/.config/herdr/config.toml
+ln -s ~/src/git/github/tluna/dotfiles/opencode/opencode.jsonc  ~/.config/opencode/opencode.jsonc
+ln -s ~/src/git/github/tluna/dotfiles/opencode/skills/         ~/.opencode/skills
 
 mkdir -p ~/init
 
