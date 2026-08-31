@@ -58,6 +58,10 @@ then
     PATH="$HOME/.opencode/bin:$PATH"
 fi
 
+if command -v git-gtr > /dev/null 2>&1; then
+    eval "$(git gtr completion zsh)"
+fi
+
 export EDITOR=nvim
 export PAGER='lv -c'
 export LANG='ja_JP.UTF-8'

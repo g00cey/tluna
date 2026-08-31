@@ -24,6 +24,12 @@ if type "helm" > /dev/null 2>&1; then
 
   source $HELM_COMPLETION
 fi
+if type "herdr" > /dev/null 2>&1; then
+  HERDR_COMPLETION=~/init/herdr-completion
+  [[ ! -e "$HERDR_COMPLETION" ]] && herdr completion zsh > "$HERDR_COMPLETION"
+
+  source $HERDR_COMPLETION
+fi
 
 # cdr の設定
 zstyle ':completion:*' recent-dirs-insert both
