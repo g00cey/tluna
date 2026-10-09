@@ -75,13 +75,13 @@
     }
   },
 
-  "model": "opencode-go/deepseek-v4-pro",
+  "model": "opencode-go/glm-5.3-flash",
   "small_model": "opencode-go/mimo-v2.5",
 
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "opencode-go/deepseek-v4-pro",
+      "model": "opencode-go/glm-5.3-flash",
       "tools": {
         "write": true,
         "edit": true,
@@ -100,7 +100,7 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "opencode-go/glm-5.2",
+      "model": "opencode-go/minimax-m3",
       "temperature": 0.1,
       "tools": {
         "write": false,
@@ -117,7 +117,7 @@
     },
     "general": {
       "mode": "subagent",
-      "model": "opencode-go/minimax-m3",
+      "model": "opencode-go/mimo-v2.5",
       "description": "複数ファイルにまたがる調査・並列作業単位の実行"
     },
     "explore": {
@@ -132,7 +132,7 @@
     },
     "scout": {
       "mode": "subagent",
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "opencode-go/mimo-v2.5",
       "description": "外部依存関係・upstreamリポジトリの調査",
       "tools": {
         "write": false,
@@ -142,7 +142,7 @@
     "reviewer": {
       "mode": "subagent",
       "hidden": true,
-      "model": "opencode-go/qwen3.7-max",
+      "model": "opencode-go/mimo-v2.5-pro",
       "description": "実装差分のレビュー。セキュリティ・保守性・パフォーマンスの観点で指摘のみ行う",
       "temperature": 0.1,
       "tools": {
@@ -154,7 +154,7 @@
     "escalation": {
       "mode": "subagent",
       "hidden": true,
-      "model": "opencode-go/kimi-k3",
+      "model": "opencode-go/kimi-k2.7-code",
       "description": "buildやreviewerが行き詰まった難問のみに使う高コスト・低頻度の切り札",
       "tools": {
         "write": false,
