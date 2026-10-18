@@ -7,7 +7,10 @@
       "name": "Lemonade Server",
       "options": {
         "baseURL": "http://172.16.1.20:13305/api/v1",
-        "timeout": false
+        "timeout": false,
+        // ローカル推論は長いプロンプトの prefill に時間がかかるため既定の 5 分から 30 分に延長
+        "headerTimeout": 1800000,
+        "chunkTimeout": 1800000
       },
       "models": {
         // build: コーディング特化 / 262k ctx
