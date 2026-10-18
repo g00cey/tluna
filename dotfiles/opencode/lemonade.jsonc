@@ -97,7 +97,7 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "lemonade/GLM-4.5-Air-UD-Q4K-XL-GGUF",
+      "model": "lemonade/Qwen3-Coder-Next-GGUF",
       "temperature": 0.1,
       "tools": {
         "write": false,
@@ -139,7 +139,7 @@
     "reviewer": {
       "mode": "subagent",
       "hidden": true,
-      "model": "lemonade/gpt-oss-120b-GGUF-MXFP4",
+      "model": "lemonade/GLM-4.5-Air-UD-Q4K-XL-GGUF",
       "description": "実装差分のレビュー。セキュリティ・保守性・パフォーマンスの観点で指摘のみ行う",
       "temperature": 0.1,
       "tools": {
