@@ -52,6 +52,10 @@ function fzf-cdr() {
 
 alias co='git checkout $(git branch -a | tr -d " " |fzf --height 100% --prompt "CHECKOUT BRANCH>" --preview "git log --color=always {}" | head -n 1 | sed -e "s/^\*\s*//g" | perl -pe "s/remotes\/origin\///g")'
 
+#opencode
+alias opencodego='OPENCODE_CONFIG=~/.config/opencode/opencodego.jsonc opencode'
+alias lemonadego='OPENCODE_CONFIG=~/.config/opencode/lemonade.jsonc opencode'
+
 snap_bin_path="/snap/bin"
 if [ -n "${PATH##*${snap_bin_path}}" -a -n "${PATH##*${snap_bin_path}:*}" ]; then
     export PATH=$PATH:${snap_bin_path}
