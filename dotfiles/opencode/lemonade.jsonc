@@ -1,11 +1,11 @@
 {
   "$schema": "https://opencode.ai/config.json",
 
-  "provider": {
+  "providers": {
     "lemonade": {
-      "npm": "@ai-sdk/openai-compatible",
+      "package": "@opencode/ai/providers/openai-compatible",
       "name": "Lemonade Server",
-      "options": {
+      "settings": {
         "baseURL": "http://172.16.1.20:13305/api/v1",
         "timeout": false,
         // ローカル推論は長いプロンプトの prefill に時間がかかるため既定の 5 分から 30 分に延長
@@ -14,35 +14,48 @@
       },
       "models": {
         // build: コーディング特化 / 262k ctx
-        "Qwen3-Coder-Next-GGUF": {
+        "Qwen3-Coder": {
           "name": "Qwen3 Coder Next",
-          "tool_call": true,
+          "modelID": "Qwen3-Coder-Next-GGUF",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
           "limit": { "context": 262144, "output": 32768 }
         },
         // plan / escalation: 推論系・最大モデル (106B MoE)
-        "GLM-4.5-Air-UD-Q4K-XL-GGUF": {
+        "GLM-4.5-Air": {
           "name": "GLM-4.5 Air",
-          "tool_call": true,
-          "reasoning": true,
+          "modelID": "GLM-4.5-Air-UD-Q4K-XL-GGUF",
+          "capabilities": {
+            "tools": true,
+            "input": ["text"],
+            "output": ["text"],
+            "reasoning": { "supported": true }
+          },
           "limit": { "context": 131072, "output": 32768 }
         },
         // general / explore / scout: 高速 MoE
-        "Gemma-4-26B-A4B-it-GGUF": {
+        "Gemma-4-26B-A4B-it": {
           "name": "Gemma 4 26B A4B",
-          "tool_call": true,
+          "modelID": "Gemma-4-26B-A4B-it-GGUF",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
           "limit": { "context": 262144, "output": 32768 }
         },
         // reviewer: build と別系統の推論モデル
-        "gpt-oss-120b-GGUF-MXFP4": {
+        "gpt-oss-120b": {
           "name": "gpt-oss 120B",
-          "tool_call": true,
-          "reasoning": true,
+          "modelID": "gpt-oss-120b-GGUF-MXFP4",
+          "capabilities": {
+            "tools": true,
+            "input": ["text"],
+            "output": ["text"],
+            "reasoning": { "supported": true }
+          },
           "limit": { "context": 131072, "output": 16384 }
         },
         // small_model: タイトル生成等の軽量用途
-        "Gemma-4-E4B-it-GGUF": {
+        "Gemma-4-E4B-it": {
           "name": "Gemma 4 E4B",
-          "tool_call": true,
+          "modelID": "Gemma-4-E4B-it-GGUF",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
           "limit": { "context": 131072, "output": 16384 }
         }
       }
@@ -64,6 +77,12 @@
 
   "plugin": ["opencode-ignore"],
 
+  // ツール出力の truncation 上限 (既定: 2000 行 / 50KB)
+  "tool_output": {
+    "max_lines": 4000,
+    "max_bytes": 204800
+  },
+
   "permission": {
     "read": {
       "*": "allow",
@@ -72,13 +91,13 @@
     }
   },
 
-  "model": "lemonade/Qwen3-Coder-Next-GGUF",
-  "small_model": "lemonade/Gemma-4-E4B-it-GGUF",
+  "model": "lemonade/Qwen3-Coder",
+  "small_model": "lemonade/Gemma-4-E4B-it",
 
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "lemonade/Qwen3-Coder-Next-GGUF",
+      "model": "lemonade/Qwen3-Coder",
       "tools": {
         "write": true,
         "edit": true,
@@ -97,7 +116,7 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "lemonade/Qwen3-Coder-Next-GGUF",
+      "model": "lemonade/Qwen3-Coder",
       "temperature": 0.1,
       "tools": {
         "write": false,
@@ -114,12 +133,12 @@
     },
     "general": {
       "mode": "subagent",
-      "model": "lemonade/Gemma-4-26B-A4B-it-GGUF",
+      "model": "lemonade/Gemma-4-26B-A4B-it",
       "description": "複数ファイルにまたがる調査・並列作業単位の実行"
     },
     "explore": {
       "mode": "subagent",
-      "model": "lemonade/Gemma-4-26B-A4B-it-GGUF",
+      "model": "lemonade/Gemma-4-26B-A4B-it",
       "description": "コードベース内の高速読み取り専用検索",
       "tools": {
         "write": false,
@@ -129,7 +148,7 @@
     },
     "scout": {
       "mode": "subagent",
-      "model": "lemonade/Gemma-4-26B-A4B-it-GGUF",
+      "model": "lemonade/Gemma-4-26B-A4B-it",
       "description": "外部依存関係・upstreamリポジトリの調査",
       "tools": {
         "write": false,
@@ -139,7 +158,7 @@
     "reviewer": {
       "mode": "subagent",
       "hidden": true,
-      "model": "lemonade/GLM-4.5-Air-UD-Q4K-XL-GGUF",
+      "model": "lemonade/GLM-4.5-Air",
       "description": "実装差分のレビュー。セキュリティ・保守性・パフォーマンスの観点で指摘のみ行う",
       "temperature": 0.1,
       "tools": {
@@ -151,7 +170,7 @@
     "escalation": {
       "mode": "subagent",
       "hidden": true,
-      "model": "lemonade/GLM-4.5-Air-UD-Q4K-XL-GGUF",
+      "model": "lemonade/GLM-4.5-Air",
       "description": "buildやreviewerが行き詰まった難問のみに使う高コスト・低頻度の切り札",
       "tools": {
         "write": false,
