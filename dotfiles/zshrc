@@ -87,7 +87,11 @@ if [ -e "$BREW_PATH" ]; then
   export PATH="$BREW_PATH:$PATH"
 fi
 
+LOCAL_BIN_PATH="$HOME/.local/bin"
+if [ -e "$LOCAL_BIN_PATH" ]; then
+  export PATH="$LOCAL_BIN_PATH:$PATH"
+fi
+
 if [ -f ~/.zshrc-local ]; then
   source ~/.zshrc-local
 fi
-
