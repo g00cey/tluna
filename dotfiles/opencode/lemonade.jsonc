@@ -14,16 +14,16 @@
       },
       "models": {
         // build: コーディング特化 / 262k ctx
-        "Qwen3-Coder": {
-          "name": "Qwen3 Coder Next",
-          "modelID": "Qwen3-Coder-Next-GGUF",
+        "Qwen3.8-Flash-Next-GGUF-UD-IQ3_XXS": {
+          "name": "Qwen3.8-Flash-Next-GGUF-UD-IQ3_XXS",
+          "modelID": "Qwen3.8-Flash-Next-GGUF-UD-IQ3_XXS",
           "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
           "limit": { "context": 262144, "output": 32768 }
         },
         // plan / escalation: 推論系・最大モデル (106B MoE)
-        "GLM-4.5-Air": {
-          "name": "GLM-4.5 Air",
-          "modelID": "GLM-4.5-Air-UD-Q4K-XL-GGUF",
+        "GLM-5.3-Flash": {
+          "name": "GLM-5.3-Flash",
+          "modelID": "GLM-5.3-Flash-GGUF-UD-IQ2_XXS",
           "capabilities": {
             "tools": true,
             "input": ["text"],
@@ -36,6 +36,13 @@
         "Gemma-4-26B-A4B-it": {
           "name": "Gemma 4 26B A4B",
           "modelID": "Gemma-4-26B-A4B-it-GGUF",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
+          "limit": { "context": 262144, "output": 32768 }
+        },
+        // general / explore / scout: 高速 MoE
+        "gemma4-it-e4b-FLM": {
+          "name": "gemma4-it-e4b-FLM",
+          "modelID": "gemma4-it-e4b-FLM",
           "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
           "limit": { "context": 262144, "output": 32768 }
         },
@@ -91,13 +98,13 @@
     }
   },
 
-  "model": "lemonade/Qwen3-Coder",
-  "small_model": "lemonade/Gemma-4-E4B-it",
+  "model": "lemonade/Qwen3.8-Flash-Next-GGUF-UD-IQ3_XXS",
+  "small_model": "lemonade/gemma4-it-e4b-FLM",
 
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "lemonade/Qwen3-Coder",
+      "model": "lemonade/Qwen3.8-Flash-Next-GGUF-UD-IQ3_XXS",
       "tools": {
         "write": true,
         "edit": true,
@@ -116,7 +123,7 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "lemonade/Qwen3-Coder",
+      "model": "lemonade/GLM-5.3-Flash",
       "temperature": 0.1,
       "tools": {
         "write": false,
@@ -133,12 +140,12 @@
     },
     "general": {
       "mode": "subagent",
-      "model": "lemonade/Gemma-4-26B-A4B-it",
+      "model": "lemonade/gemma4-it-e4b-FLM",
       "description": "複数ファイルにまたがる調査・並列作業単位の実行"
     },
     "explore": {
       "mode": "subagent",
-      "model": "lemonade/Gemma-4-26B-A4B-it",
+      "model": "lemonade/gemma4-it-e4b-FLM",
       "description": "コードベース内の高速読み取り専用検索",
       "tools": {
         "write": false,
@@ -148,7 +155,7 @@
     },
     "scout": {
       "mode": "subagent",
-      "model": "lemonade/Gemma-4-26B-A4B-it",
+      "model": "lemonade/gemma4-it-e4b-FLM",
       "description": "外部依存関係・upstreamリポジトリの調査",
       "tools": {
         "write": false,
@@ -158,7 +165,7 @@
     "reviewer": {
       "mode": "subagent",
       "hidden": true,
-      "model": "lemonade/GLM-4.5-Air",
+      "model": "lemonade/GLM-5.3-Flash",
       "description": "実装差分のレビュー。セキュリティ・保守性・パフォーマンスの観点で指摘のみ行う",
       "temperature": 0.1,
       "tools": {
@@ -170,7 +177,7 @@
     "escalation": {
       "mode": "subagent",
       "hidden": true,
-      "model": "lemonade/GLM-4.5-Air",
+      "model": "lemonade/GLM-5.3-Flash",
       "description": "buildやreviewerが行き詰まった難問のみに使う高コスト・低頻度の切り札",
       "tools": {
         "write": false,
