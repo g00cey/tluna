@@ -18,6 +18,8 @@ switch_ascii_input_source_in_prefix = true
 [keys]
 previous_agent = ["prefix+alt+p", "ctrl+alt+p"]
 next_agent = ["prefix+alt+n", "ctrl+alt+n"]
+previous_workspace = "alt+down"
+next_workspace = "alt+up"
 
 [ui.sound]
 enabled = true
