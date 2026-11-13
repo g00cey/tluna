@@ -30,7 +30,9 @@
             "output": ["text"],
             "reasoning": { "supported": true }
           },
-          "limit": { "context": 131072, "output": 32768 }
+          "limit": { "context": 131072, "output": 32768 },
+          // plan / reviewer 用: 低 temperature バリアント
+          "variants": [{ "id": "calm", "body": { "temperature": 0.1 } }]
         },
         // general / explore / scout: 高速 MoE
         "Gemma-4-26B-A4B-it": {
@@ -70,19 +72,20 @@
   },
 
   "mcp": {
-    "awslabs.aws-pricing-mcp-server": {
-      "type": "local",
-      "command": ["uvx", "awslabs.aws-pricing-mcp-server@latest"],
-      "environment": {
-        "FASTMCP_LOG_LEVEL": "ERROR",
-        "AWS_PROFILE": "default",
-        "AWS_REGION": "us-east-1"
-      },
-      "enabled": true
+    "servers": {
+      "awslabs.aws-pricing-mcp-server": {
+        "type": "local",
+        "command": ["uvx", "awslabs.aws-pricing-mcp-server@latest"],
+        "environment": {
+          "FASTMCP_LOG_LEVEL": "ERROR",
+          "AWS_PROFILE": "default",
+          "AWS_REGION": "us-east-1"
+        }
+      }
     }
   },
 
-  "plugin": ["opencode-ignore"],
+  "plugins": ["opencode-ignore"],
 
   // ツール出力の truncation 上限 (既定: 2000 行 / 50KB)
   "tool_output": {
@@ -97,17 +100,15 @@
   ],
 
   "model": "lemonade/Qwen3.8-Flash-Next-GGUF-UD-IQ3_XXS",
-  "small_model": "lemonade/gemma4-it-e4b-FLM",
 
   "agents": {
+    // タイトル生成等の軽量用途 (旧 small_model)
+    "title": {
+      "model": "lemonade/gemma4-it-e4b-FLM"
+    },
     "build": {
       "mode": "primary",
       "model": "lemonade/Qwen3.8-Flash-Next-GGUF-UD-IQ3_XXS",
-      "tools": {
-        "write": true,
-        "edit": true,
-        "shell": true
-      },
       "permissions": [
         { "action": "subagent", "resource": "*", "effect": "deny" },
         { "action": "subagent", "resource": "general", "effect": "allow" },
@@ -119,14 +120,10 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "lemonade/GLM-5.3-Flash",
-      "temperature": 0.1,
-      "tools": {
-        "write": false,
-        "edit": false,
-        "shell": false
-      },
+      "model": "lemonade/GLM-5.3-Flash#calm",
       "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" },
+        { "action": "shell", "resource": "*", "effect": "deny" },
         { "action": "subagent", "resource": "*", "effect": "deny" },
         { "action": "subagent", "resource": "explore", "effect": "allow" },
         { "action": "subagent", "resource": "scout", "effect": "allow" }
@@ -141,34 +138,30 @@
       "mode": "subagent",
       "model": "lemonade/gemma4-it-e4b-FLM",
       "description": "コードベース内の高速読み取り専用検索",
-      "tools": {
-        "write": false,
-        "edit": false,
-        "shell": false
-      }
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" },
+        { "action": "shell", "resource": "*", "effect": "deny" }
+      ]
     },
     "scout": {
       "mode": "subagent",
       "model": "lemonade/gemma4-it-e4b-FLM",
       "description": "外部依存関係・upstreamリポジトリの調査",
       "system": "あなたは外部依存関係やupstreamリポジトリの調査に特化した読み取り専用エージェントです。ファイルの変更は行わず、調査結果と根拠のみを簡潔に報告してください。",
-      "tools": {
-        "write": false,
-        "edit": false
-      }
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" }
+      ]
     },
     "reviewer": {
       "mode": "subagent",
       "hidden": true,
-      "model": "lemonade/GLM-5.3-Flash",
+      "model": "lemonade/GLM-5.3-Flash#calm",
       "description": "実装差分のレビュー。セキュリティ・保守性・パフォーマンスの観点で指摘のみ行う",
       "system": "あなたはコードレビュー専門のエージェントです。ファイルの変更やコマンド実行は行わず、実装差分に対してセキュリティ・保守性・パフォーマンスの観点から具体的な指摘のみを行ってください。",
-      "temperature": 0.1,
-      "tools": {
-        "write": false,
-        "edit": false,
-        "shell": false
-      }
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" },
+        { "action": "shell", "resource": "*", "effect": "deny" }
+      ]
     },
     "escalation": {
       "mode": "subagent",
@@ -176,11 +169,9 @@
       "model": "lemonade/GLM-5.3-Flash",
       "description": "buildやreviewerが行き詰まった難問のみに使う高コスト・低頻度の切り札",
       "system": "あなたは難問解決のためのエスカレーション専用エージェントです。ファイルの直接編集は行わず、必要に応じて検証コマンドを実行して根本原因の特定と解決方針を提示してください。",
-      "tools": {
-        "write": false,
-        "edit": false,
-        "shell": true
-      }
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" }
+      ]
     }
   }
 }
